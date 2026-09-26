@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Zaki Abdussalam Alfajary &mdash; Portfolio</title>
+  <meta name="description" content="Portofolio resmi Zaki Abdussalam Alfajary - Lulusan D4 Broadband Multimedia Politeknik Negeri Jakarta (IPK 3.66). Spesialisasi Telekomunikasi, Antena RF, IoT, dan Software Engineering." />
+  <meta name="author" content="Zaki Abdussalam Alfajary" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: '#0b0c10',
+            foreground: '#f8fafc',
+            card: '#0f1219',
+            primary: {
+              DEFAULT: '#7980fe',
+              foreground: '#0b0c10',
+            },
+            secondary: {
+              DEFAULT: '#838aff',
+              foreground: '#f8fafc',
+            },
+            muted: {
+              DEFAULT: '#1e293b',
+              foreground: '#94a3b8',
+            },
+            border: '#1e293b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            clash: ['"Clash Grotesk"', '"ClashGrotesk-Variable"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & VanillaTilt -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#0b0c10] text-slate-100 selection:bg-[#7980fe] selection:text-black">
+
+  <!-- ============================================================
+       PRELOADER (Matching WendoJ Curved Slide-Up)
+       ============================================================ -->
+  <div id="preloader">
+    <p><span class="animate-pulse preloader-dot"></span><span id="preloaderWord">Connect</span></p>
+  </div>
+
+  <!-- ============================================================
+       DYNAMIC VIDEO BACKGROUND LOOP (Blue Ambient Waving Lines - AA-VFX)
+       ============================================================ -->
+  <div id="videoBackgroundWrap" class="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-700">
+    <!-- Native HTML5 Video Element (Instan & Mulus Tanpa Iklan) -->
+    <video
+      id="bgVideoPlayer"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-85 transition-opacity duration-700"
+    >
+      <source src="video/bg-lines.mp4" type="video/mp4" />
+    </video>
+    
+    <!-- Fallback iframe for YouTube switching -->
+    <div id="ytContainer" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300vw] h-[300vh] min-w-[177.77vh] min-h-[56.25vw] pointer-events-none z-0">
+      <iframe
+        id="bgVideoIframe"
+        class="w-full h-full object-cover pointer-events-none opacity-80"
+        src=""
+        title="Dynamic Ambient Background"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Balanced dark overlay so all text stays 100% crisp while video is clearly visible -->
+    <div class="absolute inset-0 bg-[#0b0c10]/45 pointer-events-none z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b0c10]/70 via-transparent to-[#0b0c10]/80 pointer-events-none z-10"></div>
+  </div>
+
+  <!-- ============================================================
+       UPPER & LOWER AMBIENT SVG GRADIENT (Matching WendoJ)
+       ============================================================ -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <!-- Upper gradient -->
+    <div class="absolute -top-40 right-0 transform-gpu overflow-hidden blur-3xl opacity-20 sm:-top-80">
+      <svg class="relative left-[calc(50%-11rem)] h-[25rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-25rem)] sm:h-[48rem]" viewBox="0 0 1155 678">
+        <path fill="url(#grad1)" fill-opacity=".4" d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
+        <defs>
+          <linearGradient id="grad1" x1="1155.49" x2="-78.208" y1=".177" y2="474.645" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#7980fe" />
+            <stop offset="1" stop-color="#838aff" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Lower gradient -->
+    <div class="absolute inset-x-0 bottom-0 transform-gpu overflow-hidden blur-3xl opacity-20">
+      <svg class="relative left-[calc(50%+10rem)] h-[25rem] max-w-none -translate-x-1/2 sm:h-[45rem]" viewBox="0 0 1155 678">
+        <path fill="url(#grad2)" fill-opacity=".35" d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
+        <defs>
+          <linearGradient id="grad2" x1="1155.49" x2="-78.208" y1=".177" y2="474.645" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9A70FF" />
+            <stop offset="1" stop-color="#7980fe" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION (Fixed with sleek backdrop blur, matching WendoJ)
+       ============================================================ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0b0c10]/90 backdrop-blur-md border-b border-white/5 py-4 px-4 sm:px-8 2xl:px-48 shadow-lg shadow-black/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 group">
+        <span class="clash-grotesk text-xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">
+          zaki<span class="text-gradient">.</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm">
+        <a href="#home" class="nav-link nav-active">home</a>
+        <a href="#about" class="nav-link">about</a>
+        <a href="#projects" class="nav-link">projects</a>
+        <a href="#experience" class="nav-link">experience</a>
+        <a href="#services" class="nav-link">services</a>
+        <a href="#contact" class="nav-link">contact</a>
+      </nav>
+
+      <!-- Right Action / Status -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/6288298038392" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 text-slate-200 transition-all duration-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Available for work</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white bg-white/5 border border-white/10" aria-label="Buka Menu">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div id="mobileMenuOverlay" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md md:hidden flex justify-end">
+    <div id="mobileDrawer" class="w-4/5 max-w-sm h-full bg-[#0b0c10] border-l border-white/10 p-6 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+          <span class="clash-grotesk text-lg font-bold text-white">menu</span>
+          <button id="closeMobileMenuBtn" class="p-2 text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <nav class="mt-8 flex flex-col space-y-5 text-lg">
+          <a href="#home" class="mobile-nav-link text-slate-300 hover:text-white">home</a>
+          <a href="#about" class="mobile-nav-link text-slate-300 hover:text-white">about</a>
+          <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-white">projects</a>
+          <a href="#experience" class="mobile-nav-link text-slate-300 hover:text-white">experience</a>
+          <a href="#services" class="mobile-nav-link text-slate-300 hover:text-white">services</a>
+          <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-white">contact</a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-white/10 text-xs text-slate-400 space-y-2">
+        <div class="flex items-center gap-2 text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Tersedia untuk Pekerjaan / Proyek</span>
+        </div>
+        <p>&copy; 2026 Zaki Abdussalam Alfajary</p>
+      </div>
+    </div>
+  </div>
+
+  <main class="relative z-10">
+
+    <!-- ============================================================
+         HERO SECTION (Placed cleanly below navbar with ample padding)
+         ============================================================ -->
+    <section id="home" class="min-h-screen pt-36 sm:pt-40 lg:pt-44 pb-16 sm:pb-20 flex flex-col justify-center px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left: Intro Typography (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-4 sm:space-y-5">
+          <!-- Pills -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="pill">broadband multimedia</span>
+            <span class="pill">telekomunikasi &amp; rf</span>
+            <span class="pill">iot &amp; hardware</span>
+            <span class="pill">software dev</span>
+          </div>
+
+          <!-- Headline (Matching WendoJ) -->
+          <div class="pt-1 sm:pt-2">
+            <h1 class="leading-tight tracking-tight">
+              <span class="block text-3xl sm:text-5xl 2xl:text-6xl font-light text-slate-200 tracking-tighter">
+                Hello, I&apos;m
+              </span>
+              <span class="clash-grotesk text-gradient block text-4xl sm:text-6xl 2xl:text-7xl font-bold tracking-tight mt-1">
+                Zaki Alfajary.
+              </span>
+            </h1>
+            <p class="mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-slate-300 leading-relaxed">
+              Lulusan <strong>D4 Broadband Multimedia, Politeknik Negeri Jakarta</strong> (IPK <strong>3,66/4,00</strong>). Spesialisasi dalam perancangan antena mikrostrip 2x2 MIMO, transmisi fiber optic, radio link, sistem IoT, serta rekayasa perangkat lunak web dan mobile.
+            </p>
+          </div>
+
+          <!-- Call to Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2 sm:pt-3">
+            <a href="#contact" class="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#7980fe] text-[#0b0c10] hover:bg-[#838aff] transition-all duration-300 shadow-lg shadow-[#7980fe]/20">
+              <span>Hubungi Saya</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#about" class="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all duration-300">
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
+
+          <!-- Quick Micro Info -->
+          <div class="pt-2 sm:pt-3 flex flex-wrap items-center gap-5 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-primary"></i>
+              <span>Bekasi, Jawa Barat</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-primary"></i>
+              <span>IPK 3,66 / 4,00</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="briefcase" class="w-3.5 h-3.5 text-primary"></i>
+              <span>Eks LKBN ANTARA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Oval Frame Visual Container (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <div class="relative flex flex-col items-center">
+            
+            <!-- Oval Image Frame -->
+            <div class="tilt-card relative w-48 h-64 sm:w-56 sm:h-72 lg:w-60 lg:h-80 rounded-[999px] p-1.5 bg-gradient-to-b from-primary/50 via-primary/15 to-white/5 border border-primary/30 shadow-2xl shadow-primary/20 backdrop-blur-md" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+              <div class="w-full h-full rounded-[999px] overflow-hidden bg-slate-950 relative">
+                <img 
+                  src="img/profile.jpg" 
+                  alt="Zaki Abdussalam Alfajary" 
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" 
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10]/80 via-transparent to-transparent"></div>
+              </div>
+
+              <!-- Floating Micro Pill at Oval Base -->
+              <div class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-semibold bg-[#0b0c10]/95 border border-primary/40 text-slate-200 shadow-xl backdrop-blur-md whitespace-nowrap flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Zaki Abdussalam Alfajary</span>
+              </div>
+            </div>
+
+            <!-- Compact Subtitle Below Oval -->
+            <div class="mt-6 text-center text-xs text-slate-400 space-y-0.5">
+              <div class="text-slate-200 font-medium text-xs">D4 Broadband Multimedia &bull; PNJ</div>
+              <div class="text-[11px] text-primary">Riset: Antena MIMO 2&times;2 &bull; Lulusan 2026</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll to discover indicator -->
+      <div class="pt-12 sm:pt-16 pb-6 flex flex-col items-center justify-center text-xs text-slate-400 tracking-tight">
+        <span class="mb-1 text-[11px]">Scroll to discover</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce text-primary"></i>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION (Tidy, Well-Proportioned, Non-Overlapping)
+         ============================================================ -->
+    <section id="about" class="py-20 px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto border-t border-white/5 relative z-10">
+      <div class="space-y-8">
+        <div>
+          <span class="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+            &bull; About Me
+          </span>
+          <h2 class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight clash-grotesk text-white">
+            Profil &amp; Latar Belakang Rekayasa
+          </h2>
+
+          <!-- Tidy Content Card -->
+          <div class="mt-6 p-6 sm:p-8 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-sm space-y-3.5">
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              Lulusan <strong class="font-semibold text-white">D4 Broadband Multimedia, Politeknik Negeri Jakarta</strong> dengan predikat kelulusan memuaskan (<strong class="font-semibold text-primary">IPK 3,66 / 4,00</strong>). Memiliki fondasi teknis yang kuat di bidang teknologi informasi, jaringan telekomunikasi, perancangan antena mikrostrip array MIMO, transmisi serat optik (fiber optic), analisis radio link microwave, serta rekayasa IoT.
+            </p>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              Memiliki pengalaman magang profesional di <strong class="font-semibold text-white">Divisi Teknologi Informasi Perum LKBN ANTARA</strong> dalam perancangan modul Customer Relationship Management (CRM) dan Sales Force perusahaan menggunakan arsitektur PHP, Nginx, MariaDB, dan Docker.
+            </p>
+          </div>
+        </div>
+
+        <!-- About Stats (Clean Grid Cards) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-2">
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">3.66</span>
+            <span class="mt-1.5 text-xs text-slate-400">IPK Kelulusan (Skala 4.00)</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">8+</span>
+            <span class="mt-1.5 text-xs text-slate-400">Proyek Rekayasa Selesai</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">4 Bulan</span>
+            <span class="mt-1.5 text-xs text-slate-400">Magang LKBN ANTARA</span>
+          </div>
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">2+</span>
+            <span class="mt-1.5 text-xs text-slate-400">Sertifikasi Resmi Dicoding</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION (Matching WendoJ Projects Card Grid)
+         ============================================================ -->
+    <section id="projects" class="py-24 px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto border-t border-white/5">
+      <div>
+        <span class="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+          ✨ Projects
+        </span>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-semibold tracking-tight clash-grotesk text-white">
+          Streamlined digital &amp; engineering experiences.
+        </h2>
+        <p class="mt-2 text-base text-slate-400 max-w-2xl">
+          Dokumentasi nyata proyek riset antena telekomunikasi, transmisi jaringan optik &amp; radio link, otomatisasi IoT, serta aplikasi web dan mobile.
+        </p>
+
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2 mt-8" id="projectFilters">
+          <button class="pill pill-active filter-btn" data-cat="all">Semua (8)</button>
+          <button class="pill filter-btn" data-cat="rf">RF &amp; Antena (3)</button>
+          <button class="pill filter-btn" data-cat="software">Web &amp; AI (2)</button>
+          <button class="pill filter-btn" data-cat="iot">IoT &amp; Hardware (2)</button>
+          <button class="pill filter-btn" data-cat="mobile">Mobile App (1)</button>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10" id="projectsContainer">
+
+          <!-- 1. Antena MIMO -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="mimo-antenna" data-category="rf" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/mimo-antenna.jpg" alt="Antena Mikrostrip Array 2x2 MIMO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-primary backdrop-blur-md">
+                  RF &amp; ANTENA
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  1800 - 2100 MHz
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Sep 2025 &ndash; Jun 2026</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Rancang Bangun Antena Mikrostrip Array 2&times;2 MIMO Wideband
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Merancang antena array 2x2 MIMO untuk aplikasi FWA LTE (1800-2100 MHz) dengan modifikasi Z-Slot, slit, dan slit-DGS pada ground plane.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Emotion AI -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="emotion-ai" data-category="software" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/emotion-detection.jpg" alt="Emotion Detection Web App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-emerald-400 backdrop-blur-md">
+                  MACHINE LEARNING
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  GCP CLOUD
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Apr 2025 &ndash; Jun 2025</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Emotion Detection Web Application
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Mengembangkan aplikasi web machine learning untuk inferensi deteksi usia, emosi, dan ras secara real-time terintegrasi Google Cloud Platform.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Digital Savings IoT -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="digital-savings" data-category="iot" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/digital-savings.jpg" alt="Digital Savings IoT System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-amber-400 backdrop-blur-md">
+                  IOT &amp; HARDWARE
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  SHEETS API
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Nov 2024 &ndash; Des 2024</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Digital Savings System (Sensor Warna + Sheets)
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Sistem tabungan digital berbasis mikrokontroler dengan sensor warna TCS3200 untuk mendeteksi pecahan uang dan upload otomatis ke Google Sheets.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Flutter Music -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="flutter-music" data-category="mobile" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/music-player.jpg" alt="Flutter Music Player App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-purple-400 backdrop-blur-md">
+                  MOBILE APPLICATION
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  DART &amp; KOTLIN
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Okt 2024 &ndash; Nov 2024</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Flutter Music Player Application
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Aplikasi pemutar musik mobile dengan Flutter dan native Android Kotlin, mendukung antarmuka dinamis dan pemutaran audio di latar belakang.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Fiber Optic Margonda -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="fiber-margonda" data-category="rf" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/fiber-optic.jpg" alt="Topologi Fiber Optic Margonda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-cyan-400 backdrop-blur-md">
+                  FIBER OPTIC
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  LINK BUDGET &amp; RPL
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Sep 2024 &ndash; Nov 2024</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Desain Jaringan Fiber Optic &mdash; Margonda, Depok
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Perencanaan jaringan kabel fiber optic, penyusunan mapping jalur rute, kalkulasi optical link margin, serta penyusunan dokumen BoQ dan RPL teknis.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Smart Gardening -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="smart-gardening" data-category="iot" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Smart Gardening ESP32" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-emerald-400 backdrop-blur-md">
+                  IOT &amp; EMBEDDED
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  ESP32 &amp; TELEGRAM
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Jun 2024 &ndash; Jul 2024</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Smart Gardening System berbasis ESP32
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Sistem penyiraman tanaman otomatis berbasis ESP32, relay solenoid valve, sensor kelembaban, serta notifikasi real-time bot Telegram.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Canteen Web App -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="canteen-web" data-category="software" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/canteen-app.jpg" alt="KAPE Canteen Web App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-blue-400 backdrop-blur-md">
+                  WEB APPLICATION
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  FULLSTACK
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Apr 2024 &ndash; Jul 2024</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Canteen Ordering Web Application
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Aplikasi pemesanan kantin dengan arsitektur frontend dan backend, katalog menu interaktif, serta panel admin pemantau pesanan real-time.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Radio Link LOS -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="radio-los" data-category="rf" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/radio-los.jpg" alt="Radio Link LOS Diagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/70 border border-white/10 text-primary backdrop-blur-md">
+                  RADIO TRANSMISI
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-slate-300">
+                  FRESNEL ZONE
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Apr 2024 &ndash; Mei 2024</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Desain Radio Link LOS &amp; Analisis Perencanaan
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Perencanaan transmisi radio link Line of Sight (Jakarta &ndash; Depok), analisis clearance zona Fresnel, evaluasi link margin dan path loss.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs text-primary font-medium pt-3 border-t border-white/5">
+                <span>Lihat Case Study Lengkap</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE SECTION (PERUM LKBN ANTARA)
+         ============================================================ -->
+    <section id="experience" class="py-24 px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto border-t border-white/5">
+      <div>
+        <span class="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+          &bull; Work Experience
+        </span>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-semibold tracking-tight clash-grotesk text-white">
+          Pengalaman Kerja Profesional
+        </h2>
+        <p class="mt-2 text-base text-slate-400 max-w-2xl">
+          Pengalaman kerja riil di lembaga kantor berita nasional Republik Indonesia.
+        </p>
+
+        <div class="mt-10 rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden p-6 sm:p-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Info -->
+            <div class="lg:col-span-7 space-y-6">
+              <div>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary border border-primary/30">
+                  LEMBAGA KANTOR BERITA NASIONAL
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mt-3 clash-grotesk">PERUM LKBN ANTARA</h3>
+                <p class="text-sm text-primary font-medium mt-1">
+                  Staf Magang &mdash; Departemen Pengembangan TI, Divisi Teknologi Informasi
+                </p>
+                <p class="text-xs text-slate-400 mt-1">September 2025 &ndash; Desember 2025 &bull; Jakarta Pusat</p>
+              </div>
+
+              <ul class="space-y-3 text-sm text-slate-300">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                  <span>Terlibat dalam <strong>perancangan dan implementasi Customer Relationship Management (CRM) internal</strong> berbasis web untuk mendukung kegiatan operasional dan tim sales force perusahaan.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                  <span>Mengembangkan <strong>modul invoice, verifikasi pembayaran</strong>, manajemen data admin/pegawai, dan integrasi notifikasi pelanggan otomatis.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                  <span>Mengimplementasikan teknologi <strong>PHP, Nginx, MariaDB, dan Docker</strong> dalam lingkungan deployment terstandarisasi.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-primary shrink-0 mt-0.5"></i>
+                  <span>Berkoordinasi aktif dengan tim pengembang senior dalam analisis kebutuhan fungsional dan penyelesaian sistem tepat waktu.</span>
+                </li>
+              </ul>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="pill">PHP</span>
+                <span class="pill">Nginx</span>
+                <span class="pill">MariaDB</span>
+                <span class="pill">Docker</span>
+                <span class="pill">Web CRM</span>
+              </div>
+            </div>
+
+            <!-- Right Office Image -->
+            <div class="lg:col-span-5">
+              <div class="rounded-xl overflow-hidden border border-white/10 aspect-[16/11] relative group">
+                <img 
+                  src="img/antara-office.jpg" 
+                  alt="Gedung Antara Heritage Center" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div class="absolute bottom-0 inset-x-0 bg-black/70 backdrop-blur-sm p-3 text-xs text-slate-300 border-t border-white/10 text-center">
+                  Gedung Antara Heritage Center &mdash; Pasar Baru, Jakarta Pusat
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION (Matching WendoJ "Need more info? I got you.")
+         ============================================================ -->
+    <section id="services" class="py-24 px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto border-t border-white/5">
+      <div>
+        <div class="max-w-2xl">
+          <span class="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+            &bull; Expertise &amp; Services
+          </span>
+          <h2 class="mt-2 text-3xl sm:text-5xl font-semibold tracking-tight clash-grotesk text-white">
+            Need more info?<br />
+            <span class="text-gradient">I got you.</span>
+          </h2>
+          <p class="mt-2 text-base text-slate-400">
+            Berikut adalah domain keahlian teknis dan layanan engineering yang saya kuasai:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+              <i data-lucide="radio" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white clash-grotesk">RF &amp; Antenna Design</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+              Perancangan dan simulasi antena mikrostrip array MIMO (1800&ndash;2100 MHz), modifikasi Z-Slot, slit-DGS, evaluasi S-parameter, dan ECC menggunakan CST Studio Suite.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+              <i data-lucide="network" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white clash-grotesk">Network &amp; Fiber Optic</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+              Perencanaan jaringan kabel fiber optic, kalkulasi optical link budget, penyusunan BoQ &amp; RPL, serta analisis Line of Sight (LOS) dan zona Fresnel gelombang mikro.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white clash-grotesk">IoT &amp; Embedded Systems</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+              Pengembangan prototipe mikrokontroler (Arduino, ESP32), sensor optik/warna, aktuator solenoid relay, serta integrasi data real-time ke Google Spreadsheet &amp; Telegram API.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white clash-grotesk">Fullstack Web Engineering</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+              Pembangunan aplikasi web responsif dan modular (PHP, JavaScript, HTML, CSS, MariaDB, Docker, Nginx) dengan modul manajemen invoice, otentikasi, dan panel admin.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white clash-grotesk">Mobile Application (Flutter)</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+              Pembuatan antarmuka aplikasi mobile multiplatform berbasis Flutter dan Dart, penanganan background audio playback, dan integrasi native Kotlin di Android.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6">
+              <i data-lucide="cloud" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white clash-grotesk">Machine Learning &amp; Cloud</h3>
+            <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+              Pelatihan model machine learning berbasis Python dan Google Colab, serta integrasi inferensi model kecerdasan buatan ke lingkungan Google Cloud Platform (GCP).
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EDUCATION & CERTIFICATIONS
+         ============================================================ -->
+    <section class="py-24 px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto border-t border-white/5">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Pendidikan Formal -->
+        <div class="space-y-6">
+          <span class="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+            &bull; Academic Background
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-semibold clash-grotesk text-white">Pendidikan Formal</h2>
+
+          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-white">Politeknik Negeri Jakarta</h3>
+                <p class="text-sm text-primary">D4 Broadband Multimedia &bull; Teknik Elektro</p>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white">
+                IPK 3,66 / 4,00
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pt-2 border-t border-white/5">
+              Menyelesaikan pendidikan sarjana terapan dengan fokus pada antena telekomunikasi MIMO, fiber optic, radio link LOS, pemrosesan sinyal digital, serta software engineering.
+            </p>
+          </div>
+
+          <!-- Organisasi -->
+          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3">
+            <h3 class="text-base font-bold text-white">LDK FIKRI Politeknik Negeri Jakarta</h3>
+            <p class="text-xs text-primary">Kepala Biro PSDM (Pengembangan Sumber Daya Muslim) &bull; 2025 &ndash; 2026</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Memimpin koordinasi program mentoring anggota, menjabat Ketua Pelaksana HIQMAH kurban, Project Officer Lentera, dan Vice PO PNJ Cool.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pelatihan Resmi -->
+        <div class="space-y-6">
+          <span class="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+            &bull; Certifications
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-semibold clash-grotesk text-white">Sertifikasi Kompetensi</h2>
+
+          <div class="space-y-4">
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-1">
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-primary font-semibold">Dicoding Indonesia</span>
+                <span class="text-slate-400">27 Mei 2024 &bull; 41 Jam</span>
+              </div>
+              <h4 class="text-base font-bold text-white">Belajar Dasar Pemrograman Web</h4>
+              <p class="text-xs text-slate-400 leading-relaxed pt-1">
+                HTML, CSS, semantic structure, responsive layouts, Flexbox, media queries, dan web standards.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-1">
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-primary font-semibold">Dicoding Indonesia</span>
+                <span class="text-slate-400">23 Des 2024 &bull; 40 Jam</span>
+              </div>
+              <h4 class="text-base font-bold text-white">Belajar Membuat Aplikasi Flutter untuk Pemula</h4>
+              <p class="text-xs text-slate-400 leading-relaxed pt-1">
+                Widget tree Flutter, state navigation, responsive layout, asset handling, dan build APK/AAB.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION (Matching WendoJ "Let's work together.")
+         ============================================================ -->
+    <section id="contact" class="py-24 px-4 sm:px-8 2xl:px-48 max-w-7xl mx-auto border-t border-white/5">
+      <!-- Big Gradient Card (Matching WendoJ) -->
+      <div class="flex flex-col items-center justify-center rounded-3xl bg-gradient-to-br from-[#7980fe]/10 via-white/[0.02] to-transparent border border-white/10 px-6 py-16 sm:p-20 text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl space-y-4">
+          <h2 class="text-3xl sm:text-5xl 2xl:text-6xl font-medium tracking-tighter clash-grotesk text-white">
+            Let&apos;s work <span class="text-gradient">together.</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Saya terbuka untuk peluang kerja penuh waktu, kolaborasi proyek rekayasa, maupun diskusi teknis telekomunikasi &amp; software.
+          </p>
+
+          <div class="pt-6 flex flex-wrap items-center justify-center gap-3">
+            <a href="https://wa.me/6288298038392?text=Halo%20Zaki,%20saya%20tertarik%20dengan%20profil%20dan%20portofolio%20Anda." target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[#7980fe] text-[#0b0c10] hover:bg-[#838aff] transition-all duration-300 shadow-lg shadow-[#7980fe]/20">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Hubungi via WhatsApp</span>
+            </a>
+            <button id="copyEmailBtn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all duration-300">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Salin Email</span>
+            </button>
+            <a href="https://linkedin.com/in/zaki-abdussalam" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 transition-all duration-300">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Quick WhatsApp Form -->
+          <div class="mt-10 p-6 rounded-2xl bg-black/40 border border-white/10 text-left max-w-lg mx-auto backdrop-blur-md">
+            <h4 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3">Kirim Pesan Cepat</h4>
+            <form id="waQuickForm" class="space-y-3 text-xs">
+              <input type="text" id="waName" required placeholder="Nama Anda / Nama Perusahaan *" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary text-sm" />
+              <textarea id="waMsg" rows="2" required placeholder="Tuliskan pesan Anda di sini... *" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary text-sm"></textarea>
+              <button type="submit" class="w-full py-2.5 rounded-xl bg-primary text-black font-semibold hover:bg-secondary transition-colors flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span>Kirimkan ke WhatsApp</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       CASE STUDY POPUP MODAL (Clean Modern Layout)
+       ============================================================ -->
+  <div id="caseStudyModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="modal-container w-full max-w-3xl rounded-2xl bg-[#0f1219] border border-white/10 overflow-hidden shadow-2xl my-auto">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
+        <div class="flex items-center gap-2.5">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-primary/20 text-primary border border-primary/30" id="modalCategory">
+            KATEGORI
+          </span>
+          <span class="text-xs text-slate-400" id="modalPeriod">PERIODE</span>
+        </div>
+        <button id="closeModalBtn" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Tutup Dialog">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6 max-h-[72vh] overflow-y-auto" id="modalBody">
+        <!-- Dynamically injected via script.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 border-t border-white/10 bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span class="text-xs text-slate-500">Dokumentasi portofolio terverifikasi</span>
+        <button id="modalActionBtn" class="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs font-semibold bg-primary text-black hover:bg-secondary transition-colors">
+          Diskusikan Proyek Ini
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING AMBIENT VIDEO CONTROLLER
+       ============================================================ -->
+  <div class="fixed bottom-5 left-5 z-40 flex items-center gap-2">
+    <button id="toggleBgVideoBtn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#0b0c10]/85 border border-white/10 hover:border-primary/40 text-slate-300 backdrop-blur-md shadow-xl transition-all" title="Aktifkan/Nonaktifkan Video Latar Belakang">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" id="videoStatusDot"></span>
+      <span id="videoStatusText">Ambient Video: ON</span>
+    </button>
+    <button id="openVideoModalBtn" class="p-2 rounded-full bg-[#0b0c10]/85 border border-white/10 hover:border-primary/40 hover:text-white text-slate-400 backdrop-blur-md shadow-xl transition-all" title="Pilih atau Ganti Video YouTube">
+      <i data-lucide="video" class="w-3.5 h-3.5 text-primary"></i>
+    </button>
+  </div>
+
+  <!-- Modal Ganti Video YouTube -->
+  <div id="videoCustomModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="w-full max-w-md rounded-2xl bg-[#0f1219] border border-white/10 p-6 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <div class="flex items-center gap-2">
+          <i data-lucide="video" class="w-4 h-4 text-primary"></i>
+          <h3 class="text-sm font-bold text-white">Pengaturan Video Background</h3>
+        </div>
+        <button id="closeVideoModalBtn" class="text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Preset Selection -->
+      <div class="space-y-2">
+        <label class="block text-xs font-semibold text-slate-300">Pilih Preset Loop Video:</label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-primary/50 text-left hover:bg-white/10 text-xs text-white" data-id="local">
+            <span class="font-bold block text-primary">AA-VFX Waves</span>
+            <span class="text-[10px] text-slate-400">Blue Ambient Lines (Lokal)</span>
+          </button>
+          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-left hover:bg-white/10 text-xs text-white" data-id="Hd6UdmSvudA">
+            <span class="font-bold block text-slate-200">Plexus Network</span>
+            <span class="text-[10px] text-slate-400">4K Lines &amp; Points</span>
+          </button>
+          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-left hover:bg-white/10 text-xs text-white" data-id="axwKsXY3xVM">
+            <span class="font-bold block text-slate-200">Hexagons</span>
+            <span class="text-[10px] text-slate-400">4K Sci-Fi Neon</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Custom Input -->
+      <div class="space-y-2 pt-2 border-t border-white/5">
+        <label class="block text-xs font-semibold text-slate-300">Atau Masukkan Link / ID YouTube Lain:</label>
+        <input type="text" id="customVideoInput" placeholder="Contoh: https://youtube.com/watch?v=... atau ID" class="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary" />
+        <button id="applyCustomVideoBtn" class="w-full py-2.5 rounded-xl bg-primary text-black font-semibold text-xs hover:bg-secondary transition-colors">
+          Terapkan Video
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER (Matching WendoJ with Live Clock & Gradient Bar)
+       ============================================================ -->
+  <footer class="w-full bg-gradient-to-t from-primary/[2%] to-transparent border-t border-white/5 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 2xl:px-48 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400">
+        <p>
+          Made with ❤️ by <span class="text-white font-medium">Zaki Abdussalam Alfajary</span>
+        </p>
+        <span class="hidden sm:inline text-slate-600">|</span>
+        <div class="hidden sm:flex items-center gap-1.5">
+          <span>Waktu lokal:</span>
+          <span class="font-semibold text-slate-200" id="localClock">--:-- WIB</span>
+        </div>
+      </div>
+
+      <a href="mailto:zakiabdussalamall@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-slate-300 hover:text-white transition-colors">
+        <i data-lucide="mail" class="w-3.5 h-3.5 text-primary"></i>
+        <span>zakiabdussalamall@gmail.com</span>
+      </a>
+    </div>
+
+    <!-- WendoJ Signature Gradient Bottom Accent Bar -->
+    <div class="h-1 bg-[radial-gradient(closest-side,#8486ff,#42357d,#5d83ff,transparent)] opacity-60"></div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
