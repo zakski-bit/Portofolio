@@ -117,142 +117,106 @@ document.addEventListener('DOMContentLoaded', () => {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // 7. Database Detail Proyek (Sesuai CV Resmi Zaki)
+  // 7. Database Detail Proyek (5 Proyek GitHub Produksi Zaki)
   const projectDetails = {
-    'mimo-antenna': {
-      category: 'RF & ANTENA',
-      period: 'September 2025 &ndash; Juni 2026',
-      title: 'Rancang Bangun Antena Mikrostrip Array 2x2 MIMO Wideband',
-      image: 'img/mimo-antenna.jpg',
+    'ldk-fikri': {
+      category: 'FULLSTACK WEB APP',
+      period: 'September 2026 &ndash; Sekarang',
+      title: 'LDK FIKRI PNJ &mdash; Portal Resmi & Syiar Kampus',
+      image: 'img/projects/ldk-fikri.jpg',
+      githubUrl: 'https://github.com/zakski-bit/Ldk-Fikri',
+      liveUrl: 'https://ldk-fikri-pnj.vercel.app',
       specs: [
-        { label: 'APLIKASI SISTEM', val: 'FWA LTE (Fixed Wireless Access)' },
-        { label: 'RENTANG FREKUENSI', val: '1800 &ndash; 2100 MHz' },
-        { label: 'MODIFIKASI GROUND', val: 'Z-Slot, Slit, dan Slit-DGS' },
-        { label: 'PARAMETER EVALUASI', val: 'S-Parameter, Gain, ECC, Diversity Gain' }
+        { label: 'FRONTEND STACK', val: 'Next.js 15 (React 19 App Router)' },
+        { label: 'LANGUAGE & CSS', val: 'TypeScript &amp; Tailwind CSS' },
+        { label: 'DATABASE & AUTH', val: 'Supabase (PostgreSQL, Auth & Storage)' },
+        { label: 'DEPLOYMENT HOST', val: 'Vercel Edge Network' }
       ],
       points: [
-        'Merancang antena mikrostrip array 2x2 MIMO untuk aplikasi FWA LTE pada rentang 1800 - 2100 MHz.',
-        'Mengembangkan modifikasi struktur Z-Slot, slit, dan slit-DGS pada ground plane untuk meningkatkan bandwidth dan isolasi antar-elemen.',
-        'Melakukan simulasi 3D elektromagnetik dengan CST Studio Suite, fabrikasi PCB fisik prototipe, serta pengujian parameter antena.',
-        'Mengevaluasi S-parameter, gain radiasi, Envelope Correlation Coefficient (ECC), dan diversity gain pada sistem MIMO.'
+        'Membangun portal resmi kegiatan dakwah kampus Politeknik Negeri Jakarta dengan arsitektur Next.js 15 App Router dan React 19.',
+        'Mengintegrasikan modul Wakaf & Pembangunan Masjid Daarul Ilmi PNJ lengkap dengan transparansi dana, kalkulator wakaf, rekening resmi BSI, dan QRIS interaktif.',
+        'Menyediakan fitur jadwal sholat dinamis, hadits harian, agenda kajian akbar, dan pendaftaran Mentoring Agama Islam (PAMI).',
+        'Membangun portal admin dan manajemen konten berbasis Supabase untuk pengelolaan inventaris, verifikasi wakaf masuk, dan publikasi artikel.'
       ]
     },
-    'emotion-ai': {
-      category: 'MACHINE LEARNING',
-      period: 'April 2025 &ndash; Juni 2025',
-      title: 'Emotion Detection Web Application',
-      image: 'img/emotion-detection.jpg',
+    'dicostory': {
+      category: 'FRONTEND & PWA',
+      period: 'September 2026',
+      title: 'DicoStory &mdash; Progressive Web App with Offline Sync & Geospatial Mapping',
+      image: 'img/projects/dicostory.jpg',
+      githubUrl: 'https://github.com/zakski-bit/dicostory',
+      liveUrl: 'https://dicostory-sub.netlify.app/',
       specs: [
-        { label: 'BAHASA & TOOLS', val: 'Python, Google Colab' },
-        { label: 'CLOUD INFERENCE', val: 'Google Cloud Platform (GCP)' },
-        { label: 'OBJEK DETEKSI', val: 'Prediksi Usia, Emosi Wajah, dan Ras' },
-        { label: 'ARSITEKTUR', val: 'Web-based Machine Learning System' }
+        { label: 'PWA FEATURES', val: 'Installable, Service Worker, Manifest Maskable' },
+        { label: 'OFFLINE CACHING', val: 'IndexedDB &amp; Cache API (StaleWhileRevalidate)' },
+        { label: 'GEOSPATIAL MAP', val: 'Leaflet.js &amp; OpenStreetMap API' },
+        { label: 'PUSH NOTIFIKASI', val: 'Web Push Notification (VAPID Support)' }
       ],
       points: [
-        'Mengembangkan aplikasi web berbasis machine learning untuk mendeteksi usia, emosi, dan ras/wajah secara real-time.',
-        'Melakukan pelatihan model kecerdasan buatan menggunakan Python dan Google Colab.',
-        'Mengintegrasikan model machine learning dengan Google Cloud Platform (GCP) untuk inferensi prediksi melalui antarmuka web.'
+        'Mengembangkan platform berbagi cerita berarsitektur Progressive Web App (PWA) yang dapat diinstall ke home screen perangkat mobile & desktop seperti aplikasi native.',
+        'Mengimplementasikan sistem Offline-First dengan antrean outbox di IndexedDB: cerita yang diunggah saat luring otomatis tersinkronisasi saat koneksi pulih.',
+        'Menampilkan persebaran cerita geografis seluruh pelosok Indonesia menggunakan peta interaktif Leaflet.js dengan penanda koordinat dinamis.',
+        'Mengintegrasikan Web Push Notification terstandarisasi dengan event push dinamis dan action buttons untuk navigasi langsung ke detail cerita.'
       ]
     },
-    'digital-savings': {
-      category: 'IOT & HARDWARE',
-      period: 'November 2024 &ndash; Desember 2024',
-      title: 'Digital Savings System (Sensor Warna + Sheets API)',
-      image: 'img/digital-savings.jpg',
+    'dicoevent': {
+      category: 'BACKEND ARCHITECTURE',
+      period: 'September 2026',
+      title: 'DicoEvent V2 &mdash; Scalable Event Management RESTful API',
+      image: 'img/projects/dicoevent.jpg',
+      githubUrl: 'https://github.com/zakski-bit/dicoevent-rest-api',
+      liveUrl: 'https://dicoevent.vercel.app/',
       specs: [
-        { label: 'KONTROLER UTAMA', val: 'Mikrokontroler Arduino / ESP Wi-Fi' },
-        { label: 'SENSOR OPTIK', val: 'Sensor Warna RGB (TCS3200)' },
-        { label: 'CLOUD DATABASE', val: 'Google Spreadsheet via Cloud API' },
-        { label: 'ANTARMUKA DISPLAY', val: 'Layar LCD 16x2 Real-Time' }
+        { label: 'BACKEND CORE', val: 'Python 3.10 &amp; Django 4.2 LTS (DRF)' },
+        { label: 'DATABASE & CACHE', val: 'PostgreSQL &amp; Redis Caching Invalidation' },
+        { label: 'ASYNC WORKERS', val: 'Celery + RabbitMQ Message Queue' },
+        { label: 'OBJECT STORAGE', val: 'MinIO S3 &bull; 233 Newman Tests Passed' }
       ],
       points: [
-        'Mengembangkan sistem tabungan digital berbasis IoT dengan sensor warna untuk mendeteksi nominal uang kertas secara otomatis.',
-        'Mengirimkan data transaksi dan saldo akumulasi secara otomatis melalui jaringan Wi-Fi ke Google Spreadsheet tanpa pencatatan manual.',
-        'Menampilkan nominal uang yang terdeteksi dan total saldo pada display hardware.'
+        'Merancang arsitektur backend RESTful API tingkat lanjut (Advanced - Nilai Bintang 5 / 4.0) untuk platform manajemen event berskala tinggi.',
+        'Mengoptimalkan performa response time dengan Redis caching dan mekanisme cache invalidation otomatis saat terjadi mutasi data event.',
+        'Menerapkan message broker asinkron Celery & RabbitMQ untuk pengiriman email tiket terdistribusi dan background tasks berat.',
+        'Mengamankan endpoint dengan otentikasi JWT, Role-Based Access Control (RBAC), penyimpanan media MinIO S3, serta lolos 233 pengujian otomatis Postman/Newman.'
       ]
     },
-    'flutter-music': {
-      category: 'MOBILE APPLICATION',
-      period: 'Oktober 2024 &ndash; November 2024',
-      title: 'Flutter Music Player Application',
-      image: 'img/music-player.jpg',
+    'antara-crm': {
+      category: 'ENTERPRISE CRM',
+      period: 'September 2025 &ndash; Desember 2025',
+      title: 'ANTARA CRM & Digital Media Portal (Perum LKBN ANTARA)',
+      image: 'img/projects/antara-crm.jpg',
+      githubUrl: 'https://github.com/zakski-bit/antara-crm-system',
+      liveUrl: 'https://crm-portfolio-live.vercel.app',
       specs: [
-        { label: 'FRAMEWORK', val: 'Flutter SDK (Dart)' },
-        { label: 'NATIVE ANDROID', val: 'Kotlin (Platform Channel)' },
-        { label: 'FITUR AUDIO', val: 'Background Playback & Playlist Service' },
-        { label: 'DESAIN UI', val: 'Dark Theme Modern dengan Navigation Drawer' }
+        { label: 'ENVIRONMENT', val: 'Docker Compose, Nginx, PHP, MariaDB' },
+        { label: 'SECURITY & AUTH', val: 'Simulasi OTP 6-Digit &amp; RBAC Multi-level' },
+        { label: 'CORE MODULES', val: 'Invoice Billing, Sales Force, License System' },
+        { label: 'CLIENT DASHBOARD', val: 'Customer Partnership Portal &amp; Analytics' }
       ],
       points: [
-        'Mengembangkan aplikasi mobile pemutar musik menggunakan framework Flutter, Dart, dan Kotlin.',
-        'Merancang antarmuka pengguna responsif (daftar lagu, tampilan pemutaran utama, dan drawer navigasi samping).',
-        'Membangun fitur pemutaran audio di latar belakang (background playback) dan pengelolaan antrean playlist lagu.'
+        'Mengembangkan sistem manajemen hubungan pelanggan (CRM) dan portal distribusi konten media berita B2B untuk LKBN ANTARA.',
+        'Membangun modul verifikasi login dua langkah berbasis OTP 6-digit, manajemen langganan lisensi produk berita multimedia (teks, foto HD, video broadcast), dan invoice otomatis.',
+        'Merancang dashboard monitoring kinerja media berita dan portal kemitraan pelanggan korporasi.',
+        'Menyediakan showcase interaktif online di Vercel yang dapat dieksplorasi langsung tanpa konfigurasi server lokal.'
       ]
     },
-    'fiber-margonda': {
-      category: 'FIBER OPTIC',
-      period: 'September 2024 &ndash; November 2024',
-      title: 'Desain Jaringan Fiber Optic &mdash; Jl. Margonda Raya, Depok',
-      image: 'img/fiber-optic.jpg',
+    'forum-api': {
+      category: 'DEVOPS & BACKEND',
+      period: 'September 2026',
+      title: 'Forum API V2 &mdash; Clean Architecture, CI/CD & Security Hardening',
+      image: 'img/projects/forum-api.jpg',
+      githubUrl: 'https://github.com/zakski-bit/forum-api',
+      liveUrl: 'https://github.com/zakski-bit/forum-api',
       specs: [
-        { label: 'LOKASI PERENCANAAN', val: 'Jl. Margonda Raya, Kota Depok' },
-        { label: 'METODE PERHITUNGAN', val: 'Link Margin & Optical Power Budget' },
-        { label: 'DOKUMEN TEKNIS', val: 'Mapping Rute, BoQ, dan Desain Teknis (RPL)' },
-        { label: 'JARINGAN DISTRIBUSI', val: 'FTTH / ODC / ODP Distribution' }
+        { label: 'ARCHITECTURE', val: 'Clean Architecture (Separation of Concerns)' },
+        { label: 'CI/CD PIPELINE', val: 'GitHub Actions with Postgres Service Container' },
+        { label: 'SECURITY HARDENING', val: 'Nginx SSL/TLS, Rate Limiting 90 req/min (DDoS)' },
+        { label: 'TESTING COVERAGE', val: '100% Automated Unit, Integration &amp; Functional Test' }
       ],
       points: [
-        'Melakukan perencanaan jaringan fiber optic berdasarkan survei kebutuhan pengguna di koridor komersial Margonda Raya.',
-        'Menyusun mapping jalur kabel jaringan optik dari Central Office hingga titik distribusi ODC, ODP, dan termination box.',
-        'Melakukan kalkulasi optical link margin serta menyusun Bill of Quantity (BoQ) dan rancangan teknis (RPL).'
-      ]
-    },
-    'smart-gardening': {
-      category: 'IOT & EMBEDDED',
-      period: 'Juni 2024 &ndash; Juli 2024',
-      title: 'Smart Gardening System berbasis ESP32',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-      specs: [
-        { label: 'MIKROKONTROLER', val: 'ESP32 (Wi-Fi & Bluetooth)' },
-        { label: 'AKTUATOR & SENSOR', val: 'Soil Moisture Sensor, Relay, Solenoid Valve' },
-        { label: 'TELEMETRI', val: 'Telegram Bot API (Notifikasi Otomatis)' },
-        { label: 'BAHASA PEMROGRAMAN', val: 'C++ (Arduino IDE)' }
-      ],
-      points: [
-        'Merancang sistem penyiraman tanaman otomatis berbasis mikrokontroler ESP32.',
-        'Mengintegrasikan sensor kelembaban tanah dengan penampil LCD, driver relay, dan katup solenoid valve air.',
-        'Mengimplementasikan sistem telemetri pemantauan dan notifikasi real-time melalui bot Telegram.'
-      ]
-    },
-    'canteen-web': {
-      category: 'WEB APPLICATION',
-      period: 'April 2024 &ndash; Juli 2024',
-      title: 'Canteen Ordering Web Application (KAPE)',
-      image: 'img/canteen-app.jpg',
-      specs: [
-        { label: 'ARSITEKTUR SISTEM', val: 'Frontend & Backend Web Application' },
-        { label: 'ROLE PENGGUNA', val: 'Pelanggan Kantin & Panel Administrator' },
-        { label: 'FITUR UTAMA', val: 'Katalog Menu, Harga, Tracking Pesanan' },
-        { label: 'MANAJEMEN STOK', val: 'Pengaturan Ketersediaan Stok Real-Time' }
-      ],
-      points: [
-        'Mengembangkan aplikasi web pemesanan kantin dengan arsitektur frontend dan backend.',
-        'Merancang antarmuka pemesanan untuk pelanggan yang memuat katalog menu dan harga transparan.',
-        'Membangun modul admin untuk memantau aliran pesanan masuk, ketersediaan menu, dan penyelesaian transaksi.'
-      ]
-    },
-    'radio-los': {
-      category: 'RADIO LINK',
-      period: 'April 2024 &ndash; Mei 2024',
-      title: 'Desain Radio Link LOS & Perencanaan Transmisi',
-      image: 'img/radio-los.jpg',
-      specs: [
-        { label: 'TRAJEKTORI LINK', val: 'Point-to-Point (Jakarta &ndash; Depok)' },
-        { label: 'ANALISIS ELEVASI', val: 'Line of Sight (LOS) Clearance' },
-        { label: 'PARAMETER UTAMA', val: 'Radius Zona Fresnel & Path Loss' },
-        { label: 'EVALUASI', val: 'Link Budget Margin Gelombang Mikro' }
-      ],
-      points: [
-        'Mendesain dan menganalisis radio link Line of Sight (LOS) antara dua gedung strategis Jakarta - Depok.',
-        'Melakukan kalkulasi parameter link transmisi microwave, clearance radius zona Fresnel, dan perancangan jaringan nirkabel.'
+        'Membangun arsitektur backend RESTful API dengan prinsip Clean Architecture (Domain, Application, Infrastructure, Interface layer).',
+        'Mengonfigurasi pipeline Continuous Integration (CI) berbasis GitHub Actions dengan service container PostgreSQL untuk pengujian otomatis pada setiap Pull Request.',
+        'Menerapkan Continuous Deployment (CD) otomatis melalui SSH ke server cloud AWS EC2 pada setiap event push ke branch utama.',
+        'Memperkuat keamanan server menggunakan Reverse Proxy Nginx dengan sertifikat SSL/TLS HTTPS dan proteksi DDoS rate limiting sebesar 90 request per menit.'
       ]
     }
   };
@@ -309,18 +273,38 @@ document.addEventListener('DOMContentLoaded', () => {
       </li>
     `).join('');
 
+    let actionButtonsHtml = `
+      <div class="flex flex-wrap items-center gap-3 pt-1">
+        ${data.githubUrl ? `
+          <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all">
+            <i data-lucide="github" class="w-4 h-4"></i>
+            <span>Lihat Source Code (GitHub)</span>
+          </a>
+        ` : ''}
+        ${data.liveUrl && data.liveUrl !== data.githubUrl ? `
+          <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-primary text-black hover:bg-secondary transition-all shadow-md shadow-primary/20">
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+            <span>Kunjungi Live Website / Demo</span>
+          </a>
+        ` : ''}
+      </div>
+    `;
+
     modalBody.innerHTML = `
       <!-- Media Cover -->
       <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-video relative">
-        <img src="${data.image}" alt="${data.title}" class="w-full h-full object-contain bg-[#0b0c10]" />
-        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0b0c10] to-transparent p-4">
+        <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover bg-[#0b0c10]" />
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/80 to-transparent p-4 sm:p-6">
           <h3 class="text-lg sm:text-xl font-bold text-white">${data.title}</h3>
         </div>
       </div>
 
+      <!-- Action Links -->
+      ${actionButtonsHtml}
+
       <!-- Specs Grid -->
       <div>
-        <h4 class="text-xs font-semibold text-primary uppercase tracking-wider mb-2.5">Spesifikasi & Parameter Teknis</h4>
+        <h4 class="text-xs font-semibold text-primary uppercase tracking-wider mb-2.5">Arsitektur &amp; Parameter Teknis</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           ${specsHtml}
         </div>
@@ -328,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Responsibility Points -->
       <div class="pt-2 border-t border-white/5">
-        <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-2.5">Uraian & Kontribusi Rekayasa</h4>
+        <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-2.5">Sorotan Rekayasa &amp; Implementasi</h4>
         <ul class="space-y-2 text-xs sm:text-sm">
           ${pointsHtml}
         </ul>
