@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'antara-crm': {
       category: 'ENTERPRISE CRM',
-      period: 'September 2025 &ndash; Desember 2025',
+      period: 'September 2025 &ndash; April 2026 (8 Bulan)',
       title: 'ANTARA CRM & Digital Media Portal (Perum LKBN ANTARA)',
       image: 'img/projects/antara-crm.jpg',
       githubUrl: 'https://github.com/zakski-bit/antara-crm-system',
