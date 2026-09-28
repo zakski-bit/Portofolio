@@ -403,11 +403,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isVideoOn = true;
 
-  // Ensure local video autoplays smoothly
-  if (bgVideoPlayer) {
+  // Ensure local video autoplays smoothly if active
+  if (bgVideoPlayer && !bgVideoPlayer.classList.contains('hidden')) {
     bgVideoPlayer.muted = true;
     const playVideo = () => {
-      bgVideoPlayer.play().catch(e => console.log('Autoplay pending interaction', e));
+      if (!bgVideoPlayer.classList.contains('hidden')) {
+        bgVideoPlayer.play().catch(e => console.log('Autoplay pending interaction', e));
+      }
     };
     playVideo();
     document.addEventListener('click', playVideo, { once: true });

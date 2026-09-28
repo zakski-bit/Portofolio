@@ -58,34 +58,33 @@
   </div>
 
   <!-- ============================================================
-       DYNAMIC VIDEO BACKGROUND LOOP (Blue Ambient Waving Lines - AA-VFX)
+       DYNAMIC VIDEO BACKGROUND LOOP (Hexagon 4K Sci-Fi Neon)
        ============================================================ -->
   <div id="videoBackgroundWrap" class="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-700">
-    <!-- Native HTML5 Video Element (Instan & Mulus Tanpa Iklan) -->
-    <video
-      id="bgVideoPlayer"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="auto"
-      class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-85 transition-opacity duration-700"
-    >
-      <source src="video/bg-lines.mp4" type="video/mp4" />
-    </video>
-    
-    <!-- Fallback iframe for YouTube switching -->
-    <div id="ytContainer" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300vw] h-[300vh] min-w-[177.77vh] min-h-[56.25vw] pointer-events-none z-0">
+    <!-- Primary YouTube Ambient Background (Hexagon 4K Sci-Fi Neon) -->
+    <div id="ytContainer" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300vw] h-[300vh] min-w-[177.77vh] min-h-[56.25vw] pointer-events-none z-0">
       <iframe
         id="bgVideoIframe"
-        class="w-full h-full object-cover pointer-events-none opacity-80"
-        src=""
-        title="Dynamic Ambient Background"
+        class="w-full h-full object-cover pointer-events-none opacity-85"
+        src="https://www.youtube.com/embed/axwKsXY3xVM?autoplay=1&mute=1&loop=1&playlist=axwKsXY3xVM&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&enablejsapi=1"
+        title="Hexagon 4K Sci-Fi Neon Ambient Background"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
+
+    <!-- Native HTML5 Video Element (Fallback / Local Alternative) -->
+    <video
+      id="bgVideoPlayer"
+      loop
+      muted
+      playsinline
+      preload="none"
+      class="hidden absolute inset-0 w-full h-full object-cover pointer-events-none opacity-85 transition-opacity duration-700"
+    >
+      <source src="video/bg-lines.mp4" type="video/mp4" />
+    </video>
 
     <!-- Balanced dark overlay so all text stays 100% crisp while video is clearly visible -->
     <div class="absolute inset-0 bg-[#0b0c10]/45 pointer-events-none z-10"></div>
@@ -1221,16 +1220,16 @@
       <div class="space-y-2">
         <label class="block text-xs font-semibold text-slate-300">Pilih Preset Loop Video:</label>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-primary/50 text-left hover:bg-white/10 text-xs text-white" data-id="local">
-            <span class="font-bold block text-primary">AA-VFX Waves</span>
+          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-left hover:bg-white/10 text-xs text-white" data-id="local">
+            <span class="font-bold block text-slate-200">AA-VFX Waves</span>
             <span class="text-[10px] text-slate-400">Blue Ambient Lines (Lokal)</span>
           </button>
           <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-left hover:bg-white/10 text-xs text-white" data-id="Hd6UdmSvudA">
             <span class="font-bold block text-slate-200">Plexus Network</span>
             <span class="text-[10px] text-slate-400">4K Lines &amp; Points</span>
           </button>
-          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-left hover:bg-white/10 text-xs text-white" data-id="axwKsXY3xVM">
-            <span class="font-bold block text-slate-200">Hexagons</span>
+          <button class="preset-btn px-3 py-2.5 rounded-xl bg-white/5 border border-primary/50 bg-white/10 text-left hover:bg-white/10 text-xs text-white" data-id="axwKsXY3xVM">
+            <span class="font-bold block text-primary">Hexagons</span>
             <span class="text-[10px] text-slate-400">4K Sci-Fi Neon</span>
           </button>
         </div>
