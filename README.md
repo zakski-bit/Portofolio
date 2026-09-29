@@ -2,7 +2,7 @@
 
 Portofolio resmi berarsitektur modern dan interaktif yang dibangun khusus untuk menampilkan rekayasa perangkat lunak **Fullstack Web Application, RESTful API Back-End, Progressive Web Apps (PWA), Asynchronous Caching & Message Queues, serta Cloud Infrastructure**.
 
-🔗 **Live Deployment**: [https://zaki-alfajary.surge.sh](https://zaki-alfajary.surge.sh)  
+🔗 **Live Deployment (Vercel)**: [https://portfolio-zaki-one.vercel.app](https://portfolio-zaki-one.vercel.app)  
 🐙 **GitHub Profile**: [https://github.com/zakski-bit](https://github.com/zakski-bit)
 
 ---
@@ -14,22 +14,27 @@ Portofolio resmi berarsitektur modern dan interaktif yang dibangun khusus untuk 
    - **Live Demo**: [https://ldk-fikri-pnj.vercel.app](https://ldk-fikri-pnj.vercel.app)
    - **Fitur**: Portal dakwah, katalog wakaf masjid Daarul Ilmi, jadwal sholat dinamis, pendaftaran mentoring, konseling anonim, & CMS admin.
 
-2. **[DicoStory](https://github.com/zakski-bit/dicostory)** &mdash; *Progressive Web App (PWA) with Offline Sync & Geospatial Mapping*
-   - **Stack**: Vanilla JS (ES6+), Vite, Service Worker PWA, Leaflet.js, OpenStreetMap, IndexedDB, Web Push Notification.
-   - **Live Demo**: [https://dicostory-sub.netlify.app/](https://dicostory-sub.netlify.app/)
-   - **Fitur**: Installable PWA, offline-first outbox sync, visualisasi peta persebaran cerita nusantara, & push notification (VAPID).
+2. **[WhatsApp Desktop Automation](https://github.com/zakski-bit/wa-desktop-automation)** &mdash; *Desktop Automation Sender & Batch Engine*
+   - **Stack**: Python 3.10, Win32 API Hooking, PyAutoGUI, CSV/Excel Parser, Vercel Simulator.
+   - **Live Simulator**: [https://wa-desktop-automation.vercel.app](https://wa-desktop-automation.vercel.app)
+   - **Fitur**: Otomasi broadcast WhatsApp Desktop via native URI, Win32 hardware key injection, dynamic templating ({nama}, {gugus}), jitter delay 15–25s anti-spam, & sent logger.
 
 3. **[DicoEvent V2](https://github.com/zakski-bit/dicoevent-rest-api)** &mdash; *Scalable Event Management RESTful API*
    - **Stack**: Python 3.10, Django 4.2 LTS, Django REST Framework, PostgreSQL, Redis Caching, Celery + RabbitMQ, MinIO S3, Docker.
    - **Live Showcase**: [https://dicoevent.vercel.app/](https://dicoevent.vercel.app/)
    - **Fitur**: Memenuhi kriteria tingkat lanjut (Bintang 5 / 4.0), cache invalidation otomatis, worker asinkron, JWT RBAC, & 233 Newman tests passed.
 
-4. **[ANTARA CRM System](https://github.com/zakski-bit/antara-crm-system)** &mdash; *Customer Relationship Management Perum LKBN ANTARA*
+4. **[ANTARA CRM System](https://github.com/zakski-bit/antara-crm-system)** &mdash; *Customer Relationship Management Perum LKBN ANTARA (Magang 8 Bulan)*
    - **Stack**: PHP, MariaDB, Docker Compose, Nginx, Bootstrap 5.
    - **Live Demo**: [https://crm-portfolio-live.vercel.app](https://crm-portfolio-live.vercel.app)
    - **Fitur**: Simulasi login OTP 6-digit, manajemen lisensi berita multimedia korporasi, billing invoice otomatis, & customer analytics.
 
-5. **[Forum API V2](https://github.com/zakski-bit/forum-api)** &mdash; *Clean Architecture, CI/CD & Security Hardening*
+5. **[DicoStory](https://github.com/zakski-bit/dicostory)** &mdash; *Progressive Web App (PWA) with Offline Sync & Geospatial Mapping*
+   - **Stack**: Vanilla JS (ES6+), Vite, Service Worker PWA, Leaflet.js, OpenStreetMap, IndexedDB, Web Push Notification.
+   - **Live Demo**: [https://dicostory-sub.netlify.app/](https://dicostory-sub.netlify.app/)
+   - **Fitur**: Installable PWA, offline-first outbox sync, visualisasi peta persebaran cerita nusantara, & push notification (VAPID).
+
+6. **[Forum API V2](https://github.com/zakski-bit/forum-api)** &mdash; *Clean Architecture, CI/CD & Security Hardening*
    - **Stack**: Node.js (Hapi.js), PostgreSQL, GitHub Actions CI/CD, AWS EC2, Nginx SSL/TLS Reverse Proxy, Rate Limiting (90 req/min).
    - **Fitur**: Clean Architecture 4 layer, automated test pipeline dengan PostgreSQL container, auto deploy SSH EC2, & DDoS protection.
 

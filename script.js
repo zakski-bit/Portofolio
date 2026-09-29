@@ -218,6 +218,26 @@ document.addEventListener('DOMContentLoaded', () => {
         'Menerapkan Continuous Deployment (CD) otomatis melalui SSH ke server cloud AWS EC2 pada setiap event push ke branch utama.',
         'Memperkuat keamanan server menggunakan Reverse Proxy Nginx dengan sertifikat SSL/TLS HTTPS dan proteksi DDoS rate limiting sebesar 90 request per menit.'
       ]
+    },
+    'wa-automation': {
+      category: 'AUTOMATION & PYTHON',
+      period: 'Februari 2026 &ndash; Sekarang',
+      title: 'WhatsApp Desktop Automation Sender & Batch Messenger',
+      image: 'img/projects/wa-desktop-automation.jpg',
+      githubUrl: 'https://github.com/zakski-bit/wa-desktop-automation',
+      liveUrl: 'https://wa-desktop-automation.vercel.app',
+      specs: [
+        { label: 'RUNTIME CORE', val: 'Python 3.10 &amp; Win32 API Hooking' },
+        { label: 'INPUT INJECTION', val: 'Hardware Scan Code 0x1C (Key Event)' },
+        { label: 'ANTI-SPAM ENGINE', val: 'Random Jitter Delays (15–25s) &amp; Logger' },
+        { label: 'LIVE SIMULATOR', val: 'Interactive Web Demo at Vercel' }
+      ],
+      points: [
+        'Membangun engine otomasi pengiriman pesan massal WhatsApp Desktop Windows via native protocol URI (whatsapp://send).',
+        'Mengimplementasikan smart window focusing dan hardware key injection menggunakan Win32 API tanpa dependensi browser berat seperti Selenium.',
+        'Mendukung dynamic templating dengan variabel otomatis ({nama}, {panggilan}, {gugus}, {jurusan}) dari file spreadsheet CSV & Excel.',
+        'Menyediakan simulator web interaktif di Vercel (wa-desktop-automation.vercel.app) untuk demonstrasi alur kerja aman tanpa spam.'
+      ]
     }
   };
 
@@ -384,139 +404,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 12. Dynamic Video Background Controller (Local HTML5 & YouTube)
-  const videoBackgroundWrap = document.getElementById('videoBackgroundWrap');
-  const bgVideoPlayer = document.getElementById('bgVideoPlayer');
-  const ytContainer = document.getElementById('ytContainer');
-  const bgVideoIframe = document.getElementById('bgVideoIframe');
+  // 12. Hero Web Showcase & Page Transition Controller
+  const heroTabBtns = document.querySelectorAll('.hero-tab-btn');
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroSlideTitle = document.getElementById('heroSlideTitle');
+  const heroPrevBtn = document.getElementById('heroPrevBtn');
+  const heroNextBtn = document.getElementById('heroNextBtn');
+  const heroMockupDisplay = document.getElementById('heroMockupDisplay');
 
-  const toggleBgVideoBtn = document.getElementById('toggleBgVideoBtn');
-  const videoStatusDot = document.getElementById('videoStatusDot');
-  const videoStatusText = document.getElementById('videoStatusText');
+  const slideData = [
+    { id: 'ldk', title: '1/5 • LDK FIKRI PNJ Portal' },
+    { id: 'wa', title: '2/5 • WA Desktop Automation' },
+    { id: 'dico', title: '3/5 • DicoEvent V2 REST API' },
+    { id: 'antara', title: '4/5 • ANTARA CRM & Media' },
+    { id: 'pnj', title: '5/5 • PNJ Multimedia Hub' }
+  ];
 
-  const openVideoModalBtn = document.getElementById('openVideoModalBtn');
-  const closeVideoModalBtn = document.getElementById('closeVideoModalBtn');
-  const videoCustomModal = document.getElementById('videoCustomModal');
-  const customVideoInput = document.getElementById('customVideoInput');
-  const applyCustomVideoBtn = document.getElementById('applyCustomVideoBtn');
-  const presetButtons = document.querySelectorAll('.preset-btn');
+  let currentSlideIdx = 0;
+  let autoSlideTimer = null;
 
-  let isVideoOn = true;
+  function goToSlide(idx) {
+    if (idx < 0) idx = slideData.length - 1;
+    if (idx >= slideData.length) idx = 0;
+    currentSlideIdx = idx;
 
-  // Ensure local video autoplays smoothly if active
-  if (bgVideoPlayer && !bgVideoPlayer.classList.contains('hidden')) {
-    bgVideoPlayer.muted = true;
-    const playVideo = () => {
-      if (!bgVideoPlayer.classList.contains('hidden')) {
-        bgVideoPlayer.play().catch(e => console.log('Autoplay pending interaction', e));
-      }
-    };
-    playVideo();
-    document.addEventListener('click', playVideo, { once: true });
-    document.addEventListener('touchstart', playVideo, { once: true });
-  }
+    const currentTab = slideData[currentSlideIdx].id;
 
-  function switchToLocalVideo() {
-    if (ytContainer) ytContainer.classList.add('hidden');
-    if (bgVideoIframe) bgVideoIframe.src = '';
-    if (bgVideoPlayer) {
-      bgVideoPlayer.classList.remove('hidden');
-      bgVideoPlayer.muted = true;
-      bgVideoPlayer.currentTime = 0;
-      bgVideoPlayer.play().catch(() => {});
-    }
-  }
-
-  function switchToYouTubeVideo(videoId) {
-    if (bgVideoPlayer) {
-      bgVideoPlayer.pause();
-      bgVideoPlayer.classList.add('hidden');
-    }
-    if (ytContainer) ytContainer.classList.remove('hidden');
-    if (bgVideoIframe) {
-      bgVideoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&enablejsapi=1`;
-    }
-  }
-
-  function extractYouTubeId(urlOrId) {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    const match = urlOrId.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : urlOrId.trim();
-  }
-
-  if (toggleBgVideoBtn) {
-    toggleBgVideoBtn.addEventListener('click', () => {
-      isVideoOn = !isVideoOn;
-      if (isVideoOn) {
-        if (bgVideoPlayer && !bgVideoPlayer.classList.contains('hidden')) {
-          bgVideoPlayer.play().catch(() => {});
-        }
-        videoBackgroundWrap.style.opacity = '1';
-        videoStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
-        videoStatusText.textContent = 'Ambient Video: ON';
+    // Update slides
+    heroSlides.forEach(slide => {
+      if (slide.id === `slide-${currentTab}`) {
+        slide.classList.remove('hidden');
+        slide.classList.add('opacity-100', 'translate-x-0');
       } else {
-        if (bgVideoPlayer) bgVideoPlayer.pause();
-        videoBackgroundWrap.style.opacity = '0';
-        videoStatusDot.className = 'w-2 h-2 rounded-full bg-slate-500';
-        videoStatusText.textContent = 'Ambient Video: OFF';
+        slide.classList.add('hidden');
       }
     });
-  }
 
-  function openVideoModal() {
-    if (videoCustomModal) {
-      videoCustomModal.classList.remove('opacity-0', 'pointer-events-none');
+    // Update tab buttons
+    heroTabBtns.forEach(btn => {
+      const tab = btn.getAttribute('data-tab');
+      if (tab === currentTab) {
+        btn.className = 'hero-tab-btn active px-2.5 py-1 rounded-lg bg-primary/20 text-primary border border-primary/40 transition-all flex items-center gap-1 shrink-0';
+      } else {
+        btn.className = 'hero-tab-btn px-2.5 py-1 rounded-lg bg-white/5 text-slate-400 hover:text-white transition-all flex items-center gap-1 shrink-0';
+      }
+    });
+
+    // Update title
+    if (heroSlideTitle) {
+      heroSlideTitle.textContent = slideData[currentSlideIdx].title;
     }
   }
 
-  function closeVideoModal() {
-    if (videoCustomModal) {
-      videoCustomModal.classList.add('opacity-0', 'pointer-events-none');
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlideTimer = setInterval(() => {
+      goToSlide(currentSlideIdx + 1);
+    }, 4500);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideTimer) {
+      clearInterval(autoSlideTimer);
+      autoSlideTimer = null;
     }
   }
 
-  if (openVideoModalBtn) openVideoModalBtn.addEventListener('click', openVideoModal);
-  if (closeVideoModalBtn) closeVideoModalBtn.addEventListener('click', closeVideoModal);
-  if (videoCustomModal) {
-    videoCustomModal.addEventListener('click', (e) => {
-      if (e.target === videoCustomModal) closeVideoModal();
-    });
-  }
-
-  presetButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const targetBtn = e.currentTarget;
-      const vid = targetBtn.getAttribute('data-id');
-      if (vid === 'local') {
-        switchToLocalVideo();
-      } else if (vid) {
-        switchToYouTubeVideo(vid);
-      }
-      presetButtons.forEach(b => {
-        b.classList.remove('border-primary/50', 'bg-white/10');
-        b.classList.add('border-white/10');
-        const titleSpan = b.querySelector('span.font-bold');
-        if (titleSpan) titleSpan.className = 'font-bold block text-slate-200';
+  if (heroTabBtns.length > 0) {
+    heroTabBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', () => {
+        goToSlide(idx);
+        startAutoSlide();
       });
-      targetBtn.classList.add('border-primary/50', 'bg-white/10');
-      targetBtn.classList.remove('border-white/10');
-      const activeTitle = targetBtn.querySelector('span.font-bold');
-      if (activeTitle) activeTitle.className = 'font-bold block text-primary';
-      
-      closeVideoModal();
     });
-  });
 
-  if (applyCustomVideoBtn) {
-    applyCustomVideoBtn.addEventListener('click', () => {
-      const val = customVideoInput.value.trim();
-      if (val) {
-        const parsedId = extractYouTubeId(val);
-        switchToYouTubeVideo(parsedId);
-        customVideoInput.value = '';
-        closeVideoModal();
-      }
-    });
+    if (heroPrevBtn) {
+      heroPrevBtn.addEventListener('click', () => {
+        goToSlide(currentSlideIdx - 1);
+        startAutoSlide();
+      });
+    }
+
+    if (heroNextBtn) {
+      heroNextBtn.addEventListener('click', () => {
+        goToSlide(currentSlideIdx + 1);
+        startAutoSlide();
+      });
+    }
+
+    if (heroMockupDisplay) {
+      heroMockupDisplay.addEventListener('mouseenter', stopAutoSlide);
+      heroMockupDisplay.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    startAutoSlide();
   }
 });
 
