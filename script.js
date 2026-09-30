@@ -499,5 +499,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoSlide();
   }
+
+  // 13. Dynamic Local Ambient Video Controller (AA-VFX Blue Waving Lines)
+  const toggleBgVideoBtn = document.getElementById('toggleBgVideoBtn');
+  const bgVideoPlayer = document.getElementById('bgVideoPlayer');
+  const videoBackgroundWrap = document.getElementById('videoBackgroundWrap');
+  const videoStatusDot = document.getElementById('videoStatusDot');
+  const videoStatusText = document.getElementById('videoStatusText');
+
+  let isVideoPlaying = true;
+  if (bgVideoPlayer) {
+    bgVideoPlayer.muted = true;
+    const playVideo = () => {
+      bgVideoPlayer.play().catch(() => {});
+    };
+    playVideo();
+    document.addEventListener('click', playVideo, { once: true });
+    document.addEventListener('touchstart', playVideo, { once: true });
+  }
+
+  if (toggleBgVideoBtn && bgVideoPlayer && videoBackgroundWrap) {
+    toggleBgVideoBtn.addEventListener('click', () => {
+      isVideoPlaying = !isVideoPlaying;
+      if (isVideoPlaying) {
+        bgVideoPlayer.play().catch(() => {});
+        videoBackgroundWrap.style.opacity = '1';
+        if (videoStatusDot) videoStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+        if (videoStatusText) videoStatusText.textContent = 'Ambient Lines: ON';
+      } else {
+        bgVideoPlayer.pause();
+        videoBackgroundWrap.style.opacity = '0';
+        if (videoStatusDot) videoStatusDot.className = 'w-2 h-2 rounded-full bg-slate-500';
+        if (videoStatusText) videoStatusText.textContent = 'Ambient Lines: OFF';
+      }
+    });
+  }
 });
 

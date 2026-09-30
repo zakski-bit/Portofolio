@@ -58,7 +58,29 @@
   </div>
 
   <!-- ============================================================
-       CLEAN AMBIENT MESH & GLOWING GRADIENTS (Zero Video Overhead)
+       DYNAMIC LOCAL VIDEO BACKGROUND LOOP
+       (Blue Ambient Waving Lines - AA-VFX)
+       ============================================================ -->
+  <div id="videoBackgroundWrap" class="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-700">
+    <video
+      id="bgVideoPlayer"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-60 transition-opacity duration-700"
+    >
+      <source src="video/bg-lines.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Balanced dark overlay gradient so all text & UI mockup remain 100% crisp -->
+    <div class="absolute inset-0 bg-[#0b0c10]/60 pointer-events-none z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b0c10]/80 via-transparent to-[#0b0c10]/85 pointer-events-none z-10"></div>
+  </div>
+
+  <!-- ============================================================
+       CLEAN AMBIENT MESH & GLOWING GRADIENTS
        ============================================================ -->
   <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-[#0b0c10]">
     <!-- Ambient glowing orbs matching mockup -->
@@ -1519,7 +1541,15 @@
     </div>
   </div>
 
-
+  <!-- ============================================================
+       FLOATING AMBIENT VIDEO TOGGLE
+       ============================================================ -->
+  <div class="fixed bottom-5 left-5 z-40 flex items-center gap-2">
+    <button id="toggleBgVideoBtn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#0b0c10]/85 border border-white/10 hover:border-primary/40 text-slate-300 backdrop-blur-md shadow-xl transition-all" title="Aktifkan/Nonaktifkan Video Latar Belakang">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" id="videoStatusDot"></span>
+      <span id="videoStatusText">Ambient Lines: ON</span>
+    </button>
+  </div>
 
   <!-- ============================================================
        FOOTER
