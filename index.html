@@ -392,12 +392,12 @@
             <span class="mt-1.5 text-xs text-slate-400">IPK Kelulusan PNJ (Skala 4.00)</span>
           </div>
           <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
-            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">6+</span>
+            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">10+</span>
             <span class="mt-1.5 text-xs text-slate-400">Proyek GitHub Terverifikasi</span>
           </div>
           <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
-            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">5</span>
-            <span class="mt-1.5 text-xs text-slate-400">Lisensi Resmi AWS &amp; Dicoding</span>
+            <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">9</span>
+            <span class="mt-1.5 text-xs text-slate-400">Lisensi Resmi AWS, Google &amp; Dicoding</span>
           </div>
           <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
             <span class="clash-grotesk text-gradient text-3xl sm:text-4xl font-bold tracking-tight">8 Bulan</span>
@@ -424,11 +424,12 @@
 
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center gap-2 mt-8" id="projectFilters">
-          <button class="pill pill-active filter-btn" data-cat="all">Semua Proyek (6)</button>
-          <button class="pill filter-btn" data-cat="fullstack">Fullstack Web (2)</button>
+          <button class="pill pill-active filter-btn" data-cat="all">Semua Proyek (10)</button>
+          <button class="pill filter-btn" data-cat="ai-ml">AI &amp; Machine Learning (2)</button>
+          <button class="pill filter-btn" data-cat="fullstack">Fullstack Web (3)</button>
           <button class="pill filter-btn" data-cat="backend">Backend &amp; API (2)</button>
+          <button class="pill filter-btn" data-cat="frontend">Frontend &amp; PWA (2)</button>
           <button class="pill filter-btn" data-cat="automation">Automation &amp; Tools (1)</button>
-          <button class="pill filter-btn" data-cat="frontend">Frontend &amp; PWA (1)</button>
         </div>
 
         <!-- Project Cards Grid -->
@@ -484,7 +485,117 @@
             </div>
           </div>
 
-          <!-- 2. DicoStory PWA -->
+          <!-- 2. Bitcoin 24-Hour Price Forecasting -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="bitcoin-forecast" data-category="ai-ml" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/projects/bitcoin-forecast.jpg" alt="Bitcoin Price Forecasting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/75 border border-white/10 text-amber-400 backdrop-blur-md">
+                  AI &bull; DEEP LEARNING MAHIR
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-emerald-400 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>LIVE DEMO &bull; VERCEL</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Okt 2026</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Bitcoin 24-Hour Price Forecasting (Seq2Seq LSTM)
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Sistem peramalan harga Bitcoin multi-step 24 jam dengan arsitektur Sequence-to-Sequence (Seq2Seq) LSTM, Self-Attention layer kustom, Custom Training Loop tf.GradientTape, visualisasi Chart.js, dan Google Colab.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/5">
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">TensorFlow 2.15</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Keras 3</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Seq2Seq LSTM</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Chart.js</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs font-medium pt-3 border-t border-white/5">
+                <div class="flex items-center gap-3">
+                  <a href="https://github.com/zakski-bit/bitcoin-seq2seq-forecasting" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                    <span>GitHub</span>
+                  </a>
+                  <span class="text-slate-600">&bull;</span>
+                  <a href="https://bitcoin-seq2seq-forecasting-41sf.vercel.app" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <span>Live</span>
+                  </a>
+                  <span class="text-slate-600">&bull;</span>
+                  <a href="https://colab.research.google.com/drive/1dHQX7Zh0oi9HBnhiZxZ1-blRG87GEFjz?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                    <span>Colab</span>
+                  </a>
+                </div>
+                <span class="text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Detail</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CineMatch — Movie Recommender System -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="movie-recommender" data-category="ai-ml" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/projects/movie-recommender.jpg" alt="Movie Recommender System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/75 border border-white/10 text-rose-400 backdrop-blur-md">
+                  MACHINE LEARNING TERAPAN
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-emerald-400 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>LIVE DEMO &bull; VERCEL</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Okt 2026</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  CineMatch &mdash; End-to-End Movie Recommender System
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Sistem rekomendasi film hybrid memadukan Content-Based Filtering (TF-IDF &amp; Cosine Similarity) dan Deep Learning Collaborative Filtering (RecommenderNet) pada MovieLens 100K dengan interactive web showcase.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/5">
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">TensorFlow</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Scikit-Learn</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">RecommenderNet</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">MovieLens 100K</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs font-medium pt-3 border-t border-white/5">
+                <div class="flex items-center gap-3">
+                  <a href="https://github.com/zakski-bit/movie-recommender-system" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                    <span>GitHub</span>
+                  </a>
+                  <span class="text-slate-600">&bull;</span>
+                  <a href="https://movie-recommender-system-mu-sable.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <span>Live</span>
+                  </a>
+                  <span class="text-slate-600">&bull;</span>
+                  <a href="https://colab.research.google.com/drive/1INLUzym1GanvzJL8NU3YgXJeYVfl0K8N?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                    <span>Colab</span>
+                  </a>
+                </div>
+                <span class="text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Detail</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. DicoStory PWA -->
           <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="dicostory" data-category="frontend" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
             <div>
               <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
@@ -633,7 +744,57 @@
             </div>
           </div>
 
-          <!-- 5. Forum API V2 -->
+          <!-- 6. Dicoding Forum App -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="forumapp" data-category="fullstack" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/projects/forumapp.jpg" alt="Dicoding Forum App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/75 border border-white/10 text-cyan-400 backdrop-blur-md">
+                  REACT &bull; REDUX &bull; CI/CD
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-emerald-400 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>LIVE DEMO &bull; VERCEL</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Sep 2026 &ndash; Okt 2026</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Dicoding Forum App &mdash; React, Redux &amp; Automated Testing
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Aplikasi forum diskusi modern dengan React 18, arsitektur state Redux Toolkit, pengujian otomatis Cypress E2E &amp; Jest Unit/Integration Test (Bintang 5), leaderboard, dan pipeline CI/CD GitHub Actions ke Vercel.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/5">
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">React 18</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Redux Toolkit</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Cypress E2E</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">CI/CD Actions</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs font-medium pt-3 border-t border-white/5">
+                <div class="flex items-center gap-3">
+                  <a href="https://github.com/zakski-bit/forumapp" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                    <span>GitHub</span>
+                  </a>
+                  <span class="text-slate-600">&bull;</span>
+                  <a href="https://forumapp-ofvr-seven.vercel.app" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <span>Live</span>
+                  </a>
+                </div>
+                <span class="text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Detail</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Forum API V2 -->
           <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="forum-api" data-category="backend" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
             <div>
               <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
@@ -717,6 +878,56 @@
                   <a href="https://wa-desktop-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                     <span>Simulator</span>
+                  </a>
+                </div>
+                <span class="text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Detail</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Notes App Web Components -->
+          <div class="project-card tilt-card flex flex-col justify-between cursor-pointer group" data-project-id="notes-app" data-category="frontend" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-glare data-tilt-max-glare="0.1">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-950 relative border-b border-white/5">
+                <img src="img/projects/notes-app.jpg" alt="Notes App Web Components" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/75 border border-white/10 text-amber-400 backdrop-blur-md">
+                  WEB COMPONENTS &bull; REST API
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] bg-black/80 border border-white/10 text-emerald-400 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>LIVE DEMO &bull; NETLIFY</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="text-xs text-slate-400">Okt 2026</div>
+                <h3 class="mt-1 text-lg font-semibold text-white group-hover:text-primary transition-colors">
+                  Notes App &mdash; Vanilla Web Components &amp; RESTful API
+                </h3>
+                <p class="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                  Aplikasi pencatatan modular dengan Web Components murni (Custom Elements &amp; Shadow DOM), integrasi Dicoding Notes REST API v2, validasi formulir realtime, CSS Grid, dan Webpack 5 module bundler.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/5">
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Vanilla JS (ES6+)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Web Components</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">Webpack 5</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-slate-300">REST API v2</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <div class="flex items-center justify-between text-xs font-medium pt-3 border-t border-white/5">
+                <div class="flex items-center gap-3">
+                  <a href="https://github.com/zakski-bit/notes-app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                    <span>GitHub</span>
+                  </a>
+                  <span class="text-slate-600">&bull;</span>
+                  <a href="https://notes-appz.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 z-20" onclick="event.stopPropagation()">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <span>Live</span>
                   </a>
                 </div>
                 <span class="text-primary flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
@@ -871,11 +1082,200 @@
           </div>
         </div>
 
-        <!-- Certificate Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10">
+        <!-- Certificate Category Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2 mt-8" id="certFilters">
+          <button class="pill pill-active cert-filter-btn" data-cert-cat="all">Semua Lisensi (9)</button>
+          <button class="pill cert-filter-btn" data-cert-cat="ai">AI &amp; Deep Learning (2)</button>
+          <button class="pill cert-filter-btn" data-cert-cat="backend">Backend &amp; Cloud (2)</button>
+          <button class="pill cert-filter-btn" data-cert-cat="frontend">Front-End Web (4)</button>
+          <button class="pill cert-filter-btn" data-cert-cat="mobile">Mobile Apps (1)</button>
+        </div>
 
-          <!-- 1. Backend Expert JavaScript (AWS & Dicoding) -->
-          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+        <!-- Certificate Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10" id="certificatesContainer">
+
+          <!-- 1. Deep Learning Tingkat Mahir (Google Developers) -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="ai">
+            <div class="space-y-4">
+              <!-- Thumbnail Preview -->
+              <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
+                <img src="img/certificates/cert-deep-learning-mahir.png" alt="Sertifikat Deep Learning Tingkat Mahir" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+                  GOOGLE DEVELOPERS
+                </div>
+                <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] bg-black/80 text-slate-300 border border-white/10">
+                  90 JAM BELAJAR
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center text-xs">
+                  <span class="text-primary font-semibold">Dicoding &amp; Google Partner</span>
+                  <span class="text-slate-400">04 Okt 2026</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">
+                  Membangun Proyek Deep Learning Tingkat Mahir
+                </h4>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                  Custom Layers &amp; Models, Custom Training Loop tf.GradientTape, Distributed Training, Advanced Recommender System, Transformers NLP, Computer Vision, dan Multivariate Time Series Forecasting.
+                </p>
+                <div class="mt-3 p-2.5 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300 flex items-center justify-between">
+                  <span>ID: <strong class="text-white">JMZVL3MROXN9</strong></span>
+                  <span class="text-emerald-400 text-[10px]">Aktif s.d 2029</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-2 mt-5 pt-4 border-t border-white/5">
+              <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/sertifikat-deep-learning-mahir.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-all text-center">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-primary"></i>
+                <span>Buka PDF</span>
+              </a>
+              <a href="https://www.dicoding.com/certificates/JMZVL3MROXN9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 transition-all text-center">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Verifikasi</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Machine Learning Terapan (Google Developers) -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="ai">
+            <div class="space-y-4">
+              <!-- Thumbnail Preview -->
+              <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
+                <img src="img/certificates/cert-machine-learning-terapan.png" alt="Sertifikat Machine Learning Terapan" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+                  GOOGLE DEVELOPERS
+                </div>
+                <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] bg-black/80 text-slate-300 border border-white/10">
+                  80 JAM BELAJAR
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center text-xs">
+                  <span class="text-primary font-semibold">Dicoding &amp; Google Partner</span>
+                  <span class="text-slate-400">05 Okt 2026</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">
+                  Machine Learning Terapan
+                </h4>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                  Machine Learning System Design, Predictive Analytics (KNN, Random Forest, AdaBoost), Sentiment Analysis Deep Learning &amp; SVM, Computer Vision Object Detection, dan Hybrid Recommender System.
+                </p>
+                <div class="mt-3 p-2.5 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300 flex items-center justify-between">
+                  <span>ID: <strong class="text-white">MRZMVEGMLZYQ</strong></span>
+                  <span class="text-emerald-400 text-[10px]">Aktif s.d 2029</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-2 mt-5 pt-4 border-t border-white/5">
+              <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/sertifikat-machine-learning-terapan.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-all text-center">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-primary"></i>
+                <span>Buka PDF</span>
+              </a>
+              <a href="https://www.dicoding.com/certificates/MRZMVEGMLZYQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 transition-all text-center">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Verifikasi</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. React Web Developer Expert -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="frontend">
+            <div class="space-y-4">
+              <!-- Thumbnail Preview -->
+              <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
+                <img src="img/certificates/cert-react-expert.png" alt="Sertifikat React Web Developer Expert" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 backdrop-blur-md">
+                  REACT &amp; REDUX
+                </div>
+                <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] bg-black/80 text-slate-300 border border-white/10">
+                  EXPERT LEVEL
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center text-xs">
+                  <span class="text-primary font-semibold">Dicoding Indonesia</span>
+                  <span class="text-slate-400">30 Sep 2026</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">
+                  Menjadi React Web Developer Expert
+                </h4>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                  Linter &amp; Clean Code Kaidah Bob Martin, State Management Redux Toolkit, Automation Testing Unit &amp; Integration (Jest), End-to-End Testing (Cypress), CI/CD Automated Workflow, dan Ekosistem Modern React.
+                </p>
+                <div class="mt-3 p-2.5 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300 flex items-center justify-between">
+                  <span>ID: <strong class="text-white">1OP87N8Q1ZQK</strong></span>
+                  <span class="text-emerald-400 text-[10px]">Aktif s.d 2029</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-2 mt-5 pt-4 border-t border-white/5">
+              <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/sertifikat-react-expert.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-all text-center">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-primary"></i>
+                <span>Buka PDF</span>
+              </a>
+              <a href="https://www.dicoding.com/certificates/1OP87N8Q1ZQK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 transition-all text-center">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Verifikasi</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. Fundamental Front-End Web Development (Google Developers) -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="frontend">
+            <div class="space-y-4">
+              <!-- Thumbnail Preview -->
+              <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
+                <img src="img/certificates/cert-frontend-fundamental.png" alt="Sertifikat Fundamental Front-End Web" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 backdrop-blur-md">
+                  GOOGLE DEVELOPERS
+                </div>
+                <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] bg-black/80 text-slate-300 border border-white/10">
+                  80 JAM BELAJAR
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center text-xs">
+                  <span class="text-primary font-semibold">Dicoding &amp; Google Partner</span>
+                  <span class="text-slate-400">01 Okt 2026</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">
+                  Belajar Fundamental Front-End Web Development
+                </h4>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                  HTML5 Form Lanjutan, CSS Grid Layout Lanjut, Web Components (Custom Elements &amp; Shadow DOM), NPM Package Manager, Webpack Module Bundler, dan Asynchronous Fetch REST API.
+                </p>
+                <div class="mt-3 p-2.5 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300 flex items-center justify-between">
+                  <span>ID: <strong class="text-white">6RPNO1KE5X2M</strong></span>
+                  <span class="text-emerald-400 text-[10px]">Aktif s.d 2029</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-2 gap-2 mt-5 pt-4 border-t border-white/5">
+              <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/sertifikat-frontend-fundamental.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-all text-center">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-primary"></i>
+                <span>Buka PDF</span>
+              </a>
+              <a href="https://www.dicoding.com/certificates/6RPNO1KE5X2M" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 transition-all text-center">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Verifikasi</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 5. Backend Expert JavaScript (AWS & Dicoding) -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="backend">
             <div class="space-y-4">
               <!-- Thumbnail Preview -->
               <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
@@ -919,8 +1319,8 @@
             </div>
           </div>
 
-          <!-- 2. Web Intermediate (Dicoding & Google) -->
-          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+          <!-- 6. Web Intermediate (Dicoding & Google) -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="frontend">
             <div class="space-y-4">
               <!-- Thumbnail Preview -->
               <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
@@ -964,8 +1364,8 @@
             </div>
           </div>
 
-          <!-- 3. Backend Python (Dicoding & Google) -->
-          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+          <!-- 7. Backend Python (Dicoding & Google) -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="backend">
             <div class="space-y-4">
               <!-- Thumbnail Preview -->
               <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
@@ -1009,8 +1409,8 @@
             </div>
           </div>
 
-          <!-- 4. Flutter Mobile -->
-          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+          <!-- 8. Flutter Mobile -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="mobile">
             <div class="space-y-4">
               <!-- Thumbnail Preview -->
               <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
@@ -1054,8 +1454,8 @@
             </div>
           </div>
 
-          <!-- 5. Dasar Web -->
-          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+          <!-- 9. Dasar Web -->
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="frontend">
             <div class="space-y-4">
               <!-- Thumbnail Preview -->
               <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[4/3] relative group">
@@ -1100,7 +1500,7 @@
           </div>
 
           <!-- Academic Education Mini Card -->
-          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+          <div class="cert-card p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between" data-cert-category="all">
             <div class="space-y-4">
               <div class="w-12 h-12 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
                 <i data-lucide="graduation-cap" class="w-6 h-6"></i>

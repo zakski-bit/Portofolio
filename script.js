@@ -238,6 +238,88 @@ document.addEventListener('DOMContentLoaded', () => {
         'Mendukung dynamic templating dengan variabel otomatis ({nama}, {panggilan}, {gugus}, {jurusan}) dari file spreadsheet CSV & Excel.',
         'Menyediakan simulator web interaktif di Vercel (wa-desktop-automation.vercel.app) untuk demonstrasi alur kerja aman tanpa spam.'
       ]
+    },
+    'bitcoin-forecast': {
+      category: 'DEEP LEARNING & TIME SERIES',
+      period: 'Oktober 2026',
+      title: 'Bitcoin 24-Hour Multi-Horizon Price Forecasting (Seq2Seq LSTM)',
+      image: 'img/projects/bitcoin-forecast.jpg',
+      githubUrl: 'https://github.com/zakski-bit/bitcoin-seq2seq-forecasting',
+      liveUrl: 'https://bitcoin-seq2seq-forecasting-41sf.vercel.app',
+      colabUrl: 'https://colab.research.google.com/drive/1dHQX7Zh0oi9HBnhiZxZ1-blRG87GEFjz?usp=sharing',
+      specs: [
+        { label: 'DEEP LEARNING FRAMEWORK', val: 'TensorFlow 2.15 &amp; Keras 3' },
+        { label: 'MODEL ARCHITECTURE', val: 'Seq2Seq LSTM + Self-Attention Layer' },
+        { label: 'CUSTOM TRAINING LOOP', val: 'tf.GradientTape with Adam Optimizer' },
+        { label: 'EVALUATION & UI', val: 'RMSE / MAE &amp; Interactive Chart.js' }
+      ],
+      points: [
+        'Merancang arsitektur model Sequence-to-Sequence (Seq2Seq) LSTM dengan custom Self-Attention layer untuk peramalan multi-step 24 jam ke depan harga Bitcoin (BTC/USD).',
+        'Mengimplementasikan Custom Training Loop tingkat rendah (tf.GradientTape) untuk kontrol optimasi gradien, gradient clipping, dan loss calculation granular.',
+        'Menerapkan feature engineering multi-dimensi (log-return, rolling mean/std volatility, momentum RSI) dan normalisasi MinMaxScaler robust.',
+        'Menyediakan live dashboard interaktif di Vercel dengan rendering grafik Chart.js serta notebook Google Colab yang dapat dijalankan secara langsung.'
+      ]
+    },
+    'movie-recommender': {
+      category: 'MACHINE LEARNING TERAPAN',
+      period: 'Oktober 2026',
+      title: 'CineMatch &mdash; End-to-End Movie Recommender System',
+      image: 'img/projects/movie-recommender.jpg',
+      githubUrl: 'https://github.com/zakski-bit/movie-recommender-system',
+      liveUrl: 'https://movie-recommender-system-mu-sable.vercel.app/',
+      colabUrl: 'https://colab.research.google.com/drive/1INLUzym1GanvzJL8NU3YgXJeYVfl0K8N?usp=sharing',
+      specs: [
+        { label: 'ML & DEEP LEARNING', val: 'TensorFlow/Keras &amp; Scikit-Learn' },
+        { label: 'COLLABORATIVE MODEL', val: 'RecommenderNet (Neural Embeddings)' },
+        { label: 'CONTENT-BASED MODEL', val: 'TF-IDF Vectorizer + Cosine Similarity' },
+        { label: 'BENCHMARK DATASET', val: 'MovieLens 100K (100,000+ Ratings)' }
+      ],
+      points: [
+        'Membangun sistem rekomendasi film hibrida yang menggabungkan Content-Based Filtering dan Collaborative Filtering berbasis Deep Learning neural embedding.',
+        'Mengembangkan RecommenderNet dengan layer embedding pengguna dan film, dot product similarity, dan regularisasi Dropout untuk meminimalkan RMSE/MAE evaluasi.',
+        'Mengimplementasikan Content-Based engine berbasis representasi teks metadata (genre, sinopsis) dengan TF-IDF vectorization dan Cosine Similarity matriks.',
+        'Mendeploy showcase web interaktif di Vercel untuk pencarian rekomendasi instan dan membagikan notebook komprehensif di Google Colab.'
+      ]
+    },
+    'forumapp': {
+      category: 'FRONTEND EXPERT & REACT',
+      period: 'September 2026 &ndash; Oktober 2026',
+      title: 'Dicoding Forum App &mdash; React, Redux Toolkit & Automation Testing',
+      image: 'img/projects/forumapp.jpg',
+      githubUrl: 'https://github.com/zakski-bit/forumapp',
+      liveUrl: 'https://forumapp-ofvr-seven.vercel.app',
+      specs: [
+        { label: 'REACT ECOSYSTEM', val: 'React 18 &amp; Redux Toolkit (Thunk &amp; Slices)' },
+        { label: 'AUTOMATION TESTING', val: 'Jest Unit/Integration &amp; Cypress E2E (Nilai Bintang 5)' },
+        { label: 'CI/CD AUTOMATION', val: 'GitHub Actions Workflow (Lint, Test, Build)' },
+        { label: 'DEPLOYMENT HOST', val: 'Vercel Edge Network' }
+      ],
+      points: [
+        'Mengembangkan aplikasi forum diskusi modern berstandar enterprise dengan React 18 dan arsitektur state terpusat Redux Toolkit.',
+        'Menerapkan Test-Driven Development (TDD) dan otomasi pengujian komprehensif: unit & integration test menggunakan Jest, serta End-to-End (E2E) testing dengan Cypress yang meraih rating Bintang 5 (Sempurna).',
+        'Mengonfigurasi pipeline CI/CD GitHub Actions untuk menjalankan automated linter ESLint, pengujian otomatis, dan auto-deployment ke Vercel pada setiap push.',
+        'Menyediakan fitur thread diskusi, upvote/downvote interaktif, kategori tag filter, leaderboard pengguna paling aktif, dan otentikasi JWT token.'
+      ]
+    },
+    'notes-app': {
+      category: 'MODULAR WEB COMPONENTS',
+      period: 'Oktober 2026',
+      title: 'Notes App &mdash; Vanilla Web Components & RESTful API v2',
+      image: 'img/projects/notes-app.jpg',
+      githubUrl: 'https://github.com/zakski-bit/notes-app',
+      liveUrl: 'https://notes-appz.netlify.app/',
+      specs: [
+        { label: 'CORE TECHNOLOGY', val: 'Vanilla JavaScript ES6+ (No Framework)' },
+        { label: 'COMPONENT ARCHITECTURE', val: 'Web Components (Custom Elements &amp; Shadow DOM)' },
+        { label: 'MODULE BUNDLER', val: 'Webpack 5 with Babel Transpiler' },
+        { label: 'RESTFUL API', val: 'Dicoding Notes REST API v2 Integration' }
+      ],
+      points: [
+        'Membangun aplikasi web modular tanpa framework eksternal dengan memanfaatkan standar resmi W3C Web Components (Custom Elements, Shadow DOM, HTML Templates).',
+        'Mengintegrasikan komunikasi asinkron Fetch API dengan Dicoding Notes REST API v2 untuk operasi CRUD catatan aktif dan arsip catatan.',
+        'Mengimplementasikan real-time form validation kustom dengan pesan error dinamis dan transisi CSS Grid responsif.',
+        'Mengonfigurasi Webpack 5 untuk bundling aset produksi, minifikasi kode, dan deployment ke Netlify.'
+      ]
     }
   };
 
@@ -254,6 +336,29 @@ document.addEventListener('DOMContentLoaded', () => {
       projectCards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
         if (selectedCat === 'all' || cardCat === selectedCat) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    });
+  });
+
+  // Certificate Filtering
+  const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
+  const certCards = document.querySelectorAll('.cert-card');
+
+  certFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      certFilterBtns.forEach(b => b.classList.remove('pill-active'));
+      btn.classList.add('pill-active');
+
+      const selectedCat = btn.getAttribute('data-cert-cat');
+      certCards.forEach(card => {
+        const cardCat = card.getAttribute('data-cert-category');
+        if (selectedCat === 'all' || cardCat === selectedCat || cardCat === 'all') {
           card.style.display = 'flex';
           card.style.opacity = '1';
         } else {
@@ -305,6 +410,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-primary text-black hover:bg-secondary transition-all shadow-md shadow-primary/20">
             <i data-lucide="external-link" class="w-4 h-4"></i>
             <span>Kunjungi Live Website / Demo</span>
+          </a>
+        ` : ''}
+        ${data.colabUrl ? `
+          <a href="${data.colabUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-amber-500/20 text-amber-300 hover:bg-amber-500/30 border border-amber-500/40 transition-all">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Buka Google Colab Notebook</span>
           </a>
         ` : ''}
       </div>
