@@ -67,11 +67,11 @@ portfolio/
 │   ├── certificates/          # Cover thumbnail sertifikat
 │   ├── projects/              # Banner mockup 5 proyek GitHub
 │   └── profile.jpg            # Foto profil resmi
-├── video/                     # Aset video loop background lokal
-│   └── bg-lines.mp4           # AA-VFX 4K Blue Ambient Waving Lines
-├── index.html                 # Struktur markup utama bertema WendoJ dark aesthetic
-├── style.css                  # Custom styling glassmorphism & animasi curtain preloader
-├── script.js                  # Logika interaktif: preloader, modal case study, video switcher
+├── video/                     # Aset video lama; tidak dimuat pada halaman
+│   └── bg-lines.mp4           # Disimpan sebagai aset sumber
+├── index.html                 # Markup portofolio responsif dan semantik
+├── style.css                  # Gaya responsif, tipografi, dan aksesibilitas
+├── script.js                  # Menu, filter proyek, modal studi kasus, dan formulir kontak
 └── README.md                  # Dokumentasi komprehensif
 ```
 

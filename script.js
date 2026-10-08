@@ -1,6 +1,5 @@
 // ============================================================
-// WENDO J PORTFOLIO LOGIC — ZAKI ABDUSSALAM ALFAJARY
-// Preloader, Tilt Cards, Scroll Highlighting, Modal & Clock
+// Portfolio interactions for Zaki Abdussalam Alfajary
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,54 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) {
     window.lucide.createIcons();
   }
-
-  // 2. Preloader Animation (Matching WendoJ)
-  const preloader = document.getElementById('preloader');
-  const preloaderWord = document.getElementById('preloaderWord');
-  const words = ['Connect', 'Innovate', 'Design', 'Engineer', 'Welcome to My Portfolio'];
-  let wordIndex = 0;
-
-  const wordInterval = setInterval(() => {
-    wordIndex++;
-    if (wordIndex < words.length && preloaderWord) {
-      preloaderWord.textContent = words[wordIndex];
-    } else {
-      clearInterval(wordInterval);
-    }
-  }, 260);
-
-  setTimeout(() => {
-    if (preloader) {
-      preloader.classList.add('preloader-hidden');
-    }
-  }, 1850);
-
-  // 3. Inisialisasi VanillaTilt (Matching WendoJ)
-  if (window.VanillaTilt) {
-    const tiltElements = document.querySelectorAll('.tilt-card');
-    VanillaTilt.init(Array.from(tiltElements), {
-      max: 6,
-      speed: 350,
-      glare: true,
-      'max-glare': 0.12,
-      perspective: 900,
-      scale: 1.015,
-    });
-  }
-
-  // 4. Navbar Scroll & Section Spy (Matching WendoJ)
+  // Navbar Scroll & Section Spy (Matching WendoJ)
   const navbar = document.getElementById('navbar');
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
-    // Navbar glass effect on scroll (always keep backdrop blur & background)
+    // Navbar glass effect on scroll (smooth editorial sticky header)
     if (window.scrollY > 20) {
-      navbar.classList.add('shadow-xl', 'shadow-black/60', 'py-3.5');
-      navbar.classList.remove('py-4');
+      navbar.classList.add('scrolled');
     } else {
-      navbar.classList.remove('shadow-xl', 'shadow-black/60', 'py-3.5');
-      navbar.classList.add('py-4');
+      navbar.classList.remove('scrolled');
     }
 
     // Active nav link based on scroll position
@@ -123,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'FULLSTACK WEB APP',
       period: 'September 2026 &ndash; Sekarang',
       title: 'LDK FIKRI PNJ &mdash; Portal Resmi & Syiar Kampus',
-      image: 'img/projects/ldk-fikri.jpg',
+      image: 'img/optimized/projects/ldk-fikri.webp',
       githubUrl: 'https://github.com/zakski-bit/Ldk-Fikri',
       liveUrl: 'https://ldk-fikri-pnj.vercel.app',
       specs: [
@@ -143,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'FRONTEND & PWA',
       period: 'September 2026',
       title: 'DicoStory &mdash; Progressive Web App with Offline Sync & Geospatial Mapping',
-      image: 'img/projects/dicostory.jpg',
+      image: 'img/optimized/projects/dicostory.webp',
       githubUrl: 'https://github.com/zakski-bit/dicostory',
       liveUrl: 'https://dicostory-sub.netlify.app/',
       specs: [
@@ -163,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'BACKEND ARCHITECTURE',
       period: 'September 2026',
       title: 'DicoEvent V2 &mdash; Scalable Event Management RESTful API',
-      image: 'img/projects/dicoevent.jpg',
+      image: 'img/optimized/projects/dicoevent.webp',
       githubUrl: 'https://github.com/zakski-bit/dicoevent-rest-api',
       liveUrl: 'https://dicoevent.vercel.app/',
       specs: [
@@ -183,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'ENTERPRISE CRM',
       period: 'September 2025 &ndash; April 2026 (8 Bulan)',
       title: 'ANTARA CRM & Digital Media Portal (Perum LKBN ANTARA)',
-      image: 'img/projects/antara-crm.jpg',
+      image: 'img/optimized/projects/antara-crm.webp',
       githubUrl: 'https://github.com/zakski-bit/antara-crm-system',
       liveUrl: 'https://crm-portfolio-live.vercel.app',
       specs: [
@@ -203,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'DEVOPS & BACKEND',
       period: 'September 2026',
       title: 'Forum API V2 &mdash; Clean Architecture, CI/CD & Security Hardening',
-      image: 'img/projects/forum-api.jpg',
+      image: 'img/optimized/projects/forum-api.webp',
       githubUrl: 'https://github.com/zakski-bit/forum-api',
       liveUrl: 'https://github.com/zakski-bit/forum-api',
       specs: [
@@ -223,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'AUTOMATION & PYTHON',
       period: 'Februari 2026 &ndash; Sekarang',
       title: 'WhatsApp Desktop Automation Sender & Batch Messenger',
-      image: 'img/projects/wa-desktop-automation.jpg',
+      image: 'img/optimized/projects/wa-desktop-automation.webp',
       githubUrl: 'https://github.com/zakski-bit/wa-desktop-automation',
       liveUrl: 'https://wa-desktop-automation.vercel.app',
       specs: [
@@ -243,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'DEEP LEARNING & TIME SERIES',
       period: 'Oktober 2026',
       title: 'Bitcoin 24-Hour Multi-Horizon Price Forecasting (Seq2Seq LSTM)',
-      image: 'img/projects/bitcoin-forecast.jpg',
+      image: 'img/optimized/projects/bitcoin-forecast.webp',
       githubUrl: 'https://github.com/zakski-bit/bitcoin-seq2seq-forecasting',
       liveUrl: 'https://bitcoin-seq2seq-forecasting-41sf.vercel.app',
       colabUrl: 'https://colab.research.google.com/drive/1dHQX7Zh0oi9HBnhiZxZ1-blRG87GEFjz?usp=sharing',
@@ -264,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'MACHINE LEARNING TERAPAN',
       period: 'Oktober 2026',
       title: 'CineMatch &mdash; End-to-End Movie Recommender System',
-      image: 'img/projects/movie-recommender.jpg',
+      image: 'img/optimized/projects/movie-recommender.webp',
       githubUrl: 'https://github.com/zakski-bit/movie-recommender-system',
       liveUrl: 'https://movie-recommender-system-mu-sable.vercel.app/',
       colabUrl: 'https://colab.research.google.com/drive/1INLUzym1GanvzJL8NU3YgXJeYVfl0K8N?usp=sharing',
@@ -285,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'FRONTEND EXPERT & REACT',
       period: 'September 2026 &ndash; Oktober 2026',
       title: 'Dicoding Forum App &mdash; React, Redux Toolkit & Automation Testing',
-      image: 'img/projects/forumapp.jpg',
+      image: 'img/optimized/projects/forumapp.webp',
       githubUrl: 'https://github.com/zakski-bit/forumapp',
       liveUrl: 'https://forumapp-ofvr-seven.vercel.app',
       specs: [
@@ -305,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'MODULAR WEB COMPONENTS',
       period: 'Oktober 2026',
       title: 'Notes App &mdash; Vanilla Web Components & RESTful API v2',
-      image: 'img/projects/notes-app.jpg',
+      image: 'img/optimized/projects/notes-app.webp',
       githubUrl: 'https://github.com/zakski-bit/notes-app',
       liveUrl: 'https://notes-appz.netlify.app/',
       specs: [
@@ -385,35 +347,35 @@ document.addEventListener('DOMContentLoaded', () => {
     modalPeriod.innerHTML = data.period;
 
     let specsHtml = data.specs.map(s => `
-      <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-        <div class="text-[11px] text-slate-400">${s.label}</div>
-        <div class="text-sm font-semibold text-white mt-0.5">${s.val}</div>
+      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">${s.label}</div>
+        <div class="text-sm font-semibold text-slate-900 mt-0.5">${s.val}</div>
       </div>
     `).join('');
 
     let pointsHtml = data.points.map(p => `
       <li class="flex items-start gap-2.5">
-        <i data-lucide="check" class="w-4 h-4 text-primary mt-0.5 shrink-0"></i>
-        <span class="text-slate-300 leading-relaxed">${p}</span>
+        <i data-lucide="check" class="w-4 h-4 text-[#e62846] mt-0.5 shrink-0"></i>
+        <span class="text-slate-700 leading-relaxed">${p}</span>
       </li>
     `).join('');
 
     let actionButtonsHtml = `
       <div class="flex flex-wrap items-center gap-3 pt-1">
         ${data.githubUrl ? `
-          <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all">
+          <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 transition-all">
             <i data-lucide="github" class="w-4 h-4"></i>
             <span>Lihat Source Code (GitHub)</span>
           </a>
         ` : ''}
         ${data.liveUrl && data.liveUrl !== data.githubUrl ? `
-          <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-primary text-black hover:bg-secondary transition-all shadow-md shadow-primary/20">
+          <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#e62846] text-white hover:bg-[#d0203c] transition-all shadow-md shadow-[#e62846]/20">
             <i data-lucide="external-link" class="w-4 h-4"></i>
             <span>Kunjungi Live Website / Demo</span>
           </a>
         ` : ''}
         ${data.colabUrl ? `
-          <a href="${data.colabUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-amber-500/20 text-amber-300 hover:bg-amber-500/30 border border-amber-500/40 transition-all">
+          <a href="${data.colabUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-300 transition-all">
             <i data-lucide="book-open" class="w-4 h-4"></i>
             <span>Buka Google Colab Notebook</span>
           </a>
@@ -423,9 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalBody.innerHTML = `
       <!-- Media Cover -->
-      <div class="rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-video relative">
-        <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover bg-[#0b0c10]" />
-        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/80 to-transparent p-4 sm:p-6">
+      <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-950 aspect-video relative">
+        <img src="${data.image}" alt="${data.title}" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-4 sm:p-6">
           <h3 class="text-lg sm:text-xl font-bold text-white">${data.title}</h3>
         </div>
       </div>
@@ -435,15 +397,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Specs Grid -->
       <div>
-        <h4 class="text-xs font-semibold text-primary uppercase tracking-wider mb-2.5">Arsitektur &amp; Parameter Teknis</h4>
+        <h4 class="text-xs font-bold text-[#e62846] uppercase tracking-wider mb-2.5">Arsitektur &amp; Parameter Teknis</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           ${specsHtml}
         </div>
       </div>
 
       <!-- Responsibility Points -->
-      <div class="pt-2 border-t border-white/5">
-        <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-2.5">Sorotan Rekayasa &amp; Implementasi</h4>
+      <div class="pt-2 border-t border-slate-100">
+        <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2.5">Sorotan Rekayasa &amp; Implementasi</h4>
         <ul class="space-y-2 text-xs sm:text-sm">
           ${pointsHtml}
         </ul>
@@ -511,45 +473,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = document.getElementById('waMsg').value.trim();
       const phone = '6288298038392';
       let text = `Halo Zaki, saya *${name}*:%0A%0A${encodeURIComponent(msg)}`;
-      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank', 'noopener,noreferrer');
     });
   }
 
 
-
-  // 13. Dynamic Local Ambient Video Controller (AA-VFX Blue Waving Lines)
-  const toggleBgVideoBtn = document.getElementById('toggleBgVideoBtn');
-  const bgVideoPlayer = document.getElementById('bgVideoPlayer');
-  const videoBackgroundWrap = document.getElementById('videoBackgroundWrap');
-  const videoStatusDot = document.getElementById('videoStatusDot');
-  const videoStatusText = document.getElementById('videoStatusText');
-
-  let isVideoPlaying = true;
-  if (bgVideoPlayer) {
-    bgVideoPlayer.muted = true;
-    const playVideo = () => {
-      bgVideoPlayer.play().catch(() => {});
-    };
-    playVideo();
-    document.addEventListener('click', playVideo, { once: true });
-    document.addEventListener('touchstart', playVideo, { once: true });
-  }
-
-  if (toggleBgVideoBtn && bgVideoPlayer && videoBackgroundWrap) {
-    toggleBgVideoBtn.addEventListener('click', () => {
-      isVideoPlaying = !isVideoPlaying;
-      if (isVideoPlaying) {
-        bgVideoPlayer.play().catch(() => {});
-        videoBackgroundWrap.style.opacity = '1';
-        if (videoStatusDot) videoStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
-        if (videoStatusText) videoStatusText.textContent = 'Ambient Lines: ON';
-      } else {
-        bgVideoPlayer.pause();
-        videoBackgroundWrap.style.opacity = '0';
-        if (videoStatusDot) videoStatusDot.className = 'w-2 h-2 rounded-full bg-slate-500';
-        if (videoStatusText) videoStatusText.textContent = 'Ambient Lines: OFF';
-      }
+  // Reveal portfolio content as it enters view; leave it static for reduced-motion users.
+  const revealTargets = document.querySelectorAll(
+    '#about h2, #about .mt-6, #about .grid > div, #projects h2, #projectsContainer > *, #experience h2, #experience .grid > *, #certificates h2, #certificatesContainer > *, #services .service-card, #contact h2'
+  );
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    revealTargets.forEach((element) => {
+      element.setAttribute('data-reveal', '');
+      revealObserver.observe(element);
     });
   }
+
 });
-
