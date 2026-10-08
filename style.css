@@ -447,17 +447,59 @@ body {
 }
 
 /* ============================================================
-   HORIZONTAL SLIDER & VIEW SWITCHER (Gambar 3 Referensi)
+   PROJECTS & CERTIFICATES SMOOTH CONTINUOUS MARQUEE (Gambar 1 Referensi)
+   Like the tools/skills section: continuous 60fps hardware-accelerated glide
+   Pauses immediately on hover/touch so any card can be inspected/clicked
    ============================================================ */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+.cards-marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  padding: 0.5rem 0 1.25rem 0;
+  position: relative;
 }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.cards-marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  will-change: transform;
+}
+.cards-marquee-left {
+  animation: cardsMarqueeLeft 52s linear infinite;
+}
+.cards-marquee-right {
+  animation: cardsMarqueeRight 52s linear infinite;
+}
+.cards-marquee-container:hover .cards-marquee-track,
+.cards-marquee-container:active .cards-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes cardsMarqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes cardsMarqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-/* Slider Track Mode (Default Horizontal Scroll) */
+/* Card sizing in Marquee Mode (Compact, Uniform, Streamlined) */
+.cards-marquee-track .project-card {
+  width: 350px !important;
+  max-width: 350px !important;
+  min-width: 350px !important;
+  flex-shrink: 0 !important;
+}
+.cards-marquee-track .cert-card {
+  width: 330px !important;
+  max-width: 330px !important;
+  min-width: 330px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Legacy Slider mode fallback if needed */
 .slider-mode {
   display: flex !important;
   flex-direction: row !important;
@@ -489,7 +531,7 @@ body {
   }
 }
 
-/* Grid Mode (Large Thumbnails View) */
+/* Grid Mode (Static Large Thumbnails View) */
 .grid-mode {
   display: grid !important;
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
@@ -503,8 +545,14 @@ body {
 @media (min-width: 1024px) {
   .grid-mode {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 2rem !important;
+    gap: 1.75rem !important;
   }
+}
+.grid-mode .project-card,
+.grid-mode .cert-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
 }
 
 /* Navigation & View Toggle Buttons */

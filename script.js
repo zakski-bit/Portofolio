@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
   const projectsContainer = document.getElementById('projectsContainer');
+  const projectsTrack = document.getElementById('projectsTrack');
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -330,7 +331,11 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.opacity = '0';
         }
       });
-      if (projectsContainer) projectsContainer.scrollLeft = 0;
+      // If a category other than 'all' is selected, switch to grid view for easy browsing
+      if (selectedCat !== 'all') {
+        const gridBtn = document.getElementById('projectGridViewBtn');
+        if (gridBtn && !gridBtn.classList.contains('active')) gridBtn.click();
+      }
     });
   });
 
@@ -338,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
   const certCards = document.querySelectorAll('.cert-card');
   const certificatesContainer = document.getElementById('certificatesContainer');
+  const certificatesTrack = document.getElementById('certificatesTrack');
 
   certFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -355,134 +361,86 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.opacity = '0';
         }
       });
-      if (certificatesContainer) certificatesContainer.scrollLeft = 0;
+      if (selectedCat !== 'all') {
+        const gridBtn = document.getElementById('certGridViewBtn');
+        if (gridBtn && !gridBtn.classList.contains('active')) gridBtn.click();
+      }
     });
   });
 
-  // 8.1 Horizontal Slider & View Mode Controller (Gambar 3 Referensi)
-  function setupSliderControl({
+  // 8.1 Smooth Marquee & Grid View Mode Controller (Gambar 1 Referensi)
+  function setupMarqueeViewControl({
     containerId,
-    prevBtnId,
-    nextBtnId,
+    trackId,
     sliderViewBtnId,
     gridViewBtnId,
     arrowsContainerId,
-    scrollAmount
+    prevBtnId,
+    nextBtnId
   }) {
     const container = document.getElementById(containerId);
-    const prevBtn = document.getElementById(prevBtnId);
-    const nextBtn = document.getElementById(nextBtnId);
+    const track = document.getElementById(trackId);
     const sliderViewBtn = document.getElementById(sliderViewBtnId);
     const gridViewBtn = document.getElementById(gridViewBtnId);
     const arrows = document.getElementById(arrowsContainerId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
 
-    if (!container) return;
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      });
-    }
+    if (!container || !track) return;
 
     if (sliderViewBtn && gridViewBtn) {
       sliderViewBtn.addEventListener('click', () => {
         container.classList.remove('grid-mode');
-        container.classList.add('slider-mode', 'no-scrollbar');
+        container.classList.add('cards-marquee-container', 'marquee-fade-mask');
+        track.classList.add('cards-marquee-track', 'cards-marquee-left');
         sliderViewBtn.classList.add('active');
         gridViewBtn.classList.remove('active');
         if (arrows) arrows.style.display = 'flex';
       });
 
       gridViewBtn.addEventListener('click', () => {
-        container.classList.remove('slider-mode', 'no-scrollbar');
+        track.classList.remove('cards-marquee-track', 'cards-marquee-left');
+        container.classList.remove('cards-marquee-container', 'marquee-fade-mask');
         container.classList.add('grid-mode');
         gridViewBtn.classList.add('active');
         sliderViewBtn.classList.remove('active');
         if (arrows) arrows.style.display = 'none';
       });
     }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        container.scrollBy({ left: -360, behavior: 'smooth' });
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        container.scrollBy({ left: 360, behavior: 'smooth' });
+      });
+    }
   }
 
-  // Setup Projects Slider
-  setupSliderControl({
+  // Setup Projects Marquee/Grid View Controller
+  setupMarqueeViewControl({
     containerId: 'projectsContainer',
-    prevBtnId: 'projectPrevBtn',
-    nextBtnId: 'projectNextBtn',
+    trackId: 'projectsTrack',
     sliderViewBtnId: 'projectSliderViewBtn',
     gridViewBtnId: 'projectGridViewBtn',
     arrowsContainerId: 'projectSliderArrows',
-    scrollAmount: 420
+    prevBtnId: 'projectPrevBtn',
+    nextBtnId: 'projectNextBtn'
   });
 
-  // Setup Certificates Slider
-  setupSliderControl({
+  // Setup Certificates Marquee/Grid View Controller
+  setupMarqueeViewControl({
     containerId: 'certificatesContainer',
-    prevBtnId: 'certPrevBtn',
-    nextBtnId: 'certNextBtn',
+    trackId: 'certificatesTrack',
     sliderViewBtnId: 'certSliderViewBtn',
     gridViewBtnId: 'certGridViewBtn',
     arrowsContainerId: 'certSliderArrows',
-    scrollAmount: 380
+    prevBtnId: 'certPrevBtn',
+    nextBtnId: 'certNextBtn'
   });
-
-  // 8.2 Auto-Scroll Ticker for Projects & Certificates (seperti konten berita)
-  function initAutoScrollTicker(containerId, intervalMs = 3800, scrollStep = 420) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    let tickerInterval = null;
-    let isPaused = false;
-
-    function tick() {
-      // Only auto-scroll when in slider-mode
-      if (isPaused || !container.classList.contains('slider-mode')) return;
-
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      // If reached the end (within 24px threshold), smoothly wrap back to beginning
-      if (container.scrollLeft >= maxScrollLeft - 24) {
-        container.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: scrollStep, behavior: 'smooth' });
-      }
-    }
-
-    function start() {
-      if (tickerInterval) clearInterval(tickerInterval);
-      tickerInterval = setInterval(tick, intervalMs);
-    }
-
-    function stop() {
-      if (tickerInterval) {
-        clearInterval(tickerInterval);
-        tickerInterval = null;
-      }
-    }
-
-    // Pause on mouse hover or touch interaction
-    container.addEventListener('mouseenter', () => { isPaused = true; });
-    container.addEventListener('mouseleave', () => { isPaused = false; });
-    container.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
-    container.addEventListener('touchend', () => {
-      setTimeout(() => { isPaused = false; }, 1500);
-    }, { passive: true });
-
-    // Pause when tab is not active to conserve resources
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) stop();
-      else start();
-    });
-
-    start();
-  }
-
-  initAutoScrollTicker('projectsContainer', 3800, 420);
-  initAutoScrollTicker('certificatesContainer', 4200, 380);
 
   // 8.3 Animated Number Counter (Gambar 2 Referensi)
   const statElements = document.querySelectorAll('.stat-number');
