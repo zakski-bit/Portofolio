@@ -508,6 +508,30 @@ body {
   flex-shrink: 0 !important;
 }
 
+@media (max-width: 640px) {
+  .cards-marquee-track {
+    gap: 1rem;
+  }
+  .cards-marquee-track .project-card {
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+  }
+  .cards-marquee-track .cert-card {
+    width: 260px !important;
+    max-width: 260px !important;
+    min-width: 260px !important;
+  }
+  .cards-marquee-container {
+    padding: 0.25rem 0 0.75rem 0;
+  }
+  .marquee-fade-mask,
+  .cards-marquee-fade-mask {
+    mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+  }
+}
+
 /* Legacy Slider mode fallback if needed */
 .slider-mode {
   display: flex !important;
@@ -882,6 +906,79 @@ html.dark .portrait-float-badge {
   border-radius: 9999px;
   gap: 0.45rem;
   transform: translateZ(48px);
+}
+
+/* Responsive 3D Framed Card for Mobile & Small Devices */
+@media (max-width: 640px) {
+  .portrait-3d-stage {
+    max-width: 330px !important;
+  }
+  .portrait-3d-card {
+    padding: 0.75rem 0.75rem 0.625rem 0.75rem !important;
+    border-radius: 1.25rem !important;
+    animation: heroPortrait3DMobile 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite !important;
+  }
+  .portrait-canvas-wrap {
+    min-height: 275px !important;
+    border-radius: 1rem !important;
+  }
+  .portrait-studio-light {
+    width: 200px !important;
+    height: 200px !important;
+    top: 20% !important;
+  }
+  .portrait-3d-img {
+    max-height: 275px !important;
+    width: auto !important;
+    transform: translateZ(20px) !important;
+  }
+  .portrait-frame-header {
+    padding-bottom: 0.375rem !important;
+    margin-bottom: 0.375rem !important;
+  }
+  .badge-bottom-left {
+    bottom: 6px !important;
+    left: 6px !important;
+    padding: 0.35rem 0.55rem !important;
+    border-radius: 0.625rem !important;
+    gap: 0.45rem !important;
+    max-width: calc(100% - 12px) !important;
+    transform: translateZ(30px) !important;
+  }
+  .badge-bottom-left .w-9 {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+  }
+  .badge-top-right {
+    top: 6px !important;
+    right: 6px !important;
+    padding: 0.25rem 0.5rem !important;
+    transform: translateZ(25px) !important;
+  }
+}
+
+/* Gentle 3D Motion on Mobile (No Horizontal Edge Clipping) */
+@keyframes heroPortrait3DMobile {
+  0% {
+    transform: perspective(1000px) rotateX(2.5deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-2deg) translateY(-8px);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(2.5deg) translateY(0px);
+  }
+}
+
+/* Global Responsive Guards for Small Devices */
+@media (max-width: 640px) {
+  h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .stat-number {
+    font-size: 2.25rem !important;
+  }
 }
 
 /* ============================================================
