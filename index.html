@@ -56,9 +56,6 @@
 </head>
 <body class="selection:bg-[#e62846] selection:text-white">
 
-  <!-- Editorial Background Vertical Column Guide Lines -->
-  <div class="editorial-grid-bg" aria-hidden="true"></div>
-
   <!-- Ambient Soft Floating Orbs -->
   <div class="ambient-orb w-96 h-96 bg-slate-300/40 -top-20 -left-20" aria-hidden="true"></div>
   <div class="ambient-orb w-[30rem] h-[30rem] bg-rose-200/30 top-1/4 -right-28" style="animation-delay: -4s;" aria-hidden="true"></div>
@@ -247,40 +244,68 @@
           </div>
         </div>
 
-        <!-- Right: Greyscale Portrait Cutout (Blends Seamlessly Without Box) -->
-        <div class="lg:col-span-5 flex items-center justify-center relative lg:-mt-4">
-          <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-none hero-portrait-container">
+        <!-- Right: 3D Framed Showcase Portrait with Keyframe Animation -->
+        <div class="lg:col-span-5 flex items-center justify-center relative lg:-mt-2">
+          <div class="portrait-3d-stage w-full max-w-sm sm:max-w-md lg:max-w-[420px]" id="heroPortraitStage">
             
-            <!-- Soft Ambient Radial Light to Blend Seamlessly with Page Background -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-slate-200/50 via-slate-100/30 to-transparent rounded-full filter blur-2xl transform scale-110 pointer-events-none" aria-hidden="true"></div>
+            <!-- Ambient 3D Glow Backlight -->
+            <div class="portrait-3d-glow" aria-hidden="true"></div>
 
-            <!-- Portrait Cutout Image (Clean Transparent Background, No Black Box) -->
-            <img 
-              src="img/zaki-profile-formal.webp" 
-              alt="Zaki Abdussalam Alfajary" 
-              class="relative z-10 hero-portrait-cutout select-none"
-              width="676"
-              height="698"
-              fetchpriority="high"
-            />
+            <!-- The 3D Framed Card with Keyframe Float Animation -->
+            <div class="portrait-3d-card" id="heroPortraitCard">
 
-            <!-- Floating Pill Badge 1: 8 Bulan Magang LKBN ANTARA -->
-            <div class="absolute -bottom-2 left-0 sm:left-2 z-20 p-3 sm:p-3.5 rounded-xl bg-white/95 border border-slate-200/90 shadow-xl backdrop-blur-md flex items-center gap-3 animate-slide-up anim-delay-4">
-              <div class="w-10 h-10 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-[#e62846] shrink-0">
-                <i data-lucide="building-2" class="w-5 h-5"></i>
+              <!-- High-Tech Corner Viewfinder Accents -->
+              <div class="portrait-corner corner-tl" aria-hidden="true"></div>
+              <div class="portrait-corner corner-tr" aria-hidden="true"></div>
+              <div class="portrait-corner corner-bl" aria-hidden="true"></div>
+              <div class="portrait-corner corner-br" aria-hidden="true"></div>
+
+              <!-- Top Frame Meta Bar -->
+              <div class="portrait-frame-header" aria-hidden="true">
+                <div class="flex items-center gap-2">
+                  <span class="frame-dot"></span>
+                  <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-slate-500 dark:text-slate-400">ENGINEER // PORTFOLIO</span>
+                </div>
+                <span class="text-[10px] font-mono font-semibold text-slate-400 dark:text-slate-500">2026.ED</span>
               </div>
-              <div>
-                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">BUMN Media Nasional</div>
-                <div class="text-xs sm:text-sm font-bold text-slate-900">8 Bulan Magang &bull; LKBN ANTARA</div>
+
+              <!-- Inner Card Canvas with Subtle Studio Backdrop -->
+              <div class="portrait-canvas-wrap">
+                <!-- Studio Radial Spotlight -->
+                <div class="portrait-studio-light" aria-hidden="true"></div>
+
+                <!-- Glass Specular Reflection Glare (Keyframe Shimmer) -->
+                <div class="portrait-glass-glare" aria-hidden="true"></div>
+
+                <!-- Portrait Photo (Elevated in 3D Z-Space) -->
+                <img 
+                  src="img/zaki-profile-formal.webp" 
+                  alt="Zaki Abdussalam Alfajary" 
+                  class="portrait-3d-img select-none"
+                  width="676"
+                  height="698"
+                  fetchpriority="high"
+                />
               </div>
-            </div>
 
-            <!-- Floating Pill Badge 2: IPK 3.66 PNJ -->
-            <div class="absolute top-2 right-0 sm:right-2 z-20 px-3.5 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-lg backdrop-blur-md flex items-center gap-2 animate-slide-up anim-delay-3">
-              <i data-lucide="award" class="w-4 h-4 text-[#e62846]"></i>
-              <span class="text-xs font-bold text-slate-800">IPK 3,66 / 4,00 PNJ</span>
-            </div>
+              <!-- Floating Pill Badge 1: 8 Bulan Magang LKBN ANTARA (Elevated in 3D Z-Space) -->
+              <div class="portrait-float-badge badge-bottom-left">
+                <div class="w-9 h-9 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-[#e62846] shrink-0">
+                  <i data-lucide="building-2" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider font-mono">BUMN Media Nasional</div>
+                  <div class="text-xs font-bold text-slate-900 dark:text-slate-100">8 Bulan Magang &bull; ANTARA</div>
+                </div>
+              </div>
 
+              <!-- Floating Pill Badge 2: IPK 3.66 PNJ (Elevated in 3D Z-Space) -->
+              <div class="portrait-float-badge badge-top-right">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-[#e62846]"></i>
+                <span class="text-xs font-bold text-slate-900 dark:text-slate-100">IPK 3,66 / 4,00 PNJ</span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>

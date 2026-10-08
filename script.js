@@ -694,6 +694,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 12. Interactive 3D Parallax Tilt for Hero Portrait
+  const heroStage = document.getElementById('heroPortraitStage');
+  const heroCard = document.getElementById('heroPortraitCard');
+
+  if (heroStage && heroCard && window.matchMedia('(hover: hover)').matches) {
+    let isHovering = false;
+
+    heroStage.addEventListener('mouseenter', () => {
+      isHovering = true;
+      heroCard.style.animationPlayState = 'paused';
+    });
+
+    heroStage.addEventListener('mousemove', (e) => {
+      if (!isHovering) return;
+      const rect = heroStage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const rotX = -(y / (rect.height / 2)) * 10;
+      const rotY = (x / (rect.width / 2)) * 10;
+      
+      heroCard.style.transform = `perspective(1200px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-8px)`;
+    });
+
+    heroStage.addEventListener('mouseleave', () => {
+      isHovering = false;
+      heroCard.style.transform = '';
+      heroCard.style.animationPlayState = 'running';
+    });
+  }
 
   // All content is guaranteed visible without scroll-blocking opacity shifts
 
