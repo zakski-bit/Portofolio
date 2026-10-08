@@ -30,6 +30,32 @@
   --shadow-accent: 0 10px 24px -4px rgba(230, 40, 70, 0.3);
 }
 
+html.dark {
+  --bg-canvas: #090d16;          /* Deep rich obsidian dark */
+  --bg-surface: #0f172a;         /* High-contrast dark slate surface */
+  --bg-surface-subtle: #141e33;  /* Subdued card background */
+  --bg-surface-muted: #1e293b;
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-focus: #e62846;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --text-white: #ffffff;
+  
+  --accent: #e62846;
+  --accent-hover: #ff3b5c;
+  --accent-light: rgba(230, 40, 70, 0.15);
+  --accent-subtle: rgba(230, 40, 70, 0.25);
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 16px 32px -4px rgba(0, 0, 0, 0.7), 0 6px 14px -2px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 10px 24px -4px rgba(230, 40, 70, 0.4);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -652,6 +678,214 @@ body {
   .hero-portrait-cutout {
     max-height: 520px;
   }
+}
+
+/* ============================================================
+   DARK MODE COMPONENT OVERRIDES & THEME STYLING
+   High-contrast Obsidian/Slate palette with Crimson Accent
+   ============================================================ */
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.5rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.theme-toggle-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.theme-toggle-btn:active {
+  transform: translateY(0);
+}
+
+/* Status Pill (Human-Crafted, No Cheesy AI Pulsing Green Dot) */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+.status-pill i {
+  color: var(--accent);
+}
+
+/* Dark Mode Global Overrides */
+html.dark body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+}
+
+html.dark .editorial-grid-bg {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+html.dark #navbar {
+  background-color: rgba(9, 13, 22, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #navbar.scrolled {
+  background-color: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+html.dark .nav-link {
+  color: #94a3b8;
+}
+html.dark .nav-link:hover {
+  color: var(--accent);
+}
+html.dark .nav-link.nav-active {
+  color: #ffffff;
+}
+
+html.dark #mobileDrawer {
+  background-color: #0b1120 !important;
+  border-left-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .mobile-nav-link {
+  color: #cbd5e1;
+}
+
+html.dark .editorial-card,
+html.dark .skills-card {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+html.dark .editorial-card:hover,
+html.dark .skills-card:hover {
+  border-color: rgba(230, 40, 70, 0.4) !important;
+  box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark .btn-outline {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f1f5f9 !important;
+}
+html.dark .btn-outline:hover {
+  background-color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.dark .social-icon-btn,
+html.dark .slider-nav-btn,
+html.dark .view-btn,
+html.dark .theme-toggle-btn,
+html.dark .status-pill {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #cbd5e1 !important;
+}
+html.dark .social-icon-btn:hover,
+html.dark .slider-nav-btn:hover {
+  background-color: #1e293b !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+html.dark .theme-toggle-btn:hover {
+  color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+}
+
+html.dark .filter-btn,
+html.dark .cert-filter-btn {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #94a3b8 !important;
+}
+html.dark .filter-btn:hover,
+html.dark .cert-filter-btn:hover {
+  background-color: var(--accent-light) !important;
+  color: var(--accent) !important;
+  border-color: rgba(230, 40, 70, 0.4) !important;
+}
+
+html.dark .filter-btn.pill-active,
+html.dark .cert-filter-btn.pill-active,
+html.dark .view-btn.active {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+html.dark .modal-panel {
+  background-color: #0b1120 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+html.dark .modal-panel > div:first-child,
+html.dark .modal-panel > div:last-child {
+  background-color: #070a13 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark footer {
+  background-color: #070a13 !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Typography & General Tailwind Classes in Dark Mode */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-200\/90,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-100 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/95 {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+  background-color: #141e33 !important;
+}
+
+html.dark input,
+html.dark textarea {
+  background-color: #141e33 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
 }
 
 

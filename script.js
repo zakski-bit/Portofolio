@@ -7,6 +7,56 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) {
     window.lucide.createIcons();
   }
+
+  // 1.1 Theme Toggle Manager (Dark Mode & Light Mode)
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
+
+  function updateThemeUI(isDark) {
+    if (themeToggleBtn) {
+      themeToggleBtn.innerHTML = isDark
+        ? '<i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>'
+        : '<i data-lucide="moon" class="w-4 h-4 text-slate-600"></i>';
+    }
+    if (mobileThemeToggleBtn) {
+      mobileThemeToggleBtn.innerHTML = `
+        <span class="flex items-center gap-2 font-semibold">
+          ${isDark
+            ? '<i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>'
+            : '<i data-lucide="moon" class="w-4 h-4 text-slate-600"></i>'}
+          <span>${isDark ? 'Mode Terang (Light)' : 'Mode Gelap (Dark)'}</span>
+        </span>
+        <i data-lucide="repeat" class="w-3.5 h-3.5 text-slate-400"></i>
+      `;
+    }
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      updateThemeUI(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      updateThemeUI(true);
+    }
+  }
+
+  // Initial UI sync with current DOM state
+  const currentIsDark = document.documentElement.classList.contains('dark');
+  updateThemeUI(currentIsDark);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+  if (mobileThemeToggleBtn) {
+    mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+  }
   // Navbar Scroll & Section Spy (Matching WendoJ)
   const navbar = document.getElementById('navbar');
   const sections = document.querySelectorAll('section');
