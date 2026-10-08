@@ -478,23 +478,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // Reveal portfolio content as it enters view; leave it static for reduced-motion users.
-  const revealTargets = document.querySelectorAll(
-    '#about h2, #about .mt-6, #about .grid > div, #projects h2, #projectsContainer > *, #experience h2, #experience .grid > *, #certificates h2, #certificatesContainer > *, #services .service-card, #contact h2'
-  );
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
-    revealTargets.forEach((element) => {
-      element.setAttribute('data-reveal', '');
-      revealObserver.observe(element);
-    });
-  }
+  // All content is guaranteed visible without scroll-blocking opacity shifts
 
 });
