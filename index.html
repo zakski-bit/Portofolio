@@ -67,6 +67,7 @@
       <nav class="hidden md:flex items-center space-x-7">
         <a href="#home" class="nav-link nav-active">Beranda</a>
         <a href="#about" class="nav-link">Tentang</a>
+        <a href="#skills" class="nav-link">Skill</a>
         <a href="#experience" class="nav-link">Pengalaman</a>
         <a href="#projects" class="nav-link">Proyek</a>
         <a href="#certificates" class="nav-link">Sertifikat</a>
@@ -106,6 +107,7 @@
         <nav class="mt-8 flex flex-col space-y-5 text-base font-medium">
           <a href="#home" class="mobile-nav-link text-slate-700 hover:text-[#e62846] transition-colors">Beranda</a>
           <a href="#about" class="mobile-nav-link text-slate-700 hover:text-[#e62846] transition-colors">Tentang</a>
+          <a href="#skills" class="mobile-nav-link text-slate-700 hover:text-[#e62846] transition-colors">Skill</a>
           <a href="#experience" class="mobile-nav-link text-slate-700 hover:text-[#e62846] transition-colors">Pengalaman</a>
           <a href="#projects" class="mobile-nav-link text-slate-700 hover:text-[#e62846] transition-colors">Proyek</a>
           <a href="#certificates" class="mobile-nav-link text-slate-700 hover:text-[#e62846] transition-colors">Sertifikat</a>
@@ -132,8 +134,16 @@
     <!-- ============================================================
          HERO SECTION (Designed matching Reference Mockup Image)
          ============================================================ -->
-    <section id="home" class="min-h-screen pt-32 sm:pt-36 lg:pt-40 pb-16 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto relative">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <section id="home" class="min-h-screen pt-32 sm:pt-36 lg:pt-40 pb-16 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
+      
+      <!-- Ambient Background Video (LKBN ANTARA CRM Login Inspired) -->
+      <div class="hero-video-bg">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="video/warni_1min.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
         
         <!-- Left: Intro Typography (7 cols) -->
         <div class="lg:col-span-7 flex flex-col items-start z-10">
@@ -284,23 +294,471 @@
           </div>
         </div>
 
-        <!-- 4 Stats Cards (Clean Editorial Style) -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-2">
-          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#e62846] transition-colors">
-            <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">3.66</span>
-            <span class="mt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">IPK Kelulusan PNJ (Skala 4.00)</span>
+        <!-- Section Pencapaian & Angka Kinerja (Gambar 2 Referensi) -->
+        <div id="achievementCounters" class="mt-14 pt-10 border-t border-slate-200/80">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-5 h-[2px] bg-[#e62846]"></span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#e62846]">PENCAPAIAN &amp; REKAM JEJAK</span>
+              </div>
+              <h3 class="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+                Angka pencapaian Zaki Abdussalam untuk Rekayasa Teknologi
+              </h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 max-w-md leading-relaxed">
+              Dedikasi berkelanjutan dalam perancangan perangkat lunak berskala produksi, keunggulan akademik di Politeknik Negeri Jakarta, dan kontribusi 8 bulan penuh di BUMN Media PERUM LKBN ANTARA.
+            </p>
           </div>
-          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#e62846] transition-colors">
-            <span class="text-4xl sm:text-5xl font-extrabold text-[#e62846] tracking-tight">10+</span>
-            <span class="mt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Proyek GitHub Produksi</span>
+
+          <!-- 4 Big Number Metrics with Animated Red Counters (Matching Gambar 2) -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-[#e62846]/40 transition-all">
+              <div>
+                <span class="stat-number text-5xl sm:text-6xl font-extrabold text-[#e62846] tracking-tight" data-target="140" data-suffix="+">0</span>
+                <h4 class="mt-3 text-base sm:text-lg font-bold text-slate-900">Hari Kerja Magang</h4>
+              </div>
+              <p class="mt-1 text-xs text-slate-500">8 Bulan di Biro TI PERUM LKBN ANTARA</p>
+            </div>
+
+            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-[#e62846]/40 transition-all">
+              <div>
+                <span class="stat-number text-5xl sm:text-6xl font-extrabold text-[#e62846] tracking-tight" data-target="3.66" data-decimals="2">0.00</span>
+                <h4 class="mt-3 text-base sm:text-lg font-bold text-slate-900">IPK Sangat Memuaskan</h4>
+              </div>
+              <p class="mt-1 text-xs text-slate-500">D4 Broadband Multimedia PNJ (Skala 4.00)</p>
+            </div>
+
+            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-[#e62846]/40 transition-all">
+              <div>
+                <span class="stat-number text-5xl sm:text-6xl font-extrabold text-[#e62846] tracking-tight" data-target="10" data-suffix="+">0</span>
+                <h4 class="mt-3 text-base sm:text-lg font-bold text-slate-900">Proyek Produksi</h4>
+              </div>
+              <p class="mt-1 text-xs text-slate-500">Fullstack Web &amp; AI Live di GitHub/Vercel</p>
+            </div>
+
+            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-[#e62846]/40 transition-all">
+              <div>
+                <span class="stat-number text-5xl sm:text-6xl font-extrabold text-[#e62846] tracking-tight" data-target="9">0</span>
+                <h4 class="mt-3 text-base sm:text-lg font-bold text-slate-900">Lisensi Terverifikasi</h4>
+              </div>
+              <p class="mt-1 text-xs text-slate-500">Dicoding, Google &amp; AWS Validated Partner</p>
+            </div>
           </div>
-          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#e62846] transition-colors">
-            <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">9</span>
-            <span class="mt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Lisensi AWS, Google &amp; Dicoding</span>
+        </div>
+      </div>
+    </section>
+
+<!-- ============================================================
+         SKILLS & TECH STACK SECTION (Gambar 1 Referensi Marquee)
+         ============================================================ -->
+    <section id="skills" data-section="skills" class="py-20 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto border-t border-slate-200/80 relative overflow-hidden">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 mb-2">
+          <span class="w-5 h-[2px] bg-[#e62846]"></span>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#e62846]">STACK TEKNOLOGI &amp; SKILLSET</span>
+          <span class="w-5 h-[2px] bg-[#e62846]"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Peralatan Rekayasa Sistem &amp; Ekosistem Modern
+        </h2>
+        <div class="w-12 h-1 bg-[#e62846] mx-auto mt-3 rounded-full"></div>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          Kombinasi teknologi web modern, arsitektur basis data, framework kecerdasan buatan, dan otomatisasi pengujian yang diterapkan secara nyata dalam proyek produksi.
+        </p>
+      </div>
+
+      <!-- Marquee Container (Dual Track Infinite Scroll) -->
+      <div class="space-y-4 marquee-fade-mask overflow-hidden py-2">
+        <!-- Row 1: Frontend & Core Web (Scrolls Left) -->
+        <div class="marquee-container overflow-hidden">
+          <div class="marquee-track marquee-left">
+            
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#E34F26"><path d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0zm17.4 4.5H5.1l.4 4.4h12.9l-.4 4.5-6 1.7-6-1.7-.3-2.6H3.3l.5 5.3L12 21.6l8.2-2.5 1.2-14.6z"/></svg>
           </div>
-          <div class="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:border-[#e62846] transition-colors">
-            <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">8 Bulan</span>
-            <span class="mt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Magang TI PERUM LKBN ANTARA</span>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">HTML5</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Markup Standard</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#1572B6"><path d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0zm17.4 4.5H5.1l.4 4.4h12.9l-.4 4.5-6 1.7-6-1.7-.3-2.6H3.3l.5 5.3L12 21.6l8.2-2.5 1.2-14.6z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">CSS3</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Modern Styling</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path fill="#000" d="M7.5 18c-.8 0-1.4-.4-1.7-.9l1.2-.8c.2.3.4.5.7.5.5 0 .8-.3.8-.9v-5.6h1.5V17c0 1.2-.8 1-2.5 1zm6.3-.1c-1.3 0-2.1-.8-2.1-2.1 0-1.4.9-2.2 2.3-2.2.8 0 1.4.3 1.7.7l-1.1.9c-.2-.3-.5-.4-.8-.4-.5 0-.8.3-.8.7 0 .5.3.7 1.1.9 1.4.4 2 .9 2 2 0 1.3-.9 2.2-2.3 2.2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">JavaScript</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">ES6+ Architecture</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#3178C6"/><path fill="#fff" d="M4.5 10.5h6v1.8H8.4V19H6.6v-6.7H4.5v-1.8zm8.1 4.5c.3 1.8 1.4 2.6 3.1 2.6 1.4 0 2.5-.6 2.5-1.9 0-1.1-.8-1.6-2.1-2l-1.1-.4c-2-.6-3.2-1.7-3.2-3.4 0-2.3 1.8-3.7 4.2-3.7 2.6 0 4.1 1.4 4.2 3.6h-2.1c-.2-1.2-.9-1.8-2.1-1.8-1.2 0-1.9.6-1.9 1.6 0 .9.7 1.4 2 1.8l1.1.4c2.2.7 3.4 1.8 3.4 3.6 0 2.5-1.9 3.8-4.7 3.8-2.7 0-4.4-1.4-4.5-3.8h2.2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">TypeScript</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Typed SuperSet</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="-11.5 -10.23174 23 20.46348"><circle cx="0" cy="0" r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">React 18</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Component Architecture</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#0f172a"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.666 17.514L9.89 7.714h2.096l6.237 8.528-.557 1.272zM7.5 7.714h2v8.572h-2V7.714z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Next.js 15</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">App Router & SSR</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#06B6D4"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Tailwind CSS</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Utility-First CSS</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#764ABC"><path d="M15.688 3.738a4.912 4.912 0 0 0-3.692 1.666A4.912 4.912 0 0 0 8.304 3.738a4.93 4.93 0 0 0-4.93 4.93c0 1.25.467 2.392 1.24 3.266a4.913 4.913 0 0 0-1.24 3.266 4.93 4.93 0 0 0 4.93 4.93 4.91 4.91 0 0 0 3.692-1.666 4.91 4.91 0 0 0 3.692 1.666 4.93 4.93 0 0 0 4.93-4.93 4.915 4.915 0 0 0-1.24-3.266 4.914 4.914 0 0 0 1.24-3.266 4.93 4.93 0 0 0-4.93-4.93zm-3.684 3.136c.64 0 1.22.25 1.652.66l-1.652 1.652-1.652-1.652c.432-.41 1.012-.66 1.652-.66z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Redux Toolkit</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">State Management</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#29B6F6"><path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm0 2.3L5 8.3v7.4l7 4 7-4V8.3l-7-4z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Web Components</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Standard W3C</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#8DD6F9"><path d="M12 1.75L2.75 7.09v9.82L12 22.25l9.25-5.34V7.09L12 1.75zm-.75 2.15v7.26L4.72 15.02V8.12l6.53-4.22zm1.5 0l6.53 4.22v6.9l-6.53-3.86V3.9zM12 13.06l6.09 3.6-6.09 3.52-6.09-3.52 6.09-3.6z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Webpack 5</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Module Bundler</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#E34F26"><path d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0zm17.4 4.5H5.1l.4 4.4h12.9l-.4 4.5-6 1.7-6-1.7-.3-2.6H3.3l.5 5.3L12 21.6l8.2-2.5 1.2-14.6z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">HTML5</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Markup Standard</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#1572B6"><path d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0zm17.4 4.5H5.1l.4 4.4h12.9l-.4 4.5-6 1.7-6-1.7-.3-2.6H3.3l.5 5.3L12 21.6l8.2-2.5 1.2-14.6z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">CSS3</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Modern Styling</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path fill="#000" d="M7.5 18c-.8 0-1.4-.4-1.7-.9l1.2-.8c.2.3.4.5.7.5.5 0 .8-.3.8-.9v-5.6h1.5V17c0 1.2-.8 1-2.5 1zm6.3-.1c-1.3 0-2.1-.8-2.1-2.1 0-1.4.9-2.2 2.3-2.2.8 0 1.4.3 1.7.7l-1.1.9c-.2-.3-.5-.4-.8-.4-.5 0-.8.3-.8.7 0 .5.3.7 1.1.9 1.4.4 2 .9 2 2 0 1.3-.9 2.2-2.3 2.2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">JavaScript</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">ES6+ Architecture</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#3178C6"/><path fill="#fff" d="M4.5 10.5h6v1.8H8.4V19H6.6v-6.7H4.5v-1.8zm8.1 4.5c.3 1.8 1.4 2.6 3.1 2.6 1.4 0 2.5-.6 2.5-1.9 0-1.1-.8-1.6-2.1-2l-1.1-.4c-2-.6-3.2-1.7-3.2-3.4 0-2.3 1.8-3.7 4.2-3.7 2.6 0 4.1 1.4 4.2 3.6h-2.1c-.2-1.2-.9-1.8-2.1-1.8-1.2 0-1.9.6-1.9 1.6 0 .9.7 1.4 2 1.8l1.1.4c2.2.7 3.4 1.8 3.4 3.6 0 2.5-1.9 3.8-4.7 3.8-2.7 0-4.4-1.4-4.5-3.8h2.2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">TypeScript</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Typed SuperSet</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="-11.5 -10.23174 23 20.46348"><circle cx="0" cy="0" r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">React 18</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Component Architecture</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#0f172a"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.666 17.514L9.89 7.714h2.096l6.237 8.528-.557 1.272zM7.5 7.714h2v8.572h-2V7.714z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Next.js 15</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">App Router & SSR</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#06B6D4"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Tailwind CSS</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Utility-First CSS</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#764ABC"><path d="M15.688 3.738a4.912 4.912 0 0 0-3.692 1.666A4.912 4.912 0 0 0 8.304 3.738a4.93 4.93 0 0 0-4.93 4.93c0 1.25.467 2.392 1.24 3.266a4.913 4.913 0 0 0-1.24 3.266 4.93 4.93 0 0 0 4.93 4.93 4.91 4.91 0 0 0 3.692-1.666 4.91 4.91 0 0 0 3.692 1.666 4.93 4.93 0 0 0 4.93-4.93 4.915 4.915 0 0 0-1.24-3.266 4.914 4.914 0 0 0 1.24-3.266 4.93 4.93 0 0 0-4.93-4.93zm-3.684 3.136c.64 0 1.22.25 1.652.66l-1.652 1.652-1.652-1.652c.432-.41 1.012-.66 1.652-.66z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Redux Toolkit</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">State Management</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#29B6F6"><path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm0 2.3L5 8.3v7.4l7 4 7-4V8.3l-7-4z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Web Components</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Standard W3C</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#8DD6F9"><path d="M12 1.75L2.75 7.09v9.82L12 22.25l9.25-5.34V7.09L12 1.75zm-.75 2.15v7.26L4.72 15.02V8.12l6.53-4.22zm1.5 0l6.53 4.22v6.9l-6.53-3.86V3.9zM12 13.06l6.09 3.6-6.09 3.52-6.09-3.52 6.09-3.6z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Webpack 5</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Module Bundler</div>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Backend, AI/ML & DevOps (Scrolls Right) -->
+        <div class="marquee-container overflow-hidden">
+          <div class="marquee-track marquee-right">
+            
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24"><path fill="#3776AB" d="M11.9 1c-4.4 0-4.1 1.9-4.1 1.9l.01 2h4.2v.6H5.8S2 5.1 2 9.5s3.3 4.2 3.3 4.2h1.9v-2.7s-.1-3.3 3.3-3.3h5.7s3.2.1 3.2-3.1-3.6-3.6-7.5-3.6zm-2.4 1.3c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/><path fill="#FFD43B" d="M12.1 23c4.4 0 4.1-1.9 4.1-1.9l-.01-2h-4.2v-.6h6.2s3.8.4 3.8-4-3.3-4.2-3.3-4.2h-1.9v2.7s.1 3.3-3.3 3.3H7.8s-3.2-.1-3.2 3.1 3.6 3.6 7.5 3.6zm2.4-1.3c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Python 3.10</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Data & Backend</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#092E20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-9h2v9zm3 0h-2V11h2v5.5zm-6 0H8v-3.5h2V16.5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Django DRF</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Scalable REST API</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#5FA04E"><path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm6.75 14.2V8.6L12 4.4 5.25 8.6v7.6L12 20.4l6.75-4.2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Node.js</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Backend Runtime</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#FF6F00"><path d="M12 2L2 7.77v10.15L7 20.8v-8.74l5 2.89 5-2.89v8.74l5-2.88V7.77L12 2zm0 3.46l5 2.89-5 2.89-5-2.89 5-2.89z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">TensorFlow</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Deep Learning & Keras</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#4169E1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">PostgreSQL</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Relational Database</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#3ECF8E"><path d="M13.5 2L3 14.5h7.5L9 22l12-12.5h-7.5L13.5 2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Supabase</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Postgres & Auth</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#DC382D"><path d="M12 2L2 6.5l10 4.5 10-4.5L12 2zm0 8.5L2 15l10 4.5 10-4.5-10-4.5zm0 8.5L2 23.5l10 4.5 10-4.5-10-4.5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Redis</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">In-Memory Caching</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#2496ED"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186zm-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186zM23.99 11.7c-.1-.7-.6-1.3-1.3-1.6l-.6-.2-.3.6c-.3.6-.8 1-1.4 1.2-.5-.9-1.3-1.5-2.3-1.7H1.3c-.6 0-1.1.4-1.3 1-.3 1.2-.1 3.5 1.5 5.5 1.7 2.1 4.2 3.1 7.5 3.1 6.5 0 11.2-3.8 13.5-7.3.7-.4 1.2-1.1 1.4-1.8z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Docker</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Compose Multi-Container</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#2088FF"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">GitHub Actions</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">CI/CD Pipeline</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#17202C"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 14h-3l-2-4-2 4H7l3.5-7L7 5h3l2 4 2-4h3l-3.5 7L17 16z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Cypress E2E</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Automated Testing</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#E95420"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3a9 9 0 110 18 9 9 0 010-18zm0 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Linux Ubuntu</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Server & Nginx</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24"><path fill="#3776AB" d="M11.9 1c-4.4 0-4.1 1.9-4.1 1.9l.01 2h4.2v.6H5.8S2 5.1 2 9.5s3.3 4.2 3.3 4.2h1.9v-2.7s-.1-3.3 3.3-3.3h5.7s3.2.1 3.2-3.1-3.6-3.6-7.5-3.6zm-2.4 1.3c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/><path fill="#FFD43B" d="M12.1 23c4.4 0 4.1-1.9 4.1-1.9l-.01-2h-4.2v-.6h6.2s3.8.4 3.8-4-3.3-4.2-3.3-4.2h-1.9v2.7s.1 3.3-3.3 3.3H7.8s-3.2-.1-3.2 3.1 3.6 3.6 7.5 3.6zm2.4-1.3c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Python 3.10</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Data & Backend</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#092E20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-9h2v9zm3 0h-2V11h2v5.5zm-6 0H8v-3.5h2V16.5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Django DRF</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Scalable REST API</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#5FA04E"><path d="M12 2l9 5.2v10.4l-9 5.2-9-5.2V7.2L12 2zm6.75 14.2V8.6L12 4.4 5.25 8.6v7.6L12 20.4l6.75-4.2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Node.js</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Backend Runtime</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#FF6F00"><path d="M12 2L2 7.77v10.15L7 20.8v-8.74l5 2.89 5-2.89v8.74l5-2.88V7.77L12 2zm0 3.46l5 2.89-5 2.89-5-2.89 5-2.89z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">TensorFlow</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Deep Learning & Keras</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#4169E1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">PostgreSQL</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Relational Database</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#3ECF8E"><path d="M13.5 2L3 14.5h7.5L9 22l12-12.5h-7.5L13.5 2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Supabase</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Postgres & Auth</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#DC382D"><path d="M12 2L2 6.5l10 4.5 10-4.5L12 2zm0 8.5L2 15l10 4.5 10-4.5-10-4.5zm0 8.5L2 23.5l10 4.5 10-4.5-10-4.5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Redis</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">In-Memory Caching</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#2496ED"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186zm-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186zM23.99 11.7c-.1-.7-.6-1.3-1.3-1.6l-.6-.2-.3.6c-.3.6-.8 1-1.4 1.2-.5-.9-1.3-1.5-2.3-1.7H1.3c-.6 0-1.1.4-1.3 1-.3 1.2-.1 3.5 1.5 5.5 1.7 2.1 4.2 3.1 7.5 3.1 6.5 0 11.2-3.8 13.5-7.3.7-.4 1.2-1.1 1.4-1.8z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Docker</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Compose Multi-Container</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#2088FF"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">GitHub Actions</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">CI/CD Pipeline</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#17202C"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 14h-3l-2-4-2 4H7l3.5-7L7 5h3l2 4 2-4h3l-3.5 7L17 16z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Cypress E2E</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Automated Testing</div>
+          </div>
+        </div>
+        <div class="skills-card flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#e62846]/40 transition-all shrink-0 cursor-default group">
+          <div class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="#E95420"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3a9 9 0 110 18 9 9 0 010-18zm0 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-800 whitespace-nowrap group-hover:text-[#e62846] transition-colors">Linux Ubuntu</div>
+            <div class="text-[11px] text-slate-400 font-medium whitespace-nowrap">Server & Nginx</div>
+          </div>
+        </div>
           </div>
         </div>
       </div>
@@ -429,18 +887,46 @@
           Dokumentasi nyata repositori GitHub publik dan aplikasi web produksi, mencakup Deep Learning Time Series, Hybrid Recommender System, Clean Architecture REST API, hingga PWA Offline-First.
         </p>
 
-        <!-- Category Filter Pills -->
-        <div class="flex flex-wrap items-center gap-2 mt-8" id="projectFilters">
-          <button class="filter-btn pill-active" data-cat="all">Semua Proyek (10)</button>
-          <button class="filter-btn" data-cat="ai-ml">AI &amp; Machine Learning (2)</button>
-          <button class="filter-btn" data-cat="fullstack">Fullstack Web (3)</button>
-          <button class="filter-btn" data-cat="backend">Backend &amp; API (2)</button>
-          <button class="filter-btn" data-cat="frontend">Frontend &amp; PWA (2)</button>
-          <button class="filter-btn" data-cat="automation">Automation &amp; Tools (1)</button>
+        <!-- Toolbar: Category Filters + View Mode Switcher + Slider Arrows (Gambar 3 Referensi) -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mt-8">
+          <!-- Category Filter Pills -->
+          <div class="flex flex-wrap items-center gap-2" id="projectFilters">
+            <button class="filter-btn pill-active" data-cat="all">Semua Proyek (10)</button>
+            <button class="filter-btn" data-cat="ai-ml">AI &amp; ML (2)</button>
+            <button class="filter-btn" data-cat="fullstack">Fullstack (3)</button>
+            <button class="filter-btn" data-cat="backend">Backend (2)</button>
+            <button class="filter-btn" data-cat="frontend">Frontend (2)</button>
+            <button class="filter-btn" data-cat="automation">Automation (1)</button>
+          </div>
+
+          <!-- View Switcher & Slider Navigation -->
+          <div class="flex items-center gap-3 shrink-0">
+            <!-- View Mode Switcher: Slider vs Grid (Gambar 3 Windows Explorer Thumbnails Style) -->
+            <div class="inline-flex p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
+              <button id="projectSliderViewBtn" class="view-btn active" title="Mode Slider Horizontal (Geser)">
+                <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5"></i>
+                <span>Slider</span>
+              </button>
+              <button id="projectGridViewBtn" class="view-btn" title="Mode Grid Penuh (Large Thumbnails)">
+                <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                <span>Grid</span>
+              </button>
+            </div>
+
+            <!-- Slider Arrows (Active in Slider Mode) -->
+            <div id="projectSliderArrows" class="flex items-center gap-1.5">
+              <button id="projectPrevBtn" class="slider-nav-btn" aria-label="Geser ke kiri" title="Geser ke kiri">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button id="projectNextBtn" class="slider-nav-btn" aria-label="Geser ke kanan" title="Geser ke kanan">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Project Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10" id="projectsContainer">
+        <!-- Project Cards Container (Default: Slider Horizontal Mode) -->
+        <div class="slider-mode no-scrollbar mt-8" id="projectsContainer">
 
           <!-- 1. Bitcoin 24-Hour Price Forecasting -->
           <div class="project-card editorial-card flex flex-col justify-between cursor-pointer group" data-project-id="bitcoin-forecast" data-category="ai-ml">
@@ -990,17 +1476,45 @@
           </div>
         </div>
 
-        <!-- Certificate Category Filter Pills -->
-        <div class="flex flex-wrap items-center gap-2 mt-8" id="certFilters">
-          <button class="cert-filter-btn pill-active" data-cert-cat="all">Semua Lisensi (9)</button>
-          <button class="cert-filter-btn" data-cert-cat="ai">AI &amp; Deep Learning (2)</button>
-          <button class="cert-filter-btn" data-cert-cat="backend">Backend &amp; Cloud (2)</button>
-          <button class="cert-filter-btn" data-cert-cat="frontend">Front-End Web (4)</button>
-          <button class="cert-filter-btn" data-cert-cat="mobile">Mobile Apps (1)</button>
+        <!-- Toolbar: Certificate Filters + View Mode Switcher + Slider Arrows (Gambar 3 Referensi) -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mt-8">
+          <!-- Category Filter Pills -->
+          <div class="flex flex-wrap items-center gap-2" id="certFilters">
+            <button class="cert-filter-btn pill-active" data-cert-cat="all">Semua Lisensi (9)</button>
+            <button class="cert-filter-btn" data-cert-cat="ai">AI &amp; Deep Learning (2)</button>
+            <button class="cert-filter-btn" data-cert-cat="backend">Backend &amp; Cloud (2)</button>
+            <button class="cert-filter-btn" data-cert-cat="frontend">Front-End Web (4)</button>
+            <button class="cert-filter-btn" data-cert-cat="mobile">Mobile Apps (1)</button>
+          </div>
+
+          <!-- View Switcher & Slider Navigation -->
+          <div class="flex items-center gap-3 shrink-0">
+            <!-- View Mode Switcher: Slider vs Grid (Gambar 3 Windows Explorer Thumbnails Style) -->
+            <div class="inline-flex p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
+              <button id="certSliderViewBtn" class="view-btn active" title="Mode Slider Horizontal (Geser)">
+                <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5"></i>
+                <span>Slider</span>
+              </button>
+              <button id="certGridViewBtn" class="view-btn" title="Mode Grid Penuh (Large Thumbnails)">
+                <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                <span>Grid</span>
+              </button>
+            </div>
+
+            <!-- Slider Arrows (Active in Slider Mode) -->
+            <div id="certSliderArrows" class="flex items-center gap-1.5">
+              <button id="certPrevBtn" class="slider-nav-btn" aria-label="Geser ke kiri" title="Geser ke kiri">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button id="certNextBtn" class="slider-nav-btn" aria-label="Geser ke kanan" title="Geser ke kanan">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Certificate Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10" id="certificatesContainer">
+        <!-- Certificate Cards Container (Default: Slider Horizontal Mode) -->
+        <div class="slider-mode no-scrollbar mt-8" id="certificatesContainer">
 
           <!-- 1. Deep Learning Tingkat Mahir (Google Developers) -->
           <div class="cert-card editorial-card p-6 flex flex-col justify-between" data-cert-category="ai">

@@ -288,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. Project Filtering
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  const projectsContainer = document.getElementById('projectsContainer');
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -305,12 +306,14 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.opacity = '0';
         }
       });
+      if (projectsContainer) projectsContainer.scrollLeft = 0;
     });
   });
 
   // Certificate Filtering
   const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
   const certCards = document.querySelectorAll('.cert-card');
+  const certificatesContainer = document.getElementById('certificatesContainer');
 
   certFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -328,8 +331,137 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.opacity = '0';
         }
       });
+      if (certificatesContainer) certificatesContainer.scrollLeft = 0;
     });
   });
+
+  // 8.1 Horizontal Slider & View Mode Controller (Gambar 3 Referensi)
+  function setupSliderControl({
+    containerId,
+    prevBtnId,
+    nextBtnId,
+    sliderViewBtnId,
+    gridViewBtnId,
+    arrowsContainerId,
+    scrollAmount
+  }) {
+    const container = document.getElementById(containerId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const sliderViewBtn = document.getElementById(sliderViewBtnId);
+    const gridViewBtn = document.getElementById(gridViewBtnId);
+    const arrows = document.getElementById(arrowsContainerId);
+
+    if (!container) return;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+
+    if (sliderViewBtn && gridViewBtn) {
+      sliderViewBtn.addEventListener('click', () => {
+        container.classList.remove('grid-mode');
+        container.classList.add('slider-mode', 'no-scrollbar');
+        sliderViewBtn.classList.add('active');
+        gridViewBtn.classList.remove('active');
+        if (arrows) arrows.style.display = 'flex';
+      });
+
+      gridViewBtn.addEventListener('click', () => {
+        container.classList.remove('slider-mode', 'no-scrollbar');
+        container.classList.add('grid-mode');
+        gridViewBtn.classList.add('active');
+        sliderViewBtn.classList.remove('active');
+        if (arrows) arrows.style.display = 'none';
+      });
+    }
+  }
+
+  // Setup Projects Slider
+  setupSliderControl({
+    containerId: 'projectsContainer',
+    prevBtnId: 'projectPrevBtn',
+    nextBtnId: 'projectNextBtn',
+    sliderViewBtnId: 'projectSliderViewBtn',
+    gridViewBtnId: 'projectGridViewBtn',
+    arrowsContainerId: 'projectSliderArrows',
+    scrollAmount: 420
+  });
+
+  // Setup Certificates Slider
+  setupSliderControl({
+    containerId: 'certificatesContainer',
+    prevBtnId: 'certPrevBtn',
+    nextBtnId: 'certNextBtn',
+    sliderViewBtnId: 'certSliderViewBtn',
+    gridViewBtnId: 'certGridViewBtn',
+    arrowsContainerId: 'certSliderArrows',
+    scrollAmount: 380
+  });
+
+  // 8.2 Animated Number Counter (Gambar 2 Referensi)
+  const statElements = document.querySelectorAll('.stat-number');
+  let counterStarted = false;
+
+  function runCounters() {
+    statElements.forEach(el => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const prefix = el.getAttribute('data-prefix') || '';
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      const duration = 1800; // ms
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing function (easeOutExpo)
+        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const currentVal = target * ease;
+
+        if (decimals > 0) {
+          el.textContent = `${prefix}${currentVal.toFixed(decimals)}${suffix}`;
+        } else {
+          el.textContent = `${prefix}${Math.round(currentVal)}${suffix}`;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          if (decimals > 0) {
+            el.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
+          } else {
+            el.textContent = `${prefix}${target}${suffix}`;
+          }
+        }
+      }
+      requestAnimationFrame(update);
+    });
+  }
+
+  const counterSection = document.getElementById('achievementCounters');
+  if (counterSection && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counterStarted) {
+          counterStarted = true;
+          runCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    counterObserver.observe(counterSection);
+  } else {
+    runCounters();
+  }
 
   // 9. Case Study Modal Controller
   const modal = document.getElementById('caseStudyModal');
