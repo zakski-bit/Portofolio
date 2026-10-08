@@ -121,13 +121,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuOverlay) {
       mobileMenuOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
     }
   }
 
   function closeMobileMenu() {
     if (mobileMenuOverlay) {
       mobileMenuOverlay.classList.remove('active');
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
   }
 
