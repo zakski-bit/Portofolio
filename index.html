@@ -134,7 +134,7 @@
     <!-- ============================================================
          HERO SECTION (Designed matching Reference Mockup Image)
          ============================================================ -->
-    <section id="home" class="min-h-screen pt-32 sm:pt-36 lg:pt-40 pb-16 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
+    <section id="home" class="min-h-[90vh] pt-24 sm:pt-28 lg:pt-32 pb-12 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
       
       <!-- Ambient Background Video (LKBN ANTARA CRM Login Inspired) -->
       <div class="hero-video-bg">
@@ -143,7 +143,7 @@
         </video>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center lg:items-start relative z-10">
         
         <!-- Left: Intro Typography (7 cols) -->
         <div class="lg:col-span-7 flex flex-col items-start z-10">
@@ -222,24 +222,25 @@
           </div>
         </div>
 
-        <!-- Right: Greyscale Portrait with Paint Brush Stroke Wash (5 cols) -->
-        <div class="lg:col-span-5 flex items-center justify-center relative">
-          <div class="relative w-full max-w-md sm:max-w-lg lg:max-w-none">
+        <!-- Right: Greyscale Portrait Cutout (Blends Seamlessly Without Box) -->
+        <div class="lg:col-span-5 flex items-center justify-center relative lg:-mt-4">
+          <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-none hero-portrait-container">
             
-            <!-- High-Res Portrait Composite (Greyscale Person on Soft Slate/Lavender Brush Stroke) -->
-            <div class="relative z-10 w-full overflow-hidden flex items-center justify-center">
-              <img 
-                src="img/zaki-hero-composite.webp" 
-                alt="Zaki Abdussalam Alfajary" 
-                class="w-full h-auto object-contain drop-shadow-md select-none"
-                width="1200"
-                height="1000"
-                fetchpriority="high"
-              />
-            </div>
+            <!-- Soft Ambient Radial Light to Blend Seamlessly with Page Background -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-slate-200/50 via-slate-100/30 to-transparent rounded-full filter blur-2xl transform scale-110 pointer-events-none" aria-hidden="true"></div>
+
+            <!-- Portrait Cutout Image (Clean Transparent Background, No Black Box) -->
+            <img 
+              src="img/zaki-portrait-cutout.webp" 
+              alt="Zaki Abdussalam Alfajary" 
+              class="relative z-10 hero-portrait-cutout select-none"
+              width="475"
+              height="513"
+              fetchpriority="high"
+            />
 
             <!-- Floating Pill Badge 1: 8 Bulan Magang LKBN ANTARA -->
-            <div class="absolute -bottom-3 left-0 sm:left-4 z-20 p-3 sm:p-3.5 rounded-xl bg-white/95 border border-slate-200/90 shadow-xl backdrop-blur-md flex items-center gap-3 animate-slide-up anim-delay-4">
+            <div class="absolute -bottom-2 left-0 sm:left-2 z-20 p-3 sm:p-3.5 rounded-xl bg-white/95 border border-slate-200/90 shadow-xl backdrop-blur-md flex items-center gap-3 animate-slide-up anim-delay-4">
               <div class="w-10 h-10 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-[#e62846] shrink-0">
                 <i data-lucide="building-2" class="w-5 h-5"></i>
               </div>
@@ -250,7 +251,7 @@
             </div>
 
             <!-- Floating Pill Badge 2: IPK 3.66 PNJ -->
-            <div class="absolute top-4 right-0 sm:right-2 z-20 px-3 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-lg backdrop-blur-md flex items-center gap-2 animate-slide-up anim-delay-3">
+            <div class="absolute top-2 right-0 sm:right-2 z-20 px-3 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-lg backdrop-blur-md flex items-center gap-2 animate-slide-up anim-delay-3">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span class="text-xs font-bold text-slate-800">IPK 3,66 / 4,00 PNJ</span>
             </div>
@@ -780,92 +781,98 @@
           Pengalaman kerja riil mengembangkan modul web, otomasi penagihan klien B2B, dan infrastruktur sistem basis data di lembaga kantor berita nasional Republik Indonesia.
         </p>
 
-        <!-- LKBN ANTARA Detailed Enterprise Card -->
-        <div class="mt-10 rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden p-6 sm:p-10">
-          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-8 border-b border-slate-100">
-            <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 text-[#e62846] border border-rose-200">
-                <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
-                <span>BUMN Media Nasional &bull; Divisi Teknologi Informasi</span>
-              </div>
-              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
-                IT Developer Intern &mdash; Departemen Pengembangan TI
-              </h3>
-              <p class="text-base font-semibold text-[#e62846] mt-1">
-                PERUM LKBN ANTARA (Lembaga Kantor Berita Nasional) &bull; Jakarta Pusat
-              </p>
-            </div>
-            <div class="shrink-0 text-left lg:text-right">
-              <span class="inline-block px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-800">
-                September 2025 &ndash; April 2026
-              </span>
-              <div class="text-xs font-semibold text-slate-500 mt-1">
-                8 Bulan Penuh &bull; 140 Hari Kerja Terverifikasi
-              </div>
-            </div>
+        <!-- LKBN ANTARA Unified Heritage Center Card (Animated Background - Gambar 2 Referensi) -->
+        <div class="mt-10 heritage-card-wrap relative">
+          <!-- Animated Background: Gedung LKBN ANTARA Heritage Center -->
+          <div class="heritage-bg-wrap">
+            <img 
+              src="img/antara-heritage-center.webp" 
+              alt="Gedung ANTARA Heritage Center Pasar Baru" 
+              class="heritage-bg-img"
+              loading="lazy"
+            />
+            <!-- Dark Gradient Vignette Overlay to ensure 100% Crisp Contrast -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-slate-900/75"></div>
           </div>
 
-          <!-- Key Responsibilities & Implementation Points -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div class="space-y-3">
-              <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                <i data-lucide="layers" class="w-4 h-4 text-[#e62846]"></i>
-                <span>Modul CRM &amp; Otomasi Invoicing B2B</span>
-              </h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Merancang dan membangun modul internal Customer Relationship Management (CRM) berbasis web untuk digitalisasi invoicing, penagihan klien korporasi B2B, dan manajemen lisensi produk media berita multimedia (teks, foto HD, video broadcast).
-              </p>
+          <!-- Content Foreground -->
+          <div class="relative z-10 p-6 sm:p-10 lg:p-12 text-white flex flex-col justify-between space-y-8">
+            <!-- Header Badges & Role -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+              <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#e62846]/20 text-rose-300 border border-[#e62846]/30 backdrop-blur-md">
+                  <i data-lucide="building-2" class="w-3.5 h-3.5 text-[#e62846]"></i>
+                  <span>BUMN MEDIA NASIONAL &bull; LKBN ANTARA HERITAGE CENTER</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3">
+                  IT Developer &amp; DevOps Intern &mdash; Biro TI
+                </h3>
+                <p class="text-sm sm:text-base text-slate-300 mt-1">
+                  Pusat Distribusi Berita &amp; Portal CRM Kemitraan Media Nasional &bull; Pasar Baru, Jakarta Pusat
+                </p>
+              </div>
+              <div class="shrink-0 text-left md:text-right">
+                <span class="inline-block px-4 py-1.5 rounded-lg text-xs font-bold bg-white/10 text-white backdrop-blur-md border border-white/15">
+                  Sep 2025 &ndash; Apr 2026
+                </span>
+                <div class="text-xs font-semibold text-rose-300 mt-1">
+                  8 Bulan Penuh &bull; 140 Hari Kerja Terverifikasi
+                </div>
+              </div>
             </div>
 
-            <div class="space-y-3">
-              <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                <i data-lucide="shield-check" class="w-4 h-4 text-[#e62846]"></i>
-                <span>Otentikasi 2FA OTP 6-Digit &amp; RBAC</span>
-              </h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Mengembangkan modul otentikasi login dua langkah (Two-Factor Authentication / OTP 6-Digit) via SMTP/PHPMailer lengkap dengan brute-force protection, cooldown rate limiting, dan sistem hak akses bertingkat (RBAC) untuk admin, tim redaksi, dan klien mitra.
-              </p>
+            <!-- 3 Concise Pillar Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              <div class="p-5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-md hover:bg-white/[0.1] transition-all">
+                <div class="w-9 h-9 rounded-lg bg-[#e62846]/20 border border-[#e62846]/40 flex items-center justify-center text-[#e62846] mb-3">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                </div>
+                <h4 class="text-sm font-bold text-white">CRM &amp; Billing Invoicing B2B</h4>
+                <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  Digitalisasi alur invoicing, kemitraan pelanggan korporasi, serta lisensi konten teks, foto HD, dan video broadcast LKBN ANTARA.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-md hover:bg-white/[0.1] transition-all">
+                <div class="w-9 h-9 rounded-lg bg-[#e62846]/20 border border-[#e62846]/40 flex items-center justify-center text-[#e62846] mb-3">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </div>
+                <h4 class="text-sm font-bold text-white">2FA OTP 6-Digit &amp; RBAC</h4>
+                <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  Otentikasi login dua langkah berbasis OTP email, rate limiting anti brute-force, dan sistem hak akses bertingkat aman.
+                </p>
+              </div>
+
+              <div class="p-5 rounded-xl bg-white/[0.06] border border-white/10 backdrop-blur-md hover:bg-white/[0.1] transition-all">
+                <div class="w-9 h-9 rounded-lg bg-[#e62846]/20 border border-[#e62846]/40 flex items-center justify-center text-[#e62846] mb-3">
+                  <i data-lucide="container" class="w-4 h-4"></i>
+                </div>
+                <h4 class="text-sm font-bold text-white">Docker Compose Multi-Service</h4>
+                <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  Migrasi arsitektur kontainer PHP-FPM, Nginx Reverse Proxy &amp; MariaDB untuk keseragaman lingkungan dev dan staging.
+                </p>
+              </div>
             </div>
 
-            <div class="space-y-3">
-              <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                <i data-lucide="container" class="w-4 h-4 text-[#e62846]"></i>
-                <span>Kontainerisasi Docker Compose Multi-Service</span>
-              </h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Memimpin migrasi infrastruktur lokal dari XAMPP monolitik ke lingkungan kontainer modern multi-layanan menggunakan Docker Compose (PHP-FPM, Nginx, MariaDB), memastikan konsistensi lingkungan dev dan staging.
-              </p>
+            <!-- Action Bar -->
+            <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/10">
+              <a href="https://crm-portfolio-live.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-accent text-xs py-2.5 px-4 shadow-lg shadow-[#e62846]/30">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                <span>Live Showcase Demo CRM</span>
+              </a>
+              <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/logbook-magang-lkbn-antara.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 backdrop-blur-md transition-all">
+                <i data-lucide="book-open" class="w-4 h-4 text-rose-300"></i>
+                <span>Log Book 140 Hari (PDF)</span>
+              </a>
+              <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/kontrak-magang-lkbn-antara.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 backdrop-blur-md transition-all">
+                <i data-lucide="file-text" class="w-4 h-4 text-rose-300"></i>
+                <span>Surat Kontrak BUMN (PDF)</span>
+              </a>
+              <a href="https://github.com/zakski-bit/antara-crm-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/15 backdrop-blur-md transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Kode Sumber GitHub</span>
+              </a>
             </div>
-
-            <div class="space-y-3">
-              <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                <i data-lucide="file-check-2" class="w-4 h-4 text-[#e62846]"></i>
-                <span>Dokumentasi Teknis &amp; Handover Sistem</span>
-              </h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Menyusun dokumentasi arsitektur dan panduan serah-terima sistem secara menyeluruh: <code>HANDOVER.md</code>, <code>README-SETUP.md</code>, dan <code>ROLE-ACCESS.md</code> untuk pemeliharaan berkelanjutan oleh tim TI internal.
-              </p>
-            </div>
-          </div>
-
-          <!-- Official Documents Action Bar -->
-          <div class="flex flex-wrap items-center gap-3.5 mt-8 pt-8 border-t border-slate-100">
-            <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/kontrak-magang-lkbn-antara.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-800 hover:border-[#e62846] hover:text-[#e62846] shadow-sm transition-all">
-              <i data-lucide="file-text" class="w-4 h-4 text-[#e62846]"></i>
-              <span>Surat Kontrak Magang (PDF)</span>
-            </a>
-            <a href="https://raw.githubusercontent.com/zakski-bit/Portofolio/main/docs/logbook-magang-lkbn-antara.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-800 hover:border-[#e62846] hover:text-[#e62846] shadow-sm transition-all">
-              <i data-lucide="book-open" class="w-4 h-4 text-[#e62846]"></i>
-              <span>Log Book 140 Hari Kerja (PDF)</span>
-            </a>
-            <a href="https://crm-portfolio-live.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-accent text-xs py-2.5 px-4">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-              <span>Live Showcase Demo CRM</span>
-            </a>
-            <a href="https://github.com/zakski-bit/antara-crm-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-800 hover:bg-slate-200 transition-all">
-              <i data-lucide="github" class="w-4 h-4"></i>
-              <span>Repositori GitHub</span>
-            </a>
           </div>
         </div>
       </div>

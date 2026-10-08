@@ -37,6 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
+  // 3. Smooth Scrolling with Offset for Navbar & In-Page Anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+
+      const targetElem = document.querySelector(targetId);
+      if (targetElem) {
+        e.preventDefault();
+        const navHeight = navbar ? navbar.offsetHeight : 70;
+        const targetTop = targetElem.getBoundingClientRect().top + window.pageYOffset - navHeight + 6;
+
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth'
+        });
+
+        if (mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      }
+    });
+  });
+
   // 5. Mobile Drawer Menu
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
@@ -407,7 +431,60 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollAmount: 380
   });
 
-  // 8.2 Animated Number Counter (Gambar 2 Referensi)
+  // 8.2 Auto-Scroll Ticker for Projects & Certificates (seperti konten berita)
+  function initAutoScrollTicker(containerId, intervalMs = 3800, scrollStep = 420) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    let tickerInterval = null;
+    let isPaused = false;
+
+    function tick() {
+      // Only auto-scroll when in slider-mode
+      if (isPaused || !container.classList.contains('slider-mode')) return;
+
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      // If reached the end (within 24px threshold), smoothly wrap back to beginning
+      if (container.scrollLeft >= maxScrollLeft - 24) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      }
+    }
+
+    function start() {
+      if (tickerInterval) clearInterval(tickerInterval);
+      tickerInterval = setInterval(tick, intervalMs);
+    }
+
+    function stop() {
+      if (tickerInterval) {
+        clearInterval(tickerInterval);
+        tickerInterval = null;
+      }
+    }
+
+    // Pause on mouse hover or touch interaction
+    container.addEventListener('mouseenter', () => { isPaused = true; });
+    container.addEventListener('mouseleave', () => { isPaused = false; });
+    container.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+    container.addEventListener('touchend', () => {
+      setTimeout(() => { isPaused = false; }, 1500);
+    }, { passive: true });
+
+    // Pause when tab is not active to conserve resources
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    start();
+  }
+
+  initAutoScrollTicker('projectsContainer', 3800, 420);
+  initAutoScrollTicker('certificatesContainer', 4200, 380);
+
+  // 8.3 Animated Number Counter (Gambar 2 Referensi)
   const statElements = document.querySelectorAll('.stat-number');
   let counterStarted = false;
 

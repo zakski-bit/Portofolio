@@ -553,3 +553,57 @@ body {
   box-shadow: 0 4px 12px rgba(230, 40, 70, 0.25);
 }
 
+/* ============================================================
+   ANTARA HERITAGE CENTER ANIMATED BACKGROUND (Gambar 2 Referensi)
+   ============================================================ */
+.heritage-card-wrap {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.25);
+  background-color: #0b1120;
+}
+.heritage-bg-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.heritage-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  animation: heritagePanZoom 26s ease-in-out infinite alternate;
+  filter: contrast(110%) brightness(0.38);
+}
+@keyframes heritagePanZoom {
+  0% { transform: scale(1.04) translate(0, 0); }
+  50% { transform: scale(1.12) translate(-1.5%, -1%); }
+  100% { transform: scale(1.06) translate(1.5%, 1%); }
+}
+
+/* Hero Portrait Cutout & Smooth Blend */
+.hero-portrait-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-portrait-cutout {
+  max-height: 480px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.12));
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+@media (min-width: 1024px) {
+  .hero-portrait-cutout {
+    max-height: 520px;
+  }
+}
+
+
