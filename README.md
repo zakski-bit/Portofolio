@@ -1,93 +1,80 @@
-# 🌐 Zaki Abdussalam Alfajary &mdash; Fullstack Developer & Back-End Engineer
+# Zaki Abdussalam Alfajary — Engineering Portfolio
 
-Portofolio resmi berarsitektur modern dan interaktif yang dibangun khusus untuk menampilkan rekayasa perangkat lunak **Fullstack Web Application, RESTful API Back-End, Progressive Web Apps (PWA), Asynchronous Caching & Message Queues, serta Cloud Infrastructure**.
+Interactive software engineering portfolio showcasing production web applications, distributed backend architectures, Progressive Web Apps (PWA), asynchronous task workflows, and applied machine learning models.
 
-🔗 **Live Deployment (Vercel)**: [https://portfolio-zaki-one.vercel.app](https://portfolio-zaki-one.vercel.app)  
-🐙 **GitHub Profile**: [https://github.com/zakski-bit](https://github.com/zakski-bit)
+[![Live Deployment](https://img.shields.io/badge/Vercel-Live%20Portfolio-black?style=flat&logo=vercel)](https://portfolio-zaki-one.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=flat&logo=github)](https://github.com/zakski-bit)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/zaki-abdussalam)
 
----
+- **Production URL**: [https://portfolio-zaki-one.vercel.app](https://portfolio-zaki-one.vercel.app)
+- **Official CV Document**: [`docs/CV_Zaki_Abdussalam_Alfajary.pdf`](docs/CV_Zaki_Abdussalam_Alfajary.pdf)
 
-## 🚀 Proyek Unggulan (Production-Grade Codebases)
+## Featured Engineering Projects
 
-1. **[LDK FIKRI PNJ](https://github.com/zakski-bit/Ldk-Fikri)** &mdash; *Portal Resmi & Syiar Kampus*
-   - **Stack**: Next.js 15 (React 19 App Router), TypeScript, Tailwind CSS, Supabase (PostgreSQL & Auth), Vercel.
-   - **Live Demo**: [https://ldk-fikri-pnj.vercel.app](https://ldk-fikri-pnj.vercel.app)
-   - **Fitur**: Portal dakwah, katalog wakaf masjid Daarul Ilmi, jadwal sholat dinamis, pendaftaran mentoring, konseling anonim, & CMS admin.
+1. **[LDK FIKRI PNJ](https://github.com/zakski-bit/Ldk-Fikri)** — *Fullstack Campus Outreach Portal*
+   - **Stack**: Next.js 15 (React 19 App Router), TypeScript, Tailwind CSS, Supabase (PostgreSQL, Auth & Storage), Vercel.
+   - **Highlights**: Mosque endowment module with interactive waqf calculators, prayer time synchronization, and administrative back-office.
 
-2. **[WhatsApp Desktop Automation](https://github.com/zakski-bit/wa-desktop-automation)** &mdash; *Desktop Automation Sender & Batch Engine*
-   - **Stack**: Python 3.10, Win32 API Hooking, PyAutoGUI, CSV/Excel Parser, Vercel Simulator.
-   - **Live Simulator**: [https://wa-desktop-automation.vercel.app](https://wa-desktop-automation.vercel.app)
-   - **Fitur**: Otomasi broadcast WhatsApp Desktop via native URI, Win32 hardware key injection, dynamic templating ({nama}, {gugus}), jitter delay 15–25s anti-spam, & sent logger.
+2. **[DicoStory](https://github.com/zakski-bit/dicostory)** — *Progressive Web App with Offline Sync & Geospatial Mapping*
+   - **Stack**: Vanilla JS (ES6+), Vite, Service Worker, Leaflet.js, IndexedDB Outbox, Web Push (VAPID).
+   - **Highlights**: Offline-first outbox synchronization, interactive geospatial mapping, and camera media capture.
 
-3. **[DicoEvent V2](https://github.com/zakski-bit/dicoevent-rest-api)** &mdash; *Scalable Event Management RESTful API*
-   - **Stack**: Python 3.10, Django 4.2 LTS, Django REST Framework, PostgreSQL, Redis Caching, Celery + RabbitMQ, MinIO S3, Docker.
-   - **Live Showcase**: [https://dicoevent.vercel.app/](https://dicoevent.vercel.app/)
-   - **Fitur**: Memenuhi kriteria tingkat lanjut (Bintang 5 / 4.0), cache invalidation otomatis, worker asinkron, JWT RBAC, & 233 Newman tests passed.
+3. **[DicoEvent V2](https://github.com/zakski-bit/dicoevent-rest-api)** — *Scalable Event Management RESTful API*
+   - **Stack**: Python 3.10, Django 4.2 LTS, DRF, PostgreSQL, Redis, Celery, RabbitMQ, MinIO S3, Docker.
+   - **Highlights**: Redis caching invalidation, background reminder workers, MinIO media storage, and 233 automated Newman tests.
 
-4. **[ANTARA CRM System](https://github.com/zakski-bit/antara-crm-system)** &mdash; *Customer Relationship Management Perum LKBN ANTARA (Magang 8 Bulan)*
-   - **Stack**: PHP, MariaDB, Docker Compose, Nginx, Bootstrap 5.
-   - **Live Demo**: [https://crm-portfolio-live.vercel.app](https://crm-portfolio-live.vercel.app)
-   - **Fitur**: Simulasi login OTP 6-digit, manajemen lisensi berita multimedia korporasi, billing invoice otomatis, & customer analytics.
+4. **[ANTARA CRM & Digital Media Portal](https://github.com/zakski-bit/antara-crm-system)** — *Enterprise Media CRM & Licensing Portal*
+   - **Stack**: PHP, MariaDB, Docker Compose, Nginx Reverse Proxy, Bootstrap 5.
+   - **Highlights**: Two-factor OTP authentication, multi-role RBAC, corporate licensing for news assets, and automated billing.
 
-5. **[DicoStory](https://github.com/zakski-bit/dicostory)** &mdash; *Progressive Web App (PWA) with Offline Sync & Geospatial Mapping*
-   - **Stack**: Vanilla JS (ES6+), Vite, Service Worker PWA, Leaflet.js, OpenStreetMap, IndexedDB, Web Push Notification.
-   - **Live Demo**: [https://dicostory-sub.netlify.app/](https://dicostory-sub.netlify.app/)
-   - **Fitur**: Installable PWA, offline-first outbox sync, visualisasi peta persebaran cerita nusantara, & push notification (VAPID).
+5. **[Forum API V2](https://github.com/zakski-bit/forum-api)** — *Clean Architecture, CI/CD & Security Hardening*
+   - **Stack**: Node.js, Hapi.js, PostgreSQL, Jest (100% Coverage), GitHub Actions, AWS EC2, Nginx SSL/TLS.
+   - **Highlights**: Clean Architecture across 4 decoupled layers, PostgreSQL service containers in CI, SSH deployment, and DDoS rate-limiting (90 req/min).
 
-6. **[Forum API V2](https://github.com/zakski-bit/forum-api)** &mdash; *Clean Architecture, CI/CD & Security Hardening*
-   - **Stack**: Node.js (Hapi.js), PostgreSQL, GitHub Actions CI/CD, AWS EC2, Nginx SSL/TLS Reverse Proxy, Rate Limiting (90 req/min).
-   - **Fitur**: Clean Architecture 4 layer, automated test pipeline dengan PostgreSQL container, auto deploy SSH EC2, & DDoS protection.
+6. **[WhatsApp Desktop Automation](https://github.com/zakski-bit/wa-desktop-automation)** — *Batch Messaging Utility*
+   - **Stack**: Python 3.10, Win32 API Hooking, Protocol Handlers, CSV/XLSX Parser.
+   - **Highlights**: Native URI protocol dispatching (`whatsapp://send`), low-level hardware scan-code injection (0x1C), and anti-spam jitter pacing.
 
----
+7. **[Bitcoin 24-Hour Price Forecasting](https://github.com/zakski-bit/bitcoin-seq2seq-forecasting)** — *Deep Learning Time-Series Model*
+   - **Stack**: TensorFlow 2.15, Keras 3, Python, Chart.js.
+   - **Highlights**: Custom Seq2Seq LSTM with Multi-Head Self-Attention, low-level `tf.GradientTape` training loop, and 97.08% error reduction over baseline.
 
-## 📜 Dokumen Resmi & Kredensial Lisensi (PDF)
+8. **[CineMatch](https://github.com/zakski-bit/movie-recommender-system)** — *End-to-End Movie Recommender System*
+   - **Stack**: TensorFlow, Scikit-Learn, MovieLens 100K Dataset.
+   - **Highlights**: Hybrid engine combining Content-Based TF-IDF Cosine Similarity (100% Precision@10) and neural embedding Collaborative Filtering (`RecommenderNet`).
 
-Berkas resmi tersedia langsung di folder `docs/`:
-- **[Curriculum Vitae (CV) Resmi Zaki](docs/CV_Zaki_Abdussalam_Alfajary.pdf)** (Format PDF 2 Halaman Standar Industri)
-- **[Sertifikat Back-End Expert JavaScript (AWS & Dicoding)](docs/sertifikat-backend-expert-js.pdf)** &bull; ID: `1RXYD1YYMXVM` &bull; [Verifikasi Online](https://www.dicoding.com/certificates/1RXYD1YYMXVM)
-- **[Sertifikat Web Intermediate (Google & Dicoding)](docs/sertifikat-web-intermediate.pdf)** &bull; ID: `NVP7W78L4ZR0` &bull; [Verifikasi Online](https://www.dicoding.com/certificates/NVP7W78L4ZR0)
-- **[Sertifikat Fundamental Back-End Python (Django & Redis)](docs/sertifikat-backend-python.pdf)** &bull; ID: `0LZ0J29EQX65` &bull; [Verifikasi Online](https://www.dicoding.com/certificates/0LZ0J29EQX65)
-- **[Sertifikat Mobile Flutter untuk Pemula](docs/sertifikat-flutter-pemula.pdf)** &bull; ID: `6RPNYQVY5Z2M` &bull; [Verifikasi Online](https://www.dicoding.com/certificates/6RPNYQVY5Z2M)
-- **[Sertifikat Dasar Pemrograman Web](docs/sertifikat-dasar-web.pdf)** &bull; ID: `2VX3RR4KVZYQ` &bull; [Verifikasi Online](https://www.dicoding.com/certificates/2VX3RR4KVZYQ)
+9. **[Dicoding Forum App](https://github.com/zakski-bit/forumapp)** — *React, Redux Toolkit & Automation Testing*
+   - **Stack**: React 18, Redux Toolkit, Jest, Cypress (E2E), Storybook, GitHub Actions.
+   - **Highlights**: Centralized state with optimistic UI updates, comprehensive Jest unit/integration tests, Cypress browser automation, and isolated Storybook catalog.
 
----
+10. **[Notes App](https://github.com/zakski-bit/notes-app)** — *Vanilla Web Components & RESTful API Architecture*
+    - **Stack**: Vanilla JS (ES6+), W3C Web Components (Shadow DOM), Webpack 5.
+    - **Highlights**: Framework-free Custom Elements, real-time client validation, and responsive CSS Grid.
 
-## 📂 Struktur Direktori Proyek
+## Repository Structure
 
-```bash
-portfolio/
-├── docs/                      # Berkas dokumen resmi (CV & 5 Sertifikat PDF)
-│   ├── CV_Zaki_Abdussalam_Alfajary.pdf
-│   ├── sertifikat-backend-expert-js.pdf
-│   ├── sertifikat-web-intermediate.pdf
-│   ├── sertifikat-backend-python.pdf
-│   ├── sertifikat-flutter-pemula.pdf
-│   └── sertifikat-dasar-web.pdf
-├── img/                       # Aset grafis
-│   ├── certificates/          # Cover thumbnail sertifikat
-│   ├── projects/              # Banner mockup 5 proyek GitHub
-│   └── profile.jpg            # Foto profil resmi
-├── video/                     # Aset video lama; tidak dimuat pada halaman
-│   └── bg-lines.mp4           # Disimpan sebagai aset sumber
-├── index.html                 # Markup portofolio responsif dan semantik
-├── style.css                  # Gaya responsif, tipografi, dan aksesibilitas
-├── script.js                  # Menu, filter proyek, modal studi kasus, dan formulir kontak
-└── README.md                  # Dokumentasi komprehensif
+```
+├── docs/                      # Official credentials and curriculum vitae
+│   └── CV_Zaki_Abdussalam_Alfajary.pdf
+├── img/                       # Optimized web assets & thumbnails
+├── index.html                 # Semantic single-page application markup
+├── style.css                  # Modern responsive design & dark mode styles
+├── script.js                  # Marquee slider, case study modal & interactive controls
+└── README.md                  # Technical portfolio documentation
 ```
 
----
-
-## 🛠️ Menjalankan Secara Lokal
+## Local Development
 
 ```bash
+# Clone the repository
 git clone https://github.com/zakski-bit/Portofolio.git
 cd Portofolio
 
-# Menggunakan Python built-in server
+# Serve locally
 python -m http.server 3000
-# Buka http://localhost:3000 di browser Anda
 ```
+Navigate to `http://localhost:3000` in your web browser.
 
----
+## License
 
-© 2026 Zaki Abdussalam Alfajary. Politeknik Negeri Jakarta.
+MIT License. See [LICENSE](LICENSE) for details.
