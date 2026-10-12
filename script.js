@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ${isDark
             ? '<i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>'
             : '<i data-lucide="moon" class="w-4 h-4 text-slate-600"></i>'}
-          <span>${isDark ? 'Mode Terang (Light)' : 'Mode Gelap (Dark)'}</span>
+          <span>${isDark ? 'Light Mode' : 'Dark Mode'}</span>
         </span>
         <i data-lucide="repeat" class="w-3.5 h-3.5 text-slate-400"></i>
       `;
@@ -156,12 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // 7. Database Detail Proyek (5 Proyek GitHub Produksi Zaki)
+  // 7. Project Case Studies & Technical Architecture Database
   const projectDetails = {
     'ldk-fikri': {
       category: 'FULLSTACK WEB APP',
-      period: 'September 2026 &ndash; Sekarang',
-      title: 'LDK FIKRI PNJ &mdash; Portal Resmi & Syiar Kampus',
+      period: 'Sep 2026 &ndash; Present',
+      title: 'LDK FIKRI PNJ &mdash; Official Campus Ministry & Outreach Portal',
       image: 'img/optimized/projects/ldk-fikri.webp',
       githubUrl: 'https://github.com/zakski-bit/Ldk-Fikri',
       liveUrl: 'https://ldk-fikri-pnj.vercel.app',
@@ -172,35 +172,35 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'DEPLOYMENT HOST', val: 'Vercel Edge Network' }
       ],
       points: [
-        'Membangun portal resmi kegiatan dakwah kampus Politeknik Negeri Jakarta dengan arsitektur Next.js 15 App Router dan React 19.',
-        'Mengintegrasikan modul Wakaf & Pembangunan Masjid Daarul Ilmi PNJ lengkap dengan transparansi dana, kalkulator wakaf, rekening resmi BSI, dan QRIS interaktif.',
-        'Menyediakan fitur jadwal sholat dinamis, hadits harian, agenda kajian akbar, dan pendaftaran Mentoring Agama Islam (PAMI).',
-        'Membangun portal admin dan manajemen konten berbasis Supabase untuk pengelolaan inventaris, verifikasi wakaf masuk, dan publikasi artikel.'
+        'Architected the official student ministry web portal for Jakarta State Polytechnic using Next.js 15 App Router and React 19.',
+        'Integrated the Daarul Ilmi Mosque Endowment & Waqf module with transparent fund reporting, live waqf calculators, official BSI banking details, and interactive QRIS.',
+        'Implemented dynamic prayer schedule synchronization, daily hadith feeds, grand study agendas, and online registration for Islamic Mentoring (PAMI).',
+        'Built a robust role-based administrative dashboard powered by Supabase for inventory oversight, incoming waqf verification, and article publishing.'
       ]
     },
     'dicostory': {
       category: 'FRONTEND & PWA',
-      period: 'September 2026',
+      period: 'Sep 2026',
       title: 'DicoStory &mdash; Progressive Web App with Offline Sync & Geospatial Mapping',
       image: 'img/optimized/projects/dicostory.webp',
       githubUrl: 'https://github.com/zakski-bit/dicostory',
       liveUrl: 'https://dicostory-sub.netlify.app/',
       specs: [
-        { label: 'PWA FEATURES', val: 'Installable, Service Worker, Manifest Maskable' },
+        { label: 'PWA CAPABILITIES', val: 'Installable, Service Worker, Maskable Manifest' },
         { label: 'OFFLINE CACHING', val: 'IndexedDB &amp; Cache API (StaleWhileRevalidate)' },
         { label: 'GEOSPATIAL MAP', val: 'Leaflet.js &amp; OpenStreetMap API' },
-        { label: 'PUSH NOTIFIKASI', val: 'Web Push Notification (VAPID Support)' }
+        { label: 'PUSH NOTIFICATIONS', val: 'Web Push Notifications (VAPID Support)' }
       ],
       points: [
-        'Mengembangkan platform berbagi cerita berarsitektur Progressive Web App (PWA) yang dapat diinstall ke home screen perangkat mobile & desktop seperti aplikasi native.',
-        'Mengimplementasikan sistem Offline-First dengan antrean outbox di IndexedDB: cerita yang diunggah saat luring otomatis tersinkronisasi saat koneksi pulih.',
-        'Menampilkan persebaran cerita geografis seluruh pelosok Indonesia menggunakan peta interaktif Leaflet.js dengan penanda koordinat dinamis.',
-        'Mengintegrasikan Web Push Notification terstandarisasi dengan event push dinamis dan action buttons untuk navigasi langsung ke detail cerita.'
+        'Engineered an installable Progressive Web App (PWA) story-sharing platform delivering a responsive native-app-like user experience across desktop and mobile.',
+        'Implemented an Offline-First architecture with an IndexedDB outbox queue: stories composed while offline automatically synchronize upon network restoration.',
+        'Visualized user-submitted story locations across Indonesia on an interactive Leaflet.js map with dynamic coordinate clustering and geolocation pins.',
+        'Integrated standard Web Push Notifications with custom push event listeners and action buttons for direct story navigation.'
       ]
     },
     'dicoevent': {
       category: 'BACKEND ARCHITECTURE',
-      period: 'September 2026',
+      period: 'Sep 2026',
       title: 'DicoEvent V2 &mdash; Scalable Event Management RESTful API',
       image: 'img/optimized/projects/dicoevent.webp',
       githubUrl: 'https://github.com/zakski-bit/dicoevent-rest-api',
@@ -212,35 +212,35 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'OBJECT STORAGE', val: 'MinIO S3 &bull; 233 Newman Tests Passed' }
       ],
       points: [
-        'Merancang arsitektur backend RESTful API tingkat lanjut (Advanced - Nilai Bintang 5 / 4.0) untuk platform manajemen event berskala tinggi.',
-        'Mengoptimalkan performa response time dengan Redis caching dan mekanisme cache invalidation otomatis saat terjadi mutasi data event.',
-        'Menerapkan message broker asinkron Celery & RabbitMQ untuk pengiriman email tiket terdistribusi dan background tasks berat.',
-        'Mengamankan endpoint dengan otentikasi JWT, Role-Based Access Control (RBAC), penyimpanan media MinIO S3, serta lolos 233 pengujian otomatis Postman/Newman.'
+        'Architected an advanced RESTful API (5-star / 4.0 evaluation) for high-concurrency event ticketing and catalog management.',
+        'Optimized query latency and server throughput with Redis caching and automatic cache invalidation triggers on event record mutations.',
+        'Integrated asynchronous background task processing using Celery and RabbitMQ for distributed ticket email delivery and heavy computations.',
+        'Secured API endpoints with JWT authentication, granular RBAC, MinIO S3 media storage, achieving 100% pass across 233 automated Postman/Newman tests.'
       ]
     },
     'antara-crm': {
       category: 'ENTERPRISE CRM',
-      period: 'September 2025 &ndash; April 2026 (8 Bulan)',
+      period: 'Sep 2025 &ndash; Apr 2026',
       title: 'ANTARA CRM & Digital Media Portal (Perum LKBN ANTARA)',
       image: 'img/optimized/projects/antara-crm.webp',
       githubUrl: 'https://github.com/zakski-bit/antara-crm-system',
       liveUrl: 'https://crm-portfolio-live.vercel.app',
       specs: [
         { label: 'ENVIRONMENT', val: 'Docker Compose, Nginx, PHP, MariaDB' },
-        { label: 'SECURITY & AUTH', val: 'Simulasi OTP 6-Digit &amp; RBAC Multi-level' },
-        { label: 'CORE MODULES', val: 'Invoice Billing, Sales Force, License System' },
-        { label: 'CLIENT DASHBOARD', val: 'Customer Partnership Portal &amp; Analytics' }
+        { label: 'SECURITY & AUTH', val: '6-Digit OTP Simulation &amp; Multi-level RBAC' },
+        { label: 'CORE MODULES', val: 'Invoice Billing, Sales Force, License Management' },
+        { label: 'CLIENT DASHBOARD', val: 'Corporate Partnership Portal &amp; Analytics' }
       ],
       points: [
-        'Mengembangkan sistem manajemen hubungan pelanggan (CRM) dan portal distribusi konten media berita B2B untuk LKBN ANTARA.',
-        'Membangun modul verifikasi login dua langkah berbasis OTP 6-digit, manajemen langganan lisensi produk berita multimedia (teks, foto HD, video broadcast), dan invoice otomatis.',
-        'Merancang dashboard monitoring kinerja media berita dan portal kemitraan pelanggan korporasi.',
-        'Menyediakan showcase interaktif online di Vercel yang dapat dieksplorasi langsung tanpa konfigurasi server lokal.'
+        'Engineered a customer relationship management (CRM) system and B2B news media distribution platform for LKBN ANTARA.',
+        'Implemented two-factor authentication simulation via 6-digit OTP, tiered multimedia subscription licensing (text, HD photography, broadcast video), and automated billing.',
+        'Designed high-fidelity analytics dashboards for real-time media distribution metrics and corporate partnership account monitoring.',
+        'Deployed an interactive production showcase on Vercel for instant browser exploration without requiring local server orchestration.'
       ]
     },
     'forum-api': {
       category: 'DEVOPS & BACKEND',
-      period: 'September 2026',
+      period: 'Sep 2026',
       title: 'Forum API V2 &mdash; Clean Architecture, CI/CD & Security Hardening',
       image: 'img/optimized/projects/forum-api.webp',
       githubUrl: 'https://github.com/zakski-bit/forum-api',
@@ -249,18 +249,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'ARCHITECTURE', val: 'Clean Architecture (Separation of Concerns)' },
         { label: 'CI/CD PIPELINE', val: 'GitHub Actions with Postgres Service Container' },
         { label: 'SECURITY HARDENING', val: 'Nginx SSL/TLS, Rate Limiting 90 req/min (DDoS)' },
-        { label: 'TESTING COVERAGE', val: '100% Automated Unit, Integration &amp; Functional Test' }
+        { label: 'TESTING COVERAGE', val: '100% Automated Unit, Integration &amp; Functional Tests' }
       ],
       points: [
-        'Membangun arsitektur backend RESTful API dengan prinsip Clean Architecture (Domain, Application, Infrastructure, Interface layer).',
-        'Mengonfigurasi pipeline Continuous Integration (CI) berbasis GitHub Actions dengan service container PostgreSQL untuk pengujian otomatis pada setiap Pull Request.',
-        'Menerapkan Continuous Deployment (CD) otomatis melalui SSH ke server cloud AWS EC2 pada setiap event push ke branch utama.',
-        'Memperkuat keamanan server menggunakan Reverse Proxy Nginx dengan sertifikat SSL/TLS HTTPS dan proteksi DDoS rate limiting sebesar 90 request per menit.'
+        'Constructed a robust RESTful API leveraging Clean Architecture principles across Domain, Application, Infrastructure, and Interface layers.',
+        'Built continuous integration (CI) workflows with GitHub Actions utilizing PostgreSQL service containers to run automated test suites on every pull request.',
+        'Automated Continuous Deployment (CD) pipeline deploying directly to AWS EC2 via SSH upon successful main branch merges.',
+        'Hardened server infrastructure with Nginx reverse proxy, HTTPS SSL/TLS encryption, and DDoS mitigation rate limiting capped at 90 requests per minute.'
       ]
     },
     'wa-automation': {
       category: 'AUTOMATION & PYTHON',
-      period: 'Februari 2026 &ndash; Sekarang',
+      period: 'Feb 2026 &ndash; Present',
       title: 'WhatsApp Desktop Automation Sender & Batch Messenger',
       image: 'img/optimized/projects/wa-desktop-automation.webp',
       githubUrl: 'https://github.com/zakski-bit/wa-desktop-automation',
@@ -272,15 +272,15 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'LIVE SIMULATOR', val: 'Interactive Web Demo at Vercel' }
       ],
       points: [
-        'Membangun engine otomasi pengiriman pesan massal WhatsApp Desktop Windows via native protocol URI (whatsapp://send).',
-        'Mengimplementasikan smart window focusing dan hardware key injection menggunakan Win32 API tanpa dependensi browser berat seperti Selenium.',
-        'Mendukung dynamic templating dengan variabel otomatis ({nama}, {panggilan}, {gugus}, {jurusan}) dari file spreadsheet CSV & Excel.',
-        'Menyediakan simulator web interaktif di Vercel (wa-desktop-automation.vercel.app) untuk demonstrasi alur kerja aman tanpa spam.'
+        'Engineered a lightweight batch messaging engine targeting Windows WhatsApp Desktop via native protocol handlers (whatsapp://send).',
+        'Implemented Win32 API window focusing and low-level hardware scan code key injection, completely bypassing heavy Selenium browser overhead.',
+        'Supported dynamic message templating with variable substitution ({name}, {department}, {organization}) parsed directly from CSV and Excel spreadsheets.',
+        'Developed and deployed an interactive web simulator on Vercel demonstrating safe, jitter-delayed automated messaging workflows.'
       ]
     },
     'bitcoin-forecast': {
       category: 'DEEP LEARNING & TIME SERIES',
-      period: 'Oktober 2026',
+      period: 'Oct 2026',
       title: 'Bitcoin 24-Hour Multi-Horizon Price Forecasting (Seq2Seq LSTM)',
       image: 'img/optimized/projects/bitcoin-forecast.webp',
       githubUrl: 'https://github.com/zakski-bit/bitcoin-seq2seq-forecasting',
@@ -290,18 +290,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'DEEP LEARNING FRAMEWORK', val: 'TensorFlow 2.15 &amp; Keras 3' },
         { label: 'MODEL ARCHITECTURE', val: 'Seq2Seq LSTM + Self-Attention Layer' },
         { label: 'CUSTOM TRAINING LOOP', val: 'tf.GradientTape with Adam Optimizer' },
-        { label: 'EVALUATION & UI', val: 'RMSE / MAE &amp; Interactive Chart.js' }
+        { label: 'EVALUATION & UI', val: 'RMSE / MAE Metrics &amp; Interactive Chart.js' }
       ],
       points: [
-        'Merancang arsitektur model Sequence-to-Sequence (Seq2Seq) LSTM dengan custom Self-Attention layer untuk peramalan multi-step 24 jam ke depan harga Bitcoin (BTC/USD).',
-        'Mengimplementasikan Custom Training Loop tingkat rendah (tf.GradientTape) untuk kontrol optimasi gradien, gradient clipping, dan loss calculation granular.',
-        'Menerapkan feature engineering multi-dimensi (log-return, rolling mean/std volatility, momentum RSI) dan normalisasi MinMaxScaler robust.',
-        'Menyediakan live dashboard interaktif di Vercel dengan rendering grafik Chart.js serta notebook Google Colab yang dapat dijalankan secara langsung.'
+        'Engineered a Sequence-to-Sequence (Seq2Seq) LSTM neural architecture augmented with a custom Self-Attention mechanism for multi-step 24-hour Bitcoin price forecasting.',
+        'Constructed a low-level Custom Training Loop (tf.GradientTape) providing fine-grained control over gradient optimization, clipping, and custom loss dynamics.',
+        'Formulated multi-dimensional feature engineering including log returns, rolling volatility, RSI momentum indicators, and robust MinMax scaling.',
+        'Shipped an interactive web dashboard on Vercel featuring Chart.js visual analytics alongside an executable Google Colab research notebook.'
       ]
     },
     'movie-recommender': {
-      category: 'MACHINE LEARNING TERAPAN',
-      period: 'Oktober 2026',
+      category: 'APPLIED MACHINE LEARNING',
+      period: 'Oct 2026',
       title: 'CineMatch &mdash; End-to-End Movie Recommender System',
       image: 'img/optimized/projects/movie-recommender.webp',
       githubUrl: 'https://github.com/zakski-bit/movie-recommender-system',
@@ -314,50 +314,50 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'BENCHMARK DATASET', val: 'MovieLens 100K (100,000+ Ratings)' }
       ],
       points: [
-        'Membangun sistem rekomendasi film hibrida yang menggabungkan Content-Based Filtering dan Collaborative Filtering berbasis Deep Learning neural embedding.',
-        'Mengembangkan RecommenderNet dengan layer embedding pengguna dan film, dot product similarity, dan regularisasi Dropout untuk meminimalkan RMSE/MAE evaluasi.',
-        'Mengimplementasikan Content-Based engine berbasis representasi teks metadata (genre, sinopsis) dengan TF-IDF vectorization dan Cosine Similarity matriks.',
-        'Mendeploy showcase web interaktif di Vercel untuk pencarian rekomendasi instan dan membagikan notebook komprehensif di Google Colab.'
+        'Designed a hybrid movie recommendation engine combining content-based textual features with deep collaborative filtering embeddings.',
+        'Implemented RecommenderNet utilizing user and item embedding layers, dot-product similarity, and Dropout regularization to minimize RMSE and MAE.',
+        'Engineered a content-based vectorizer over genre and metadata corpus using TF-IDF and high-dimensional Cosine Similarity matrices.',
+        'Deployed a production web demo on Vercel for real-time recommendation querying accompanied by a reproducible Google Colab notebook.'
       ]
     },
     'forumapp': {
       category: 'FRONTEND EXPERT & REACT',
-      period: 'September 2026 &ndash; Oktober 2026',
-      title: 'Dicoding Forum App &mdash; React, Redux Toolkit & Automation Testing',
+      period: 'Sep 2026 &ndash; Oct 2026',
+      title: 'Dicoding Forum App &mdash; React, Redux Toolkit & Automated Testing',
       image: 'img/optimized/projects/forumapp.webp',
       githubUrl: 'https://github.com/zakski-bit/forumapp',
       liveUrl: 'https://forumapp-ofvr-seven.vercel.app',
       specs: [
         { label: 'REACT ECOSYSTEM', val: 'React 18 &amp; Redux Toolkit (Thunk &amp; Slices)' },
-        { label: 'AUTOMATION TESTING', val: 'Jest Unit/Integration &amp; Cypress E2E (Nilai Bintang 5)' },
+        { label: 'AUTOMATION TESTING', val: 'Jest Unit/Integration &amp; Cypress E2E (5-Star Rating)' },
         { label: 'CI/CD AUTOMATION', val: 'GitHub Actions Workflow (Lint, Test, Build)' },
         { label: 'DEPLOYMENT HOST', val: 'Vercel Edge Network' }
       ],
       points: [
-        'Mengembangkan aplikasi forum diskusi modern berstandar enterprise dengan React 18 dan arsitektur state terpusat Redux Toolkit.',
-        'Menerapkan Test-Driven Development (TDD) dan otomasi pengujian komprehensif: unit & integration test menggunakan Jest, serta End-to-End (E2E) testing dengan Cypress yang meraih rating Bintang 5 (Sempurna).',
-        'Mengonfigurasi pipeline CI/CD GitHub Actions untuk menjalankan automated linter ESLint, pengujian otomatis, dan auto-deployment ke Vercel pada setiap push.',
-        'Menyediakan fitur thread diskusi, upvote/downvote interaktif, kategori tag filter, leaderboard pengguna paling aktif, dan otentikasi JWT token.'
+        'Built an enterprise-grade discussion forum application with React 18 and centralized state architecture powered by Redux Toolkit.',
+        'Adopted Test-Driven Development (TDD) with comprehensive Jest unit and integration suites, plus Cypress End-to-End (E2E) automation achieving a flawless 5-star score.',
+        'Configured GitHub Actions CI/CD to enforce ESLint standards, run automated test suites, and deploy production builds to Vercel upon push.',
+        'Implemented interactive threaded replies, upvote/downvote mechanics, category filtering, active user leaderboards, and JWT token authentication.'
       ]
     },
     'notes-app': {
       category: 'MODULAR WEB COMPONENTS',
-      period: 'Oktober 2026',
+      period: 'Oct 2026',
       title: 'Notes App &mdash; Vanilla Web Components & RESTful API v2',
       image: 'img/optimized/projects/notes-app.webp',
       githubUrl: 'https://github.com/zakski-bit/notes-app',
       liveUrl: 'https://notes-appz.netlify.app/',
       specs: [
-        { label: 'CORE TECHNOLOGY', val: 'Vanilla JavaScript ES6+ (No Framework)' },
+        { label: 'CORE TECHNOLOGY', val: 'Vanilla JavaScript ES6+ (Framework-free)' },
         { label: 'COMPONENT ARCHITECTURE', val: 'Web Components (Custom Elements &amp; Shadow DOM)' },
         { label: 'MODULE BUNDLER', val: 'Webpack 5 with Babel Transpiler' },
         { label: 'RESTFUL API', val: 'Dicoding Notes REST API v2 Integration' }
       ],
       points: [
-        'Membangun aplikasi web modular tanpa framework eksternal dengan memanfaatkan standar resmi W3C Web Components (Custom Elements, Shadow DOM, HTML Templates).',
-        'Mengintegrasikan komunikasi asinkron Fetch API dengan Dicoding Notes REST API v2 untuk operasi CRUD catatan aktif dan arsip catatan.',
-        'Mengimplementasikan real-time form validation kustom dengan pesan error dinamis dan transisi CSS Grid responsif.',
-        'Mengonfigurasi Webpack 5 untuk bundling aset produksi, minifikasi kode, dan deployment ke Netlify.'
+        'Engineered a zero-framework, modular web application adhering strictly to official W3C Web Component standards (Custom Elements, Shadow DOM, HTML Templates).',
+        'Integrated asynchronous Fetch API communication with Dicoding Notes REST API v2 for full CRUD handling across active and archived notes.',
+        'Implemented custom real-time client-side form validation with dynamic feedback and responsive CSS Grid animations.',
+        'Configured Webpack 5 build tooling for modern asset bundling, tree-shaking, code minification, and Netlify deployment.'
       ]
     }
   };
@@ -585,19 +585,19 @@ document.addEventListener('DOMContentLoaded', () => {
         ${data.githubUrl ? `
           <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 transition-all">
             <i data-lucide="github" class="w-4 h-4"></i>
-            <span>Lihat Source Code (GitHub)</span>
+            <span>View Source Code (GitHub)</span>
           </a>
         ` : ''}
         ${data.liveUrl && data.liveUrl !== data.githubUrl ? `
           <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-[#e62846] text-white hover:bg-[#d0203c] transition-all shadow-md shadow-[#e62846]/20">
             <i data-lucide="external-link" class="w-4 h-4"></i>
-            <span>Kunjungi Live Website / Demo</span>
+            <span>Launch Live Demo</span>
           </a>
         ` : ''}
         ${data.colabUrl ? `
           <a href="${data.colabUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-300 transition-all">
             <i data-lucide="book-open" class="w-4 h-4"></i>
-            <span>Buka Google Colab Notebook</span>
+            <span>Open Google Colab Notebook</span>
           </a>
         ` : ''}
       </div>
@@ -617,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Specs Grid -->
       <div>
-        <h4 class="text-xs font-bold text-[#e62846] uppercase tracking-wider mb-2.5">Arsitektur &amp; Parameter Teknis</h4>
+        <h4 class="text-xs font-bold text-[#e62846] uppercase tracking-wider mb-2.5">Technical Specs &amp; Architecture</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           ${specsHtml}
         </div>
@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Responsibility Points -->
       <div class="pt-2 border-t border-slate-100">
-        <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2.5">Sorotan Rekayasa &amp; Implementasi</h4>
+        <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2.5">Key Engineering Implementations</h4>
         <ul class="space-y-2 text-xs sm:text-sm">
           ${pointsHtml}
         </ul>
@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalActionBtn.onclick = () => {
       closeProjectModal();
-      window.location.href = `https://wa.me/6288298038392?text=Halo%20Zaki,%20saya%20tertarik%20mendiskusikan%20mengenai%20${encodeURIComponent(data.title)}`;
+      window.location.href = `https://wa.me/6288298038392?text=Hello%20Zaki,%20I%20would%20like%20to%20discuss%20the%20project:%20${encodeURIComponent(data.title)}`;
     };
   }
 
@@ -674,7 +674,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyEmailBtn.addEventListener('click', () => {
       navigator.clipboard.writeText('zakiabdussalamall@gmail.com').then(() => {
         const orig = copyEmailBtn.innerHTML;
-        copyEmailBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Email Tersalin!</span>`;
+        copyEmailBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Email Copied!</span>`;
         if (window.lucide) window.lucide.createIcons();
         setTimeout(() => {
           copyEmailBtn.innerHTML = orig;
@@ -692,7 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('waName').value.trim();
       const msg = document.getElementById('waMsg').value.trim();
       const phone = '6288298038392';
-      let text = `Halo Zaki, saya *${name}*:%0A%0A${encodeURIComponent(msg)}`;
+      let text = `Hello Zaki, I am *${name}*:%0A%0A${encodeURIComponent(msg)}`;
       window.open(`https://wa.me/${phone}?text=${text}`, '_blank', 'noopener,noreferrer');
     });
   }
