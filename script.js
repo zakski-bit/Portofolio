@@ -672,7 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyEmailBtn = document.getElementById('copyEmailBtn');
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('zakiabdussalamall@gmail.com').then(() => {
+      navigator.clipboard.writeText('zakiabdussalamal@gmail.com').then(() => {
         const orig = copyEmailBtn.innerHTML;
         copyEmailBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Email Copied!</span>`;
         if (window.lucide) window.lucide.createIcons();
