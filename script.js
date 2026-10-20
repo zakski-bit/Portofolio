@@ -697,37 +697,303 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 12. Interactive 3D Parallax Tilt for Hero Portrait
-  const heroStage = document.getElementById('heroPortraitStage');
-  const heroCard = document.getElementById('heroPortraitCard');
+  // ============================================================
+  // 12. Anime.js Cinematic Motion & Interaction System
+  // ============================================================
 
-  if (heroStage && heroCard && window.matchMedia('(hover: hover)').matches) {
-    let isHovering = false;
+  // 12.1 Kinetic Typography Entrance for Hero Headline & Subtitle
+  function initKineticTypography() {
+    if (!window.anime) return;
+    const titleEl = document.getElementById('heroTitle');
+    if (!titleEl) return;
 
-    heroStage.addEventListener('mouseenter', () => {
-      isHovering = true;
-      heroCard.style.animationPlayState = 'paused';
+    const rawNodes = Array.from(titleEl.childNodes);
+    let newHtml = '';
+
+    rawNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent;
+        const words = text.split(/(\s+)/);
+        words.forEach(part => {
+          if (/^\s+$/.test(part)) {
+            newHtml += ' ';
+          } else if (part.length > 0) {
+            newHtml += '<span class="kinetic-word">';
+            for (let i = 0; i < part.length; i++) {
+              newHtml += `<span class="kinetic-char">${part[i]}</span>`;
+            }
+            newHtml += '</span>';
+          }
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        const text = node.textContent;
+        const classes = node.getAttribute('class') || '';
+        const words = text.split(/(\s+)/);
+        words.forEach(part => {
+          if (/^\s+$/.test(part)) {
+            newHtml += ' ';
+          } else if (part.length > 0) {
+            newHtml += `<span class="kinetic-word ${classes}">`;
+            for (let i = 0; i < part.length; i++) {
+              newHtml += `<span class="kinetic-char ${classes}">${part[i]}</span>`;
+            }
+            newHtml += '</span>';
+          }
+        });
+      }
     });
 
-    heroStage.addEventListener('mousemove', (e) => {
-      if (!isHovering) return;
-      const rect = heroStage.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      const rotX = -(y / (rect.height / 2)) * 10;
-      const rotY = (x / (rect.width / 2)) * 10;
-      
-      heroCard.style.transform = `perspective(1200px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-8px)`;
+    titleEl.innerHTML = newHtml;
+
+    const tl = anime.timeline({
+      easing: 'cubicBezier(0.16, 1, 0.3, 1)'
     });
 
-    heroStage.addEventListener('mouseleave', () => {
-      isHovering = false;
-      heroCard.style.transform = '';
-      heroCard.style.animationPlayState = 'running';
+    tl.add({
+      targets: '#heroTitle .kinetic-char',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      rotateZ: [4, 0],
+      delay: anime.stagger(26, { start: 100 }),
+      duration: 800
+    });
+
+    const subEl = document.getElementById('heroSubtitle');
+    if (subEl) {
+      tl.add({
+        targets: '#heroSubtitle',
+        translateY: [16, 0],
+        opacity: [0, 1],
+        duration: 600
+      }, '-=450');
+    }
+  }
+
+  // 12.2 Organic SVG Morphing Shapes Background
+  function initMorphingShapes() {
+    if (!window.anime) return;
+    const morphPath = document.getElementById('morphPath');
+    if (!morphPath) return;
+
+    const path1 = "M421.5,317.5Q379,385,314.5,417.5Q250,450,181,416.5Q112,383,101.5,316.5Q91,250,131.5,188Q172,126,243.5,103.5Q315,81,374.5,123Q434,165,449,232.5Q464,300,421.5,317.5Z";
+    const path2 = "M405.5,340Q353,430,268.5,420Q184,410,135,348Q86,286,98,206.5Q110,127,189,103.5Q268,80,337,117.5Q406,155,432,227.5Q458,300,405.5,340Z";
+    const path3 = "M437,331.5Q399,413,322,434Q245,455,178,416.5Q111,378,92.5,306.5Q74,235,115.5,174Q157,113,235.5,91.5Q314,70,379.5,121Q445,172,460,236Q475,300,437,331.5Z";
+
+    anime({
+      targets: '#morphPath',
+      d: [
+        { value: path2, duration: 6500, easing: 'easeInOutSine' },
+        { value: path3, duration: 6500, easing: 'easeInOutSine' },
+        { value: path1, duration: 6500, easing: 'easeInOutSine' }
+      ],
+      loop: true,
+      direction: 'alternate'
+    });
+
+    anime({
+      targets: '.ambient-morph-svg',
+      rotate: [0, 360],
+      duration: 48000,
+      easing: 'linear',
+      loop: true
     });
   }
 
-  // All content is guaranteed visible without scroll-blocking opacity shifts
+  // 12.3 Interactive 3D Perspective Tilt on Project & Cert Cards & Hero
+  function init3DTiltCards() {
+    if (!window.anime) return;
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!isFinePointer) return;
+
+    const cards = document.querySelectorAll('.project-card, .cert-card');
+    cards.forEach(card => {
+      card.classList.add('card-3d-tilt');
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotX = -((y - centerY) / centerY) * 7.5;
+        const rotY = ((x - centerX) / centerX) * 7.5;
+
+        anime.remove(card);
+        card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-4px) scale3d(1.015, 1.015, 1.015)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        anime({
+          targets: card,
+          rotateX: 0,
+          rotateY: 0,
+          translateY: 0,
+          scale: 1,
+          duration: 650,
+          easing: 'spring(1, 80, 10, 0)',
+          complete: () => {
+            card.style.transform = '';
+          }
+        });
+      });
+    });
+
+    // Hero portrait interactive tilt with spring rebound
+    const heroStage = document.getElementById('heroPortraitStage');
+    const heroCard = document.getElementById('heroPortraitCard');
+    if (heroStage && heroCard) {
+      let isHeroHover = false;
+
+      heroStage.addEventListener('mouseenter', () => {
+        isHeroHover = true;
+        heroCard.style.animationPlayState = 'paused';
+      });
+
+      heroStage.addEventListener('mousemove', (e) => {
+        if (!isHeroHover) return;
+        const rect = heroStage.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        const rotX = -(y / (rect.height / 2)) * 10;
+        const rotY = (x / (rect.width / 2)) * 10;
+
+        heroCard.style.transform = `perspective(1200px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-8px)`;
+      });
+
+      heroStage.addEventListener('mouseleave', () => {
+        if (window.anime) {
+          anime({
+            targets: heroCard,
+            rotateX: 0,
+            rotateY: 0,
+            translateY: 0,
+            duration: 600,
+            easing: 'spring(1, 80, 10, 0)',
+            complete: () => {
+              isHeroHover = false;
+              heroCard.style.transform = '';
+              heroCard.style.animationPlayState = 'running';
+            }
+          });
+        } else {
+          isHeroHover = false;
+          heroCard.style.transform = '';
+          heroCard.style.animationPlayState = 'running';
+        }
+      });
+    }
+  }
+
+  // 12.4 Fluid Parallax Camera Moves with Depth Layers
+  function initParallaxCamera() {
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!isFinePointer) return;
+
+    const parallaxItems = document.querySelectorAll('[data-depth]');
+    if (!parallaxItems.length) return;
+
+    let winW = window.innerWidth;
+    let winH = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      winW = window.innerWidth;
+      winH = window.innerHeight;
+    }, { passive: true });
+
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      targetX = (e.clientX - winW / 2) / (winW / 2);
+      targetY = (e.clientY - winH / 2) / (winH / 2);
+    }, { passive: true });
+
+    function updateParallax() {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+
+      parallaxItems.forEach(el => {
+        const depth = parseFloat(el.getAttribute('data-depth')) || 0.1;
+        const moveX = (currentX * depth * 70).toFixed(2);
+        const moveY = (currentY * depth * 70).toFixed(2);
+        el.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+      });
+
+      requestAnimationFrame(updateParallax);
+    }
+    requestAnimationFrame(updateParallax);
+  }
+
+  // 12.5 Interactive Ambient Cursor Glow Spotlight
+  function initCursorGlow() {
+    const glow = document.getElementById('cursorGlow');
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!glow || !isFinePointer) return;
+
+    let mouseX = -500;
+    let mouseY = -500;
+    let currentX = -500;
+    let currentY = -500;
+    let isRevealed = false;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isRevealed) {
+        isRevealed = true;
+        glow.style.opacity = '1';
+      }
+    }, { passive: true });
+
+    function renderGlow() {
+      currentX += (mouseX - currentX) * 0.14;
+      currentY += (mouseY - currentY) * 0.14;
+      glow.style.left = `${currentX}px`;
+      glow.style.top = `${currentY}px`;
+      requestAnimationFrame(renderGlow);
+    }
+    requestAnimationFrame(renderGlow);
+  }
+
+  // 12.6 Scroll-Triggered Section & Card Stagger Reveals
+  function initScrollObserverReveals() {
+    if (!('IntersectionObserver' in window) || !window.anime) return;
+
+    const revealSections = document.querySelectorAll('section[id]:not(#home)');
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const section = entry.target;
+          observer.unobserve(section);
+
+          const cards = section.querySelectorAll('.editorial-card, .stat-number');
+          if (cards.length) {
+            anime({
+              targets: cards,
+              translateY: [20, 0],
+              opacity: [0.85, 1],
+              delay: anime.stagger(40),
+              duration: 600,
+              easing: 'cubicBezier(0.16, 1, 0.3, 1)'
+            });
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealSections.forEach(sec => sectionObserver.observe(sec));
+  }
+
+  // 12.7 Initialize Anime.js Systems
+  initKineticTypography();
+  initMorphingShapes();
+  init3DTiltCards();
+  initParallaxCamera();
+  initCursorGlow();
+  initScrollObserverReveals();
 
 });

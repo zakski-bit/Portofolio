@@ -1193,4 +1193,99 @@ html.dark textarea {
   color: #f8fafc !important;
 }
 
+/* ============================================================
+   ANIME.JS INTERACTIVE & CINEMATIC MOTION SYSTEM
+   Kinetic Typography, 3D Perspective Tilt, Ambient Morph & Parallax
+   ============================================================ */
+
+/* 1. Kinetic Typography Tokens */
+.kinetic-headline {
+  overflow: hidden;
+}
+
+.kinetic-char {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform-origin: 50% 100%;
+}
+
+.kinetic-word {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform, opacity;
+}
+
+/* 2. Interactive Ambient Cursor Glow Spotlight */
+.cursor-glow {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(230, 40, 70, 0.14) 0%, rgba(244, 63, 94, 0.05) 40%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  will-change: transform, left, top;
+  filter: blur(45px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+html.dark .cursor-glow {
+  background: radial-gradient(circle, rgba(230, 40, 70, 0.18) 0%, rgba(59, 130, 246, 0.08) 45%, transparent 70%);
+  filter: blur(55px);
+}
+
+/* 3. Ambient Morphing SVG Vector Shape */
+.ambient-morph-svg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+  will-change: transform;
+}
+
+/* 4. 3D Interactive Card Perspective Tilt */
+.card-3d-tilt {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-3d-inner {
+  transform-style: preserve-3d;
+  transform: translateZ(0px);
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.card-3d-inner > * {
+  transform: translateZ(12px);
+}
+
+/* 5. Scroll Stagger Reveal Initial States */
+.anime-reveal-card {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: transform, opacity;
+}
+
+.anime-reveal-heading {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: transform, opacity;
+}
+
+/* Safe Hover Guard: Disable 3D tilt on touch devices to prevent touch jitter */
+@media (hover: none) {
+  .cursor-glow {
+    display: none !important;
+  }
+  .card-3d-tilt {
+    transform: none !important;
+  }
+}
+
+
 

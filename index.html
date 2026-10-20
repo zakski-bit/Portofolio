@@ -55,16 +55,34 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
 
+  <!-- Anime.js Animation Engine (v3.2.2) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="selection:bg-[#e62846] selection:text-white">
 
-  <!-- Ambient Soft Floating Orbs (Contained inside fixed wrapper to prevent horizontal scroll) -->
+  <!-- Interactive Ambient Cursor Glow Spotlight -->
+  <div id="cursorGlow" class="cursor-glow pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Ambient Soft Floating Orbs & Morphing SVG Shapes (Contained inside fixed wrapper to prevent horizontal scroll) -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
-    <div class="ambient-orb w-96 h-96 bg-slate-300/40 -top-20 -left-20"></div>
-    <div class="ambient-orb w-[26rem] h-[26rem] bg-rose-200/30 top-1/4 -right-20" style="animation-delay: -4s;"></div>
-    <div class="ambient-orb w-80 h-80 bg-blue-200/30 top-2/3 -left-20" style="animation-delay: -8s;"></div>
+    <div class="ambient-orb w-96 h-96 bg-slate-300/40 -top-20 -left-20" data-depth="0.08"></div>
+    <div class="ambient-orb w-[26rem] h-[26rem] bg-rose-200/30 top-1/4 -right-20" style="animation-delay: -4s;" data-depth="0.14"></div>
+    <div class="ambient-orb w-80 h-80 bg-blue-200/30 top-2/3 -left-20" style="animation-delay: -8s;" data-depth="0.1"></div>
+    
+    <!-- Organic Morphing SVG Vector Shape -->
+    <svg class="ambient-morph-svg -top-12 -right-12 sm:top-10 sm:right-10 w-[360px] sm:w-[540px] h-[360px] sm:h-[540px] pointer-events-none opacity-20 dark:opacity-25 transition-opacity duration-700" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="morphGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e62846" stop-opacity="0.38"/>
+          <stop offset="50%" stop-color="#f43f5e" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.18"/>
+        </linearGradient>
+      </defs>
+      <path id="morphPath" fill="url(#morphGradient)" d="M421.5,317.5Q379,385,314.5,417.5Q250,450,181,416.5Q112,383,101.5,316.5Q91,250,131.5,188Q172,126,243.5,103.5Q315,81,374.5,123Q434,165,449,232.5Q464,300,421.5,317.5Z" />
+    </svg>
   </div>
 
   <!-- ============================================================
@@ -198,12 +216,12 @@
           </div>
 
           <!-- Main Headline: I'm Zaki Abdussalam -->
-          <h1 class="animate-slide-up anim-delay-2 text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+          <h1 id="heroTitle" class="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] kinetic-headline">
             I'm <span class="text-[#e62846]">Zaki</span> Abdussalam
           </h1>
 
           <!-- Role Subtitle -->
-          <p class="animate-slide-up anim-delay-3 mt-2.5 sm:mt-3 text-sm sm:text-base lg:text-lg font-semibold text-slate-700 dark:text-slate-300 tracking-tight">
+          <p id="heroSubtitle" class="mt-2.5 sm:mt-3 text-sm sm:text-base lg:text-lg font-semibold text-slate-700 dark:text-slate-300 tracking-tight kinetic-sub">
             Fullstack Web Developer &bull; Back-End Engineer &bull; Machine Learning Practitioner
           </p>
 
@@ -314,7 +332,7 @@
               </div>
 
               <!-- Floating Pill Badge 1: LKBN ANTARA Enterprise Role (Elevated in 3D Z-Space) -->
-              <div class="portrait-float-badge badge-bottom-left">
+              <div class="portrait-float-badge badge-bottom-left" data-depth="0.18">
                 <div class="w-9 h-9 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-[#e62846] shrink-0">
                   <i data-lucide="building-2" class="w-4 h-4"></i>
                 </div>
@@ -325,7 +343,7 @@
               </div>
 
               <!-- Floating Pill Badge 2: Academic Honor PNJ (Elevated in 3D Z-Space) -->
-              <div class="portrait-float-badge badge-top-right">
+              <div class="portrait-float-badge badge-top-right" data-depth="0.22">
                 <i data-lucide="award" class="w-3.5 h-3.5 text-[#e62846]"></i>
                 <span class="text-xs font-bold text-slate-900 dark:text-slate-100">GPA 3.66 / 4.00 PNJ</span>
               </div>
